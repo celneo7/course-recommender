@@ -1,0 +1,824 @@
+post_id,author,date,reply_to_post_id,original_review,expected_grade,perceived_difficulty,workload_intensity,hours_per_week,teaching_quality,relevance_usefulness,interest_enjoyment,overall_recommendation,grading_fairness,schedule_timing,attendance_policy,recorded_lectures,flexibility,delivery_mode
+6697371191,ap3jedi,"Wednesday, April 30, 2025 10:02 PM",,"AY24/25 Sem 1
+Lecturer: Prof Zimmermann and Prof Anandha
+BZA student here. i wont tell you what the mod constitutes as you can look at the other reviews or do your own digging ;). but what i'll offer is my raw and honest review.
+As someone who has not ever scored an >A- for the previous CS1010A and CS2030 mods, i went into the mod not having much hope, wishing I could SU it.
+Got below mean and median for midterms, failed it, in actual fact. i was crushed... :(
+Despite maxxing out the ODAs, THAs and Visualgo quiz, things did not look too good. However, when i realised this might potentially be the last CS coded mod i would ever do, something in me clicked, and i decided to do the best i could.
+what i did:
+1. grinded about 15 PYPs
+2. spam asked chatgpt to help me explain answer keys...
+3. attended and listened to all the tutorials attentively (by Prof Roger Zimmermann), asking him questions too.
+4. lastly, booked a consult with Prof Anandha during finals season after i did at least 7 papers
+thankfully, the unexpected happened and i got my first A for a cs-coded mod. felt truly blessed :)
+now im in no way trying to brag thru this post please dont get me wrong, but rather i wanna share with all juniors out there two things to takeaway:
+1. never lose hope, odds may be stacked against u, but there is still a possibility to turn things around. i mean, my track record for CS mods were Bs...(not a bad grade but was hoping to get at least B+s) ++ failed midterms. was shocked that i could get 78/100 for finals...
+2. really make full use and cultivate a good relationship with the profs. profs Z and A were extremely helpful, patient and effective in their explanations. i am immensely grateful for them! highly recommend them :))",,,,,positive,,,recommended,,,,,,
+6798603297,Dr Ilyas Bellingham,"Wednesday, November 19, 2025 7:40 PM",6697371191,How did you manage to grind 15 PYPs. I've just done 2 MCQs sections and my exam is in 8 days. Anyways wanted to say it's a very inspiring review. Will prb grind 2-3 more pyps also b4 finals.,,,,,,,,,,,,,,
+6798608315,ap3jedi,"Wednesday, November 19, 2025 7:59 PM",6798603297,"Hi Ilyas! Firstly, all the best for your finals, its gonna be over in a bit so press on.
+Sad to say, there's no easy way around it. You'd have to sit yourself down and really go thru paper after paper.
+What I liked to do was to mark the paper as soon as I'm done (of course with some questions skipped). In that way, the questions would still be fresh in my memory, instead of re-visiting a paper I've done days ago and trying to und the qn over again. Its my preference though.
+Something else that helped was to circle those questions I skipped/made mistakes in, so at the end of it all, I could refer to them if I dont have time to go through all questions.
+In my humble opinion, you still have time - 8 days is sufficient for you to do more than 2-3 pyps, though I understand you might have other mods to study for.
+Nonetheless, I'd recommend covering at least 5? And perhaps do the 5 newest ones. Maybe save the latest paper for your last, and do under exam conditions - standard tips.
+Hope this helps mate!
+edit: I forgot to point out that I only had 2 finals to study for that sem...hence this gave me ample time to complete that amount of papers",,easy,,,,,,,,,,,,
+6801201686,Dr Ilyas Bellingham,"Tuesday, November 25, 2025 7:53 PM",6798608315,Hi. Thanks for the advice. Made some progress but think I'll prb only be able to hit 3-4 max. Hope things go well.,,,,,,,,,,,,,,
+6802043097,ap3jedi,"Thursday, November 27, 2025 4:14 PM",6801201686,"Hope things go well for you too mate, don't worry, what I did was a bit extreme and out of desperation",,,,,,,,,,,,,,
+6803296841,Dr Ilyas Bellingham,"Monday, December 1, 2025 12:24 AM",6802043097,ahh ic. tbh i think i didnt do well for finals but no regrets. just got to keep moving forward from here on out i guess.,,,,,,,,,,,,,,
+5413942781,Russell Saerang,"Thursday, June 10, 2021 12:47 AM",,"AY20/21 Sem 2
+Lecturer: Prof. Chong Ket Fah
+Assessment:
+3% Tutorial Attendance
+2% Lab Attendance
+15% One Day Assignments (ODA, 10 x 1.5%)
+12% Take Home Assignments (THA, 8 x 1.5%)
+8% VisuAlgo Quiz (2 x 4%)
+20% Midterm
+40% Final Exam
+Module Difficulty
+If you are taking this module, I assume you have already taken CS1010 or its equivalent, hence understands programming in a nutshell.
+The whole programming part in this module will be in Java, so regardless of the Java crash course in the first week, I suggest you to learn Java elsewhere too.
+Are the lecture contents easy? Yes and no. Yes because you might have seen this before and how it works. No because the questions assessed will be quite tricky given your understanding of the data structures and algorithms taught.
+Are the assessments easy? Mostly not really. You've got to spend some time especially on the THAs although the deadline is 2 weeks. Sometimes, you have to be rained on ideas on solving the problems despite the hints given from the lab sessions and maybe the tutorial sessions. Do attend these as your presence will contribute to your grade and these sessions will help you on the ODAs and the THAs.
+VisuAlgo quiz is not that hard if you practice over and over again. You can actually find a certain pattern or ""hack"" on the given questions.
+Finally, is the final exam easy? No. As I said, some questions are tricky unless you have seen the insights before, either from PYPs or other platforms.
+TLDR, nothing is easy but rest assured that they are indeed doable.
+The workload below is measured weekly.
+Lectures - 2h
+If you have taken CS1231 before, this should be quite an advantage as some contents might be a review of what you've learned in CS1231. The content is understandable to me at least although it is quite exhaustive, including the hard parts which are actually based from intuitive ideas. I agree with the other reviewers that taking this during special term may be a very fast pace, since the whole module is quite exhaustive in 13 weeks, talk about 5/6 weeks.
+Prof. Chong explains the material very well. We all loved his catchphrase after finishing his algorithm demonstrations with VisuAlgo, probably his signature phrase. You'll get to hear this if your lecturer is him.
+Lab - 2h
+Every lab sessions, the TA will explain about the recently covered data structure along with its algorithms, which will be the main topic of the upcoming ODA and THA. As the name suggests, ODAs are only for one day and these lab sessions are a chance for you to figure out how to solve them. Besides ODAs, there are also THAs which you can also consult on. Both of the VisuAlgo quizzes will be held during two of all the lab sessions.
+Tutorials - 1h
+Just like my review on CS1010S, it's a smaller group discussion which may provide support for those who are shy at asking questions during both lectures and recitaions, so feel free to reach out to them. It's also a very very final recap of the latest lecture content so make sure you understand it before the next lecture (this is my suggestion or else you'll be overwhelmed?)
+Personal Opinion
+Probably the most useful module for tech interviews, since they mostly cover about data structures and algorithms.
+Prof. Chong mainly uses Kattis, so you can actually practice Java there beforehand! Leetcode or Hackerrank can also be an alternative to practice your coding in Java or at least your understanding of the data structures and algorithms mentioned in the module description.
+ODAs are generally easier and less complicated than THAs. ODAs are mostly testing your ability to use the existing Java syntaxes that actually represents the currently taught data structure/algorithm. You are not required to build your own data structure for ODAs, unlike some THAs. For those taking during this special term (2021), you can actually compare the difficulties yourselves. Do reach out your TAs if you are still stuck on the last days of submission!
+VisuAlgo quiz, as I have mentioned, are not that hard, but are also prone to mistakes. My suggestion is to practice with the hard questions over and over, keep track of the time spent, and recognize the patterns which will be eventually found if you keep retrying! You will be given 2 attempts for each assessment during the lab sessions, so make sure you make no mistake. For myself, there was enough time to recheck, so don't worry much about having no time to finish the quiz too.
+Finally, midterm and final exam. It was conducted through LumiNUS and they both go with the same strategy. Practice all the past papers, especially the ones made by the respective lecturers, since it may be the most relevant of all. Spend enough time for reading all of them one by one during recess/reading week, and manage time well during the real exam. Despite being open book, I didn't have really much time checking them as I kept doing the exam questions until the end and rechecked without looking at the cheatsheets again.
+One more thing, Java should be only for ODAs and THAs. You are not required to type out the Java code during the exams like CS1010 modules. An English explanation or a pseudocode will work, as long as the explanation is clear and works in optimal time complexity.
+Expected grade : A
+Final grade : Somewhere around expected",A,moderate,,,positive,useful,enjoyed,,,,,,,
+5467724962,Văn Minh Lê,"Saturday, July 24, 2021 9:04 PM",5413942781,"uh huh, sound nice, gotta try",,,,,positive,,,,,,,,,
+6840821907,Balasuriyan Ramachandran,"Saturday, February 21, 2026 10:27 PM",5413942781,thanks bro,,,,,,,,,,,,,,
+6815577034,fkLeetcode,"Sunday, December 28, 2025 6:30 PM",,"AY25/26, Sem 1
+Taught by Profs Sanka Rasnayaka, Roger Zimmermann, Low Kok Lim
+Jampacked course, many things to learn (and master) but useful for interviews ig. I got spooked by the reviews here and spent about 3 months during the holidays exclusively starting Leetcode and learning Java before taking this course. This helped greatly and I was able to go through the course, especially the first half, without too much struggle. Despite enjoying CS2030 much more, I scored way better in this course because it’s so smurfable I guess. DP and greedy aren't really the focus here though they may inherently be part of other algorithms like APSP. There are a lot of assessments in this course, which on the one hand means the grade is more spread out, on the other hand very busy . I’ll only highlight the parts of the course that I have anything interesting to note, the rest can refer to other reviews.
+Lectures
+Start and end was taught by prof sanka, middle part taught by prof roger. In my opinion they are both pretty decent lecturers, but prof roger need to 2x speed him. The course is structured based on some CP4 textbook by prof s Halim .They provide crash course prerecorded lectures to learn Java at the start of the course, but it is wholly insufficient. Java is quite different from Python due to the OOP focus and static typing and being more verbose, so best to familiarise beforehand , I think learning it simultaneously thorugh CS2030 will just cause more stress haha.
+The first half of the course goes through some data structures which you may already be familiar with (lists, hashmap), but focus on how they work under the hood, their limitations. For example hashmaps are usually fast, O(1) time complexity, but worst case can be like O(N) or smth. They also introduce the concept of time complexity, which might be completely new to some people, at least for CS1010e it was very briefly taught as ""the number of comparisons made"" or something by prof ksc but other 1010 variants might have gone through it better.
+The second half goes through ""non linear data structures"", like trees and graphs. I feel this part was significantly more complex. Things like AVL trees, minimum spanning trees took me a while to really understand in detail. Drawing things out or testing in visualgo was useful for those topics. Maybe taking CS1231 or being more maths inclined would have helped for this part, especially those proofs for things like dijkstra. however I was ultimately able to skate by some of the more mathy topics, like graphs and time complexity, having grinded a good amount of LC graph questions (I am a lousy h1 maths student). Lucky they don’t cover DP and greedy or I think I’m screwed
+Midterms
+Midterms and finals have the same format as always, which is MCQ, then true false questions, then open ended questions on Examplify with open book.
+This midterm paper felt rather manageable if you have been diligent with the tutorial questions and PYPs. I did a few of the Kattis questions that are provided weekly for practice but of those that I tried they seemed a bit too easy. Practising on Leetcode is useful for the open ended questions, but the first half of the paper focus more on therotical concepts which LC largely doesn't help with, rather use PYP for those. Some of the PYPs are so unbelievably brutal I could not solve more than half the questions. One of the open ended questions I figured out what to do as I got inspiration from one of the tutorial questions. Another open ended question on Linked Lists was literally a Leetcode question https://leetcode.com/problems/partition-list/ . Since I copied a lot of Leetcode solutions to my pdf, all I had to do was copy paste the answer word for word and get free 10 marks or so. The Edstem forum to ask questions to the profs and TAs was also pretty good to read through because some solutions were clarified there. If you somehow have the budget, maybe bring a bigger laptop screen to exam lol
+Some other notes: Generally, midterms seem to always have a question on monotonic stacks (just google it). Linked List questions usually are also quite standard Leetcode 150 style. I mostly wrote in full pseudocode with Java and sometimes Python syntax which I regret in hindsight since it wastes a lot of time writing out menial things compared to using an “essay” format to answer the question, so should be more discerning about which format to use
+Finals:
+Finals almost exclusively test on graphs and trees despite the supposed scope being all topics. I didn't revise the first half topics at all. The MCQs were I think pretty tricky, but the other sections felt manageable. In fact I wasted quite a bit of time thinking through some of the true false and open ended because some of the questions were so suspiciously straightforward. While AVL trees and APSP I don't think are readily available problem types on LC, there is another site called UVA online judge or something which have these questions, however I didn't remember about this website until too late. I respect that the assessments in this course mostly didn’t involve bullshit full blown CP questions or IQ tests.
+Other misc notes:
+1. I think it’s very weird that the lab questions are needed to submit by the end of the lesson instead of the end of the day. Is the intention to reduce the use of AI abuse or what? Well it clearly won’t work since the questions are mostly the same as previous years so people can prep it before coming to class. Additionally the questions are released at the start of the day so those with labs at the end of the day have much more time to legally start. I’m pretty sure when push comes to shove they are flexible with the submission time, but then what is the point even of setting this format? Just set it to pass fail basis or smth.
+2. I don't think the Visualgo quizzes are trivial at all. Definitely grindable but it took me quite some time to be comfortable with all the questions.
+3. Thank god they reduce the number of THA from 4 of them to just 2 they are damn annoyihng
+final grade: A
+Grades (mean/median/low/high/LQ/UQ)
+ILA 10%: 10/10 (9.86, 10, 0, 10, 10, 10)
+THA 4%: 4/4 (3.8, 4, 0, 4, 4, 4)
+WA 8%: 40/40 (31.61, 32, 3, 40, 28, 36)
+Midterms 25%: 76/100 (51.43, 49, 14, 94, 41, 63)
+Finals 40%: 65/100 (53.77, 54, 0, 94, 43, 64) (originally 64 but appealed and got 1 mark more)
+Visuialgo quiz 1 4%: 15/15 (14.13, 15, 3, 15, 14, 15)
+Visualgo quiz 2 4%: 15/15 (13.52, 14, 0, 15, 13, 15)
+Lab attendance 2%: 2/2 (1.96, 2, 0, 2, 2, 2)
+Tutorial attendance 1.5%: 1.5/1.5 (1.4, 1.5, 0, 1.5, 1.35, 1.5)
+Tutorial participation 1.5%: 1.5/1.5 (1.41, 1.5, 0, 1.5, 1.5, 1.5)
+Topics:
+time complexity
+sorting
+arraylist, linked list
+stack queue
+hashmap/set
+priority queue/heap
+Union find/ disjoint set
+Binary search tree/ AVL tree
+Graphs
+Minimum spanning tree
+single source shortest path
+all pairs shortest path",A,easy,light,,positive,useful,enjoyed,,,morning,participation_based,True,flexible,online
+6836049823,idk,"Tuesday, February 10, 2026 10:08 PM",6815577034,"hello, where did you learn the material before hand, is it from some lecture videos, do you mind sharing it with me, thx",,,,,,,,,,,,,,
+6813872848,gomuflower,"Tuesday, December 23, 2025 11:35 AM",,"Taken in AY25/26 S1
+Lecturers: Prof Sanka Rasnayaka/Prof Roger Zimmerman
+Tutor: Prof Low Kok Lim
+Lectures
+2 + 1 hours of online lectures each week. Lectures are good though they often overrun quite significantly by up to 1 hour which is quite irritating. Prof Roger lectures quite slowly and rushes at the end and that the slides for the topic on BST/AVL trees are really messy.
+Tutorials
+The tutorials for this course can be quite challenging as you are expected to apply the data structures and algorithms. My tutor was Prof Low Kok Lim who was good with explaining the concepts but I feel he focused too much on class participation which led to classes overrunning. Overall, tutorials are quite useful for prepping for exams and some of the questions are leetcode-style questions as well :).
+Labs (Individual Learning Assignment)
+Nothing much to say, besides that it can sometimes be stressful to finish the lab by the end of the lab slot (the newly added requirement this sem). It can also be quite disheartening when your code fails to meet a hidden test case. That said, my tutors Ryan and Jun Wei were quite goated and helpful in helping us during the debugging process. Would recommend scheduling your lab slot as late as possible so that you have more time to finish the assignment.
+Written Assessment
+Generally was quite straightforward compared to the midterms/finals. Have your notes and some rough paper on standby.
+Midterms and Finals
+Midterms and Finals consists of MCQs, Analysis (True/False with explanations) and Essay Questions.
+Midterms cover Analysis of Algorithms until Heap while Finals test on tree and graph related topics. MCQs take up quite a significant portion so be careful and avoid making careless mistakes. For the Essay questions, we just need to write pseudocode and even if you can't think of the most efficient algorithm, you can write whatever comes to mind for some method marks.
+I noticed that some leetcode style questions (bitonic arrays, max stack, stack with 2 queues etc) do come out so it may be useful to have quick glance to see the kind of questions that may come out.
+I did the make-up midterms which was generally okay in difficulty. I did not have much time to study for finals and ended up making quite a few careless mistakes and doing worse than midterms.
+Overall:
+CS2040 is quite useful in training problem solving skills and for preparing for leetcode based interviews. I particularly enjoyed learning about trees and graphs (especially famous algorithms such as BFS, DFS, Kruskal , Dijkstra and Floyd-Warshall). Content-wise, the content is more straight-forward than CS2030 though the questions are more challenging and require a good intuition for applying what is taught in the course.
+Also, while CS1231 is not a pre-requisite for this course, some proving techniques and properties of data structures are briefly touched upon in lectures especially in the topics for trees and graphs (though it is emphasized that proving is not covered). It was funny seeing things like the Pigeonhole Principle and proof by contradiction/induction pop up throughout the course.
+Grades:
+Tutorial Attendance 3/3
+Lab Attendance 2/2
+ILA 10/10
+THA 4/4
+Online Quiz 8/8
+Written Assessment 36/40 (7.2/8)
+Midterm 65/100 (16.5/25)
+Finals 63/100 (25.2/40)
+Overall: 75~
+Actual Grade: A-",A,hard,,,positive,useful,enjoyed,recommended,,,participation_based,,,online
+6808030781,Dr Ilyas Bellingham,"Thursday, December 11, 2025 10:37 PM",,"Taken in AY 25/26
+Lecturers: Prof Sanka/ Prof Roger Zimmerman
+Programming Language: Java (for assignments), DSA people/people who didnt do CS2030 were told to watch a video produced by the CS2040 teaching team on Java basics (about 3-4 hours long).
+Exams: All in pseudo code ie you dont have to write out code in python/java (like they did in CS1010S/E) you can just write the idea in English and it will count.
+Assignments:
+1. 10 x Lab Assignments (Kattis) (10%) (1.25% each capped at 10% so essentially you only need to do 8 to get the full score)
+2. 2 x THA (Kattis) (4%) (2% each, 1% per question)
+3. Written Assessment in week 6 (8%)
+4. Midterms (25%)
+5. Visualgo Quiz 1 and Quiz 2 (8% total)
+6. Class participation + Tutorial/Lab attendance - 5%
+7. Finals (40%)
+Overview of the module:
+After dropping it once in AY 24/25 Sem 2, like Liverpool against Barcelona in the 2018/19 Champions League, I have comeback to do the module. And tbh I feel I shouldn't have dropped the mod last semester because the graded components changed alot from last semesters' iteration (with regards to the weightage), as I will explain below.
+Lectures:
+Lectures were held twice a week with one slot being 2h long and the other being 1 hour long. The profs did a good job for the most part and really took the time to go through thoroughly the lecture content. Tehey were also really patient and answered questions live. If you have any questions just ask then and there regardless of how stupid. The profs seem to have an infinite mount of patience and even answer some really stupid/braindead questions that are vaguely related to content. If you still dont understand the content, just ask them on the Ed forum. Like Prof Sanka said, ""Dont struggle alone, ask on Ed"". I would say the content for graphs were not taught as well so i had to ask a lot on ed or go for the weekly remedial sessions where the TA there will talk about how poorly taught that section is before teaching us again from scratch.
+Also be warned that lectures will not stop at 1h 30 mins. They actually go beyond that, the longest being the entire 2 hours long. If you really have to leave just leave, but remember to watch the remaining parts when you have time. I've feedbacked to the profs in the course feedback form and I suggested that they have some pre recorded lectures that we can watch prior to the lecture slots so that they would be able to finish the lectures within 1h 30 mins or 1 h even, thereby saving time.
+1. Lab Assignments (10%)
+Similar to last couple of iterations of this module, the programming language used was Java Unlike last semester where one day was given to complete the assignment, this semester the teaching team thought it would be a great idea to turn it into a 2 hour lab assignment so instead of 24 hours to do the kattis problems, we had a fraction of the time. This was done in order to reduce plagiarism as per one of the teaching team people I met though tbh I felt that the restricted time would just encourage people to plagiarise more in order to secure the marks. Exceptions to this would be on weeks where there were Visualgo quizzes and Written assessments as these would be done during the lab slot. On these days, the deadline was extended to 8 am the next day. The assignments were released on kattis at 8 am every Friday and because it was due at the end of the lab (mine ended at 12 pm). This mad pissed me off as I often had to wake up before 8 am in order to start coding when the assignment was released. Even then I found it difficult and had to consult my TAs and chatgpt in order to barely finish on time (within the 4 hours from 8-12 pm) in order to get the full score for the lab. Essentially every Friday turned into a beat the clock challenge. I feel that if this continues for the next semester, you should bid for a later time slot like 2-4 pm or 4-6 pm so that you will have almost the entire day to do the assignment and get the full marks. This is especially relevant for next semester where I see that there are 8 am labs. Avoid those labs like how Manchester city avoids FFP accusations and bid for later time slots unless there is no choice. And if you do get those slots write in to the teaching team to ask for extension for the submission cause it really is unfair to the early labslots.
+During the labs the TAs will go through the problems and you can also consult them if you're having issues with the problems. Most are quite nice and are willing to break down the question so that you can understand it better. They also go through the THAs when the THAs are released. The ILAs are usually at an easier level than the THAs but even then with the time restrictions and time complexity restrictions, it makes the coding difficult so best to consult your TAs and chatgpt if you're stuck.
+There are also a lot of resources on Github but dont plagiarise because alot of people have been caught for it and github is a last resort imo. Imo I didnt like that we had to meet a specified time complexity or else it wouldnt pass all the test cases because to me it is already hard enough to get the right answer. I feel that as long as the code runs it shows that we understand how to solve the problem and sometimes even the most inefficient code is better for understanding the problem than an efficient code that is complicated.
+Also use VScode when coding because the IDE the teaching team recommends is very tedious to use and VScode is much better imo. Intellij is also good I heard but I didnt use it.
+Grades for THA - 10/10
+2. 2 x THAs (4%)
+There were 2 THAs (Take home assignments) released throughout the semester, and for each we were given 3 weeks to complete them. Last semester there were 4 I heard, so they reduced it this semster to have lesser CA components cause of the plagiarism issues. Each THA had 2 questions each worth 1% and tbh these were difficult. Some questions from previous semsters were used though there were also completely new ones and if it weren't for me spamming my TA with questions, I prb wouldnt be able to even understand the questions in the first place. I felt once I understood how to approach the questions, coding is much easier especially if you consult your TAs and AI (for debugging).
+Score for THA - 4/4
+3. Written Assessment (8%)
+Something new this semester was the 8% written assessment that served as a pre midterm though considerably easier as it tested stuff largely related to lecture content, only the last qn was a structured question that followed the PYPs/tutorials. Was around 45 minutes and if you paid attention during lectures you'd do well in them. I got around 29/40 for it cause of careless mistakes. Median is around 31/40. Content was up to heaps (though 98% of the questions was up until hashing and only 1 question was on heaps though it was very basic iirc ie about property of a max heap).
+Grades for Written Assessment - 5.8/8
+Visualgo Quiz 1 and 2 (8%, 4% each):
+Visualgo quizzes are as the name suggests quizzes carried out on the visualgo website. There are 15 random questions which you'll have to complete in 20 mins. The first quiz tested until UFDS and the second one the rest of the syllabus (until SSSP). Visualgo is largely like BTT for driving, where quantity matters over quality and if you do enough you'll see the same problems repeating. Just dont be careless and practice a lot and you should be fine. Make sure to practice under timed conditions also cause the time crunch is real esp for students like me whon are weaker. Because of this I got 10/15 for my first visualgo quiz but improved on it and got 12/15 for the second one. The quizzes usually happen on weeks where there are a lot of submissions so if you really think you're unprepared, just take MC and do the makeup quiz on a later date (chao kengs in NS will be familiar with such tactics), cause most will score on the visualgo quizzes. Should've taken MC for the first quiz tbh.
+Score for Visualgo quizzes - 5.87/8
+Midterms (25%)
+Midterms were held on Week 7 (Saturday) and were 1.5 hours long. The profs gave a lot of PYPs to prep for the midterms so you should do at least 2 PYPs to prepare decently for them, and more if you have the time. It was until heaps and I feel if you understand the content you'll be able to get around median (with about 2 PYPs done properly). Just manage your time well and bring in all the materials like tutorials, lecture slides and PYPs solutions so you can answer the questions properly.
+Grades for midterms - 11/25
+Finals (40%)
+Finals covered all topics though most were from the topic after heaps. I had other mods to focus on so only managed to do 2 PYPs and was also struggling with the tutorials and content after this (ie Graphs and SSSP). Imo I feel that if you do alot of PYPs (around 5) you should be better prepared for the finals. I found that this year's finals were harder than last years' ones (ie Sem 1 and 2), and did poorly for finals. Then again I saw that I was 5% below the median for finals so I'm not too pissed cause only a few days prior to finals I was still trying to grasp the concepts of Dijkstra and Bellman Ford (they are the foundations of SSSP) so you could really see that I was quite screwed and could've ended up with a 20/100 if not for the last min studying on top of the consistent effort I put in throughout the semester. Then again, I'm quite weak in CS2040 so if you're stronger in it, you'll do well if you grind PYPs. Just dont be disheartened if you get 1/10 or 0/10 for the MCQs on the first practices cause it's quite normal.
+Score for finals - 16.4/40
+Other miscellaneous graded components:
+Tutorial participation + attendance (3%);
+Just attend the tutorials and answer questions, even if it is wrong they will still consider it as you participated. They really be pulling an NUS Business School class part for this (from what I heard about Business school's insane class part criteria).
+Score - 3/3
+Lab attendance + participation (2%):
+Just attend the labs and submit pseudocode by the end of the day to secure the full 2%. I usually finished coding first so I just copy pasted my code and submitted it as pseudocode cause I'm too lazy to write pseudocode after coding.
+Score - 2/2
+Overall, CS2040 was a hard module but it was also very fun and I learnt a lot of things about algorithms that are applicable to my life (ie Greedy algorithm and SSSP algorithms) which could be applied when it comes to time management or finding how to go from point A to B in the shortest time. It also helped me improve my computational thinking and coding due to the sheer number of coding exercises and the ridiculous time limits for the ILAs which I hope they change cause it seemed as though the teaching team was getting high when they were deciding to make a 24 hour assingment due in 2-4 hours. I have feedbacked my grievances about this on Ed (they just told me they mandated it cause of plagiarism) and have also done it on the course feedback so really hope they change it esp cause next semester has 8 am slots so they realy only have 2 hours to complete it given the assignment is released at 8 am on kattis. Atb to them. Eventhough i didnt do well in the module, I'm still proud of myself for not dropping it, like I had done last semester, and actually thugged it out and completed it. Hoping i can get at least a B in it.
+Module rating - 9/10 (lost the 1 cause of the ridiculous ILA deadlines).",,hard,,,positive,useful,mixed,,,morning,participation_based,True,flexible,
+6242634586,Wayne Wong Hoi Yin,"Saturday, July 29, 2023 10:28 PM",,"Taken in AY22/23 ST2 with Prof Chong Ket Fah
+The Module covers the following topics
+1. Intro to Java
+2. Abstract Data Type
+3. Analysis of Algorithm
+- Time Complexity
+4. Sorting
+- Selection, Bubble, Insertion, Merge, Quick, Radix, Built-In methods
+5. Lists
+- Array lists, Linked lists (Basic, Tailed, Circular, Doubly)
+6. Stacks and Queues
+7. Hash tables
+8. Binary Heap and Priority Queue
+9. Union-Find Disjoint Sets
+10. Binary Search Tree
+11. AVL Tree and Balancing
+12. The Foundations Of Graphs
+- Adjacency Matrix, Adjacency List, Edge List
+13. Graph Transversal
+- BFS, DFS, Reachability Test, Shortest Path Between 2 vertices, Finding Components, Topological Sort (Kahn’s Algorithm), Finding Strongly Connected Components (Kosaraju’s Algorithm)
+14. Minimum Spanning Tree
+- Prim’s Algorithm, Kruskal’s Algorithm
+15. Single-Source Shortest Paths
+- BFS Algorithm, Bellman Ford’s Algorithm, Dijkstra’s Algorithm
+16. All-Pairs Shortest Paths (Not tested)
+- Floyd Warshall’s Dynamic Programming Algorithm
+Module Structure :
+Finals: 40%
+Midterm: 20%
+Visualgo Quiz: 8%
+Tutorial and Lab Attendance: 5%
+One Day Assignment: 10 * 1.5%
+Take Home Assignment: 4 * 2 * 1.5%
+The module teaches about the different kinds of data structures. These data structures are used to solve coding problems efficiently and ""easily"" as compared to other methods such as hard coding. Visualgo is used to visualize these data structures and Kattis is used for assignments and practices.
+Prof Chong Ket Fah is an excellent prof. He teaches well and gives a lot of guidance. He takes time to explain the concepts and show us the visualization.
+Midterms and Finals were quite manageable. Visualgo quiz was quite ok as long as you practiced enough on visualgo and can visualize the data structures well. The Kattis ODA and THA can be somewhat time consuming and cancerous to code out, especially when trying out the new data structures introduced. Moreover the code has space and time complexity restrictions so errors like Time Limit Exceeded becomes extremely common. The test cases also are not public so it can be pretty annoying to find what you missed.
+""I will never touch Computer Science ever again after CS1010s."" Famous last words from yours truly. I took this module to fulfil my CS minor requirements since why not suffer more when I have already suffered in MA1100 and CS1010s? I treated this module like a holiday and relaxing module. Hence, I did not hardcore study for this module and did minimum for this module due to medical reasons. So, take note of this while reading this review.
+Personally, this module was ok ok for me. I knew what the data structures were doing and their mechanics. However, I had trouble using them and did many trial and errors. I only understood the data structures on a surface level but not really on the algorithmic level. I would say CS2040 is CS1010s but in java. CS1010s makes use of a lot of data manipulation while CS2040 does not really. However, CS2040 have space and mainly time restrictions on the code that is used. Hence, the use of the data structures introduced is needed to overcome the restrictions. Another notable thing is time complexity, this guy called O(n), will come back to haunt you. It was fun while it lasted. By the way, Java basics is not taught during the lectures and you are expected to know the Java basics before the start of the course. For my batch, there was a 3 hour pre-recorded crash course video on Java basics so it was not a worry. Coursemology will not be there to tell you what test case you failed so be prepared to break your laptop. Visualgo is your best friend so make use of it!
+Some useful codes:
+https://github.com/hoi-yin/...
+Finals: 62/100
+Midterm: 44/100 (25th percentile)
+Visualgo Quiz 1: 10/10
+Visualgo Quiz 2: 15/15
+Tutorial and Lab Attendance: Full Marks
+One Day Assignment: Full Marks
+Take Home Assignment: Full Marks
+Expected Grade : B/B-
+Final Grade : TBC
+No of students : 43",B,hard,heavy,,positive,useful,enjoyed,,,,,True,,
+6342279178,Wayne Wong Hoi Yin,"Monday, December 11, 2023 11:50 PM",6242634586,,,,,,,,,,,,,,,
+6342288859,Lum,"Tuesday, December 12, 2023 12:04 AM",6342279178,Why do u need to publish the cohort performance??,,,,,,,,,,,,,,
+6254323049,Wayne Wong Hoi Yin,"Monday, August 14, 2023 12:12 PM",6242634586,"Final Grade : B+
+Finals : Around the 62.5th percentile",B,,,,,,,,,,,,,
+5874528490,anonymous_peanut,"Wednesday, June 1, 2022 11:12 PM",,"AY21/22 Sem 2 Prof. Chong Ket Fah
+Tutorial Attendance/ Participation - 3%
+Lab attendance - 2%
+In-lab Assignments - 15%
+Take Home Assignments - 12%
+Online Quiz 1 - 4%
+Online Quiz 2 - 4%
+Midterm - 20%
+Final Exam - 40%
+The in-lab assignments have a one day deadline. During labs, you are asked to show your pseudo-code and your TAs will help with that. Afterwards, you are asked to figure it out yourself. These assignments took me about 1 - 3 hours to complete.
+The take home assignments are much tougher than the one day assignments. It took me about a full day to finish each question. Good to get started as soon as the assignments are out.
+The online quizzes are conducted in Visualgo. Definitely possible to get full marks with practice as there's only so many formats that the questions are asked.
+Midterm & Finals: Combination of MCQ, T&F with explanation and pseudo-code section. Good to brush up on concepts before these papers and practice past year papers.
+Expected Grade: A-
+Actual Grade: A-
+Enjoyability: 4/5 (Pretty hard but satisfying to solve the assignments)
+Usefulness: 5/5 (These mod is essential to your tech internships - your coding interviews are largely based on content from this mod)
+Workload: 4/5",A,hard,,,mixed,useful,enjoyed,,,,participation_based,,,online
+6806554545,MA1522 UBottom,"Monday, December 8, 2025 3:17 PM",,"AY25/26 Semester 1
+Lecturers: Roger Zimmerman & Sanka
+Tutor: Nguyen
+I was expecting CS2040 to be tougher in terms of workload compared to CS2030 based on the past reviews, but I felt like it was much more chill. I believe they reduced the number of THAs and we only had to do two for this semester. The Kattis assignments are also optional and you can frankly skip it, I stopped doing it after the first few weeks. The only downside of CS2040 is that you have to be constantly on your toes to keep up with the almost weekly assessments (there are THAs, Visualgo quizzes, Written assessments etc.). However, the weekly assessments are really chill and easy to score full marks if you can keep up with the lecture contents.
+Lectures:
+Lectures are 3 hours weekly, split into a two-hour session and a one-hour session on another day. It is quite draining as the two lecturers will usually overrun every single time, so you have to watch the lectures in your own time if you need to head for another class. Otherwise, I thought the explanations by the lecturers are done well but sometimes they focus too much on the basics they end up rushing towards the end.
+Tutorial:
+My tutor is a solid man and his slides are superb. He was able to break down the problem into simpler steps without confusing us too much. The tutorial questions are quite challenging at times and it is normal to be totally confused.
+Labs:
+The labs are quite useless to be honest as we are forced to do some Kattis questions in class for attendance. The questions are quite basic and can be done in 30 minutes. The questions are basically implementing the algorithms in Java.
+Midterm:
+Midterm was manageable and frankly quite easy to score since the stuff tested are not that abstract and are much easier to visualise. For essay questions, always write something even if you cannot solve it in the best time complexity, you will still be able to score decently for the essay questions. I recommend to just explain your method in paragrapgs rather than writing psuedocode as it can be quite confusing at times. Midterm is 1.5 hours so it is quite rush.
+Finals:
+Finals was much more tough as the focus was on graphs (MST, Shortest paths etc.). It is much tougher to visualise and the questions are really testing your understanding of the algorithms taught in lecture. I did not have much time to revise for CS2040 so I did not do as well compared to midterm. But the tips for finals remain the same as midterm.
+Grading (Lower Quartile, Median, Upper Quartile):
+Tutorial Attendance 3%
+Lab Attendance 2%
+ILA 10%
+THA 4%
+Online Quiz 8%
+Written Assessment 8% (28,32,36 out of 40)
+Midterm 25% (41,49,63 out of 100)
+Finals 40% (43,54,64 out of 100)
+Expected Grade: A- (my overall is around 81%)",A,moderate,light,3.0,positive,not_useful,,,,,,,,online
+6814654236,MA1522 UBottom,"Thursday, December 25, 2025 5:11 PM",6806554545,Actual Grade: A,A,,,,,,,,,,,,,
+6726713393,survivor,"Monday, June 23, 2025 9:40 PM",,"Just a tip for the weekly ODAs and THAs, check out GitHub. :)
+https://github.com/alif898/Kattis-Solutions
+https://github.com/jeremykvlim/kattis/tree/main/nus/cs2040
+https://github.com/yuqitanyq/Data-Structures-and-Algorithms-CS2040S-/tree/main/%20CS2040S%20Data%20Structures%20and%20Algorithms%20(Kattis)",,,,,,,,,,,,,,
+6450257112,aa,"Saturday, May 4, 2024 12:55 AM",,"Taken in AY23/24 Sem 2
+Lecturer: Prof Chong Ket Fah
+Assessments
+5% Tutorial/lab attendance
+15% ODA (one-day assignments) done in labs
+12% THA (take-home assignments)
+8% VisuAlgo quizzes
+20% Midterm (Examplify, open-book block internet)
+40% Finals (Examplify, open-book block internet)
+Content
+- Intro to Java
+- Analysis of algorithms (big-O notation)
+- Sorting algorithms (selection, bubble, insertion, merge, quick, radix)
+- ArrayList, LinkedList, Stack, Queue
+- HashMap, hashing, collision resolution
+- Binary Heap (and heapsort), PriorityQueue
+- UFDS
+- BST, AVL tree
+- Graphs: representation, traversal (BFS, DFS), toposort (Kahn's, topoDFS), SCC counting (Kosaraju's), MST (Prim's, Kruskal's), SSSP (Bellman-Ford's, Dijkstra's), APSP (Floyd-Warshall's)
+Midterms/Finals
+Generally the papers have 3 sections:
+- MCQ (about 40% of the paper in terms of marks)
+- Analysis (about 20%): given a problem and a proposed solution, determine if the solution is correct and explain
+- Application (about 40%): given a problem, describe an algorithm to solve it under a certain time complexity
+Prof provides quite a lot of past-year papers along with their solutions, so you'll definitely have enough practice material. If you find them hard, they're meant to be :p
+Remarks
+Enjoyable and useful mod, and Prof Chong is a good lecturer. The Piazza forum is really helpful, prof and TAs frequent it and answer your questions well.
+I'd recommend pre-learning Java so you get used to the syntax. It's mostly relevant for ODAs and THAs; the midterms and finals are answered in pseudocode. THAs are quite difficult but you can ask on the Piazza forum if you get stuck. Other than the THAs, the workload is quite manageable, but I still wouldn't recommend overloading with this mod.
+Expected grade: A+
+Final grade: [to be updated]",A,hard,moderate,,positive,useful,enjoyed,not_recommended,,,,,,
+6475093995,aa,"Thursday, June 6, 2024 9:32 PM",6450257112,"Final grade: A+
+Grade breakdown:
+VisuAlgo quizzes (8%): 10/10, 15/15
+Midterm (20%): 67/75
+Finals (40%): 89/100
+Total percentage: 93.47% (estimated)",A,,,,,,,,,,,,,
+6243192481,small monkey,"Sunday, July 30, 2023 6:11 PM",,"AY 22/23 ST2
+Prof: Chong Ket Fah
+Lab tutor: Wei Tat
+Structure:
+10x In-Lab Assignment (ILA) - 1 question per lab
+8x Take-Home Assignment (THA)- 2 questions per week
+2x VisuAlgo quiz
+1x Midterms
+1x Finals
+Workload: 8/10 (for those with no prior java experience)
+This mod is very fast paced in special term 2. If you check out other reviews, the module usually has 1 tut and lab per week, and THA are 2 qns biweekly. However for special term, everything is faster by x2 pace. Also, I found myself crapping my pants when I realised that did not really grasp later topics properly. Only during week 6 (7 days before finals) was I confident about my data structures but at that point, I did not have enough practise to see how data structures were used to solve questions (100% my fault)
+Results:
+ILA - max (15%)
+THA - max (12%)
+Tutorial/Lab attendance - max (3%)
+quiz1 - 9/10 (3.6%) *NOTE: DO NOT SUBMIT EARLY, always check your answers and don't be cocky like me
+quiz2 - 10/10 (4%)
+midterms - 59/100 (11.8%)
+finals - 52/100 (20.8%)
+overall - 70.2%
+Overall I enjoyed this module. It's always fun when you get the desired output and as a bonus, you complete it with the most efficient algorithm either self-implemented or in existence. Personally, I expect a shitty grade but I'm actually planning to practise a lot more algorithms now. Despite the expected grade, i've gained a strong interest in solving applicable questions on leetcode and kattis and I plan to do a lot more questions and think critically about appropriate data structures to use to solve questions. This is definitely a step up from CS1010S and I would recommend you to take this module in special term 2 if you have the money for it. When the alphabet grade comes out, I can decide whether I wanna take a minor, second major or just focus on my primary major so it's really good. I recommend this module for those who were in a similar position as me.
+Expected Grade: B-/B
+Final Grade: TBA",B,,,,positive,useful,enjoyed,recommended,,morning,,,,
+6348025155,small monkey,"Wednesday, December 20, 2023 1:38 AM",6243192481,A little bit late but final grade was higher than expected,,,,,,,,,,,,,,
+6065940165,Naman Agrawal,"Wednesday, December 14, 2022 11:24 PM",,"AY22/23 Sem 1
+Lecturer: Prof. Tan Sun Teck & Prof. Roger Zimmermann
+Assessments:
+Labs: 12*1% = 12%
+Tutorials: 3% Attendance + 3% Participation = 6%
+Mock Practical Exam: 3%
+Practical Exam: 12%
+Visualgo: 12% (5% + 5% + 2% for 3 visualgo quizzes)
+Midterms: 15%
+Finals: 40%
+One of the most important modules for any technical interview. If you like knowing about new problem solving techniques in the form of computational algorithms, you'll enjoy this module. But you'll have to put in lots of efforts! At the start of the module, Prof introduces everyone to the basics of Java and Vim. While Prof does teach the basics, it's vital that you take time to read up some online references too, especially for the labs and practical examination. If you're regular in your lab work, then you wouldn't face a lot of problem on the coding part. Make sure to familiarize yourself with the important Java API data structures and interfaces: Integer, String, Long, Double, Arrays, ArrayList, LinkedList, ArrayDeque, Stack, Queue, HashMap, HashSet, TreeMap, TreeSet, PriotityQueue, et al. By the end of the module you'll probably be playing with many such data structures entangled in a web of custom classes, interface and references.
+The lesson plan was as follows:
+Week 1 and 2: Java Basics + Time complexity analysis introduction.
+Week 3: ArrayList and LinkedList (Quite interesting, but questions can be tricky!)
+Week 4: Stacks and Queues (Quite intuitive, very imp for midterms)
+Week 5: Recursion (Probably the easiest if you paid attention in 1010S)
+Week 6: Searching and Sorting (1010S + some more algorithms, should be easier, but questions require more in-depth understanding of each algorithm)
+Week 7: Hashing (Probably the most imp and useful concept) if you ever see your lab questions asking you to achieve an insanely low time complexity or anything of order O(1), this would be very useful! Do pay close attention.
+Week 8: Binary Search Trees and AVL trees: Lots of new concepts, very fun!
+Week 9: Priority Queues (Heaps): Another useful data structure. You might have reached the point where the huge number of data structures starts to confuse you.
+Week 10- end: Graph theory: Graph representations, types of graphs, DFS, BFS, topological sorting (only Kahns), Dijkstra's, Bellman Ford, Prims MaxST, Kruskal's algorithm, etc... (Personally, I enjoyed these a lot because of the immense practical applications of graph modeling, but subjective). For these concepts, very important to pay attention to;
+1. Different implementations of same algorithm
+2. Different graphs on which a particular algorithm is useful
+Labs: There was one lab every week. Each lab had 3 questions (generally in increasing order of difficulty). You're required to submit only one lab question (the intermediate one) to earn the 1% every week (except for Lab0). However, there was no partial marks i.e., even if you failed one private test case, you won't get any credit). Also, note that about 30% of the lab marks were allocated for code cleanliness and comments on only the even weeks! The lab questions were generally quite difficult. However discussing thought processes with friends and on Piazza would really help in solving them! Make sure to find a group of friends to study with.
+Visuaglo Quizzes: One of the most useful tools in this module. Some of the visualgo questions would require you to pay close attention to the mechanics of certain algorithms, very helpful to boost your understanding! It's also the most scoring component of the grading (after tutorial attendance and lab0). Be sure to regularly practice the questions!
+TLDR,
+Before taking this module, make sure to check out the Prof that's teaching. Prof. Tan generally likes to focus a lot on basic topics such as recursion and sorting causing some of the syllabus in Graph theory to be reduced. Also, if you'd like to prepare for this module in advance, I'd suggest to focus more on learning and understanding algorithms. Learning java syntaxes maybe something you can do over the semester, what's critical is being able to design and analyze efficient algorithms. You may check out Abdul Bari's channel on YouTube to get a headstart, while using Kattis/Leetcode for practicing a variety of problems.
+Enjoyability: 9/10
+Usefulness: 10/10
+Workload: 9/10
+Expected Grade: A",A,hard,,,positive,useful,enjoyed,,,,participation_based,,,online
+6050316704,ChlorineCl2,"Saturday, November 26, 2022 5:04 PM",,"AY22/23 Sem 1
+Lecturer: Prof Tan Sun Teck/Roger Zimmermann
+Prof Tan for before recess week, Prof Roger for after.
+Tutorial: Dani
+Lab: Huang Yuqi
+Workload is really high.
+You have:
+Lecture videos
+Live lecture Q&A (though after week 3 most stopped attending)
+Tutorials
+Labs
+Mock PE
+PE
+3 VisualAlgo Quiz
+Midterms
+Finals
+The most stressful ones are the weekly labs even though they only contribute 1% each, They release 3 question, 1 is intended to be submitted. It has to pass every single test case to get that 1%, else 0. On even weeks, it's manually graded for 30% programming style as well. (0.7 for passing all test cases, 0.3 for good programming style). The questions are not easy and take hours to even days to come up with solution. Coding was done in Java.
+Difficulty is pretty bs, midterms was absolutely horrendous. Finals seem to be much better but I didn't want to put in too much effort for finals. I do think if you studied hard for finals, you would've scored ok. But midterms was really bonkers.
+The tough concepts set in after Trees are introduced. After that, I start getting lost on how to even apply the concepts already.
+Visualgo quizzes are meant to help you get free marks, so practise them diligently.
+Tutorial attendance and participation are the easiest percentages in this mod, you'll understand once you start doing the labs how these percentages are freelo.
+Personally not a fan of the lecture videos + live Q&A system for this mod. Kinda bored by the former and the latter is too chim for my small brain to even get valuable information out of.
+Dani is okay, not too bad.
+Yuqi is really passionate, but he speaks too fast. You would like Yuqi a lot if you also share a passion for solving problems on leetcode/kattis since he always gives extra problems. However, I do not have such sentiment for coding sadly, so I couldn't maximise my benefits in learning from him. However, he is very helpful and responsive and one of the quintessential factor to how I got through many of the weekly lab questions.
+Overall, fk me I hated this so much and I'm just glad it's finally over.",,hard,,,positive,useful,not_enjoyed,,,,participation_based,,,
+5695354593,Rain and Coffee,"Tuesday, January 18, 2022 12:13 AM",,"CS2040 Data Structures and Algorithms
+Taken in AY20/21 (Special Term)
+For more reviews and updates, visit https://blackforestcheesecakeandcoffee.wordpress.com/
+Lecturer
+Dr. Chong Ket Fah
+Grade Distribution
+Tutorial Attendance/Participation: 3%
+Lab Attendance: 2%
+2 Online Quizzes: 8%
+Assignments
+10 One Day Assignments: 15%
+4 Take Home Assignments: 12%
+Midterms: 20%
+Final Assessment: 40%
+Contents
+Introduction to Java
+Abstract Data Types (ADTs)
+Analysis of Algorithms
+Sorting
+List ADTs
+Array List
+Linked List
+Stack
+Queue
+Map ADT
+Hash Table
+Priority Queue ADT
+Binary Heap
+Set ADT
+Hash Table
+Union-Find Disjoint Sets (UFDS)
+Ordered Map ADT
+Binary Search Tree
+AVL Tree
+Graphs
+Graph Traversal
+Minimum Spanning Tree (MST)
+Single Source Shortest Path (SSSP)
+All Pair Shortest Path (APSP)
+Lecture (Two 2 hr Lectures / Week)
+Lectures are held over zoom in the morning, followed by tutorial sessions in the evening. Typically, the content that was covered in class was put into use in either the same day tutorial, or the next one. As usual for special term modules, the content was delivered at a breakneck pace.
+Kattis
+Our assessments are held on the website Kattis. The tasks typically involve the designing of algorithms to complete the tasks within the given time and memory constraints. If you remember Coursemology, you will find this hatefully nostalgic. Testing against unknown test cases, watching the website throwing hands at your tearfully-compiled code. It brings back the same old rejection messages (“Wrong answer!”, “compile error”), with brand new twists (“Memory space exceeded!”, “Run time exceeded!”). Truly a fertile ground for pain.
+The one day assessments are usually doable, with plenty of leeway to design less-than-efficient algorithms. However, the take-home assignments are absolutely horrendous. A day or two are usually spent on crunching through various approaches to the problem until you hit the right one. Fortunately, you have a week to slowly tear your brain open over them.
+Quizzes
+Was conducted using Visualgo. Was fairly easy. Visualgo allows you to practice questions on their various topics with differing degrees of difficulty. Just practice the questions on hard mode, and you’ll find that many of the quiz questions are in similar vein to the practice ones. The quiz is also open-book. You’re given two shots at it, so no stress.
+Midterm/Final Assessment
+Disgusting. I could barely do the first couple of questions. The assessments also involves not just basic code-tracing, but also designing of algorithms. The last few questions were of this nature, and I just left them black. At least they were open-book.
+Ended up with 68/100 for finals and 52/100 for midterms.
+Expected Grade:
+Final Grade:
+Thoughts
+Before I started the module, I thought learning Java was going to be the hardest part of the module.
+NOPE
+If you have some familiarity in any programming language, you’ll find that the basic routines are fairly similar, and you just need to google the syntaxes and error messages that crop up. The challenge comes when designing the best procedure for a given task. I honestly found the challenge intriguing, since it tests your creativity to some extent.
+This enthusiasm died after getting endless rejection messages from Kattis. You’ll face overwhelming despair as the website tells you that your algorithm runs far too slowly, or can’t fit within its tiny memory space. The worst project was the AVL tree. It’s supposedly a super-duper-mega-efficient data structure that really helps in something-or-the-other, but since we had to code it up from scratch, I strongly disagree. Accounting for all the edge cases was absolutely disgusting, and it currently holds the record for the longest piece of code I have written (and it still failed the memory constraint…)
+Nonetheless, the module contents itself was pretty interesting, and we do learn about various tricks that are employed to make stuff run faster and smaller. The many graded components of the module makes it quite a time sink, and a general pain-in-the-ass. Would recommend to take if you’re interested in programming. Would not recommend to take for fun.",,hard,,,mixed,,enjoyed,mixed,,morning,participation_based,,,online
+5653007711,disqus_nJFMKjAtd8,"Tuesday, December 21, 2021 12:04 PM",,"AY 21/22 sem 1
+Lecturer: Prof Tan Sun Teck
+Assessment:
+3% Tutorial attendence
+3% Tutorial Participation
+3% Mock Practical exam
+12% weekly Labs
+12% Visu Algo (best 6 of 9)
+12% Practical exam
+15% Midterm exam
+40% Finals
+Overview:
+A buildup on cs1010 with a focus on using datastructures and algorithms to solve given tasks as efficiently as possible. In cs1010 variants, most likely you are only concerned with writing programs that solve the given task without much attention to the time/space complexity. However, in this module you would be expected to come up with solutions that run much better than brute force solutions.
+Difficulty:
+Personally, I found this module to be much more challenging than CS2030 (however I have heard of people who think otherwise and hence your mileage may vary depending on your strengths) and it could be beneficial to have taken 2030 before this module. The weekly labs are difficult and take much time to solve. My personal suggestion would be to come up with the algorithm that would solve the task in the required time before beginning to write code. Having friends to discuss the solutions with really helps too. Visualgo can take up to 2 or 3 hours to practice in order to obtain the required proficiency to get full marks. (my advice would be to get full marks for 6 quizzes as fast as possible and then slack off for the rest since the quizzes are mostly based in rote learning and do not help much in understanding the module content). As for midterms and finals, get in as much practice from PYPs as possible.
+Prof Tan Sun Teck employs a flipped classroom approach (recorded lecture plus live q and a) and hence total lecture time is doubled. Including labs and tutorials, the weekly time spent on lessons alone was close to 10 hours. This time spent would be much higher when you include weekly assignments time spent in understanding content. Do keep this in mind and avoid taking this module in a semester where other modules are very time consuming as well.
+Advice:
+Overall, my advice would be to keep pace with the content from day 1 otherwise it would snowball quite fast especially the part on graphs. Do get started on labs early and do not let submissions pile up. Make sure you fully understand the tutorial questions and how they are solved since those are the kind of qns you get in exams. If you are not sure about content, do use the forum as the TAs are quite active there.",,hard,heavy,,positive,useful,,,,morning,participation_based,True,,in_person
+5202262846,おたく,"Saturday, December 26, 2020 10:09 PM",,"AY20/21 Sem 1
+Lecturer: Tan Sun Teck
+- Labs 12%
+- Midterm 15%
+- Tutorial 6%
+- Visualgo quiz 12% (take 6 best out of 9)
+- Mock PE 3%
+- PE 12%
+- Final 40%
+There are quite a lot CAs and you are supposed to get full marks for Labs, Turorials, and Visualgo quizes, so the workload is heavy.
+Each week they release 3 lab questions and only 1 is graded, but I feel like even doing 3 given questions are far less than enough as exams will definitely have different questions requiring various skills. Tutorial questions are more interesting thatn labs and they are more like the natural extensions of covered content.
+Every weeks' visualgo quiz takes much time as you are required to do 15 questions in 10 minutes, so high proficiency is needed (you are expected to practice by yourself on the website every week). The goal of this quiz is just to make sure you remember and can trace the process and perform the process of codes covered in lectures, but it takes me at least 40 - 60 minutes every week to practice. As they have tested coding tracing and these mechanical staff by these quizes, the exams did not involve any of these and focus more on applications. (that is, solving new problems in the exams, scary huh?)
+This semester's lecture is a climaty for me. It's in the form of flipped classroom that you are supposed to watch recorded lectures and understand lecture slides by yourself, and Prof Tan will have live ""Q&A session"" on the original lecture time slot and the sessions are recorded. The ""Q&A session"" will do Q&A for the first 5 - 15 minutes, and the rest of time will be used to cover extra content or solving past year questions. Although Prof Tan call it voluntary, but would anyone who want to score well not going to listen to extra contents nor watch its recrding? So the lecture time is about doubled. I was so frustrated as I was taking 28 MCs and could not afford so much time. Some students may like this style of teaching, but anyway, I am so depressed on it. (And I don't find any fun about the jokes Prof Tan shared during live lectures).
+They have also enforced a coding style and that is assessed 30% of PE. However, they just hope your lab TA will tell you the right way to format coding style and never give any samples. Unluckily, my tutor did not duly tell us how to code as the prof wishes (or he is confused as well), I lose about 1/3 of marks on coding style in the PE (Mock PE is assessed by lab TA, so this issue is not reflected in the mock PE).
+Expected Grade: A before I take it, C from midterm onward.
+Actual Grade: A-",A,,heavy,,negative,,enjoyed,,,,,True,flexible,in_person
+6555146732,catnip S,"Sunday, September 22, 2024 11:22 PM",,"You may refer to my more detailed reviews including lec/tut/lab settings, grading schemes for lab assignments, online quizzes and exams settings here:
+https://nusmodsreview-yyz.blogspot.com/2024/08/2023-y2s1.html
+
+AY23/24 Semester 1
+Lecturer: Dr Chong Ket Fah
+Timetable Workload (lecture + tutorial + lab): 3 + 1 + 2
+There are two lectures per week, one is 2 hrs long and the other one is 1 hr long. Lectures are online through Zoom, Tutorials and Labs are onsite.
+Attendance: Lectures do not have participation. While tutorials and labs have attendance.
+Lecture Recordings: Videos are uploaded after the live lectures if I remember correctly.
+Grading Scheme / Assessment:
+Tut attendance/participation: 3%
+Lab attendance: 2%
+In-lab assignments: 15%
+Take home assignments: 12%
+Online quiz: 8%
+Midterm: 20%
+Final: 40%",,,,,mixed,,,,,,participation_based,True,,online
+6472579586,DarkAxel,"Monday, June 3, 2024 9:58 AM",,"Taken In AY23/24 Semester 2
+Lecturer: Prof Chong Ket Fah
+Tutorial TA: David Eom
+Lab TAs: Huang Chao Ming, Hoang Trong Tan
+Assessment Of Module:
+Tutorial Attendance (5%) - Assume 5/5
+10 One-day Assignments (15%) - 15/15
+8 Take-Home Assignments (12%) - 12/12
+2 Visualgo Quizzes (8%) - Around 7/8 Lost a bit of marks here and there due to careless (lower quartile)
+Midterms (20%) - 17/75 Lower lower quartile (26.2 median) - I got 0 marks for mcq is a big achievement i must say .-.
+Final Exam (40%) - 36/100 Lower lower quartile (49 median)
+Good Prof and TAs, especially my tutorial TA. But the ability to score is definitely harder than CS2030. Really enjoyed this module and better understanding as compared to CS2030. If u like visualizing problems, this is a good module. More content than CS2030.
+Expected Grade: B (by some miracle)
+Actual Grade: B- (not too bad considering how bad I did)",B,hard,,,negative,,enjoyed,,,,,,,
+6467964480,Damaen Tan,"Tuesday, May 28, 2024 1:07 AM",,"Taken In AY23/24 Semester 2
+Lecturer: Prof Chong Ket Fah
+Tutor: Ivan Chew
+Lab TAs: Tan Si Rui, Issaiah Koh
+Assessment Of Module:
+Tutorial Attendance (5%)
+10 One-day Assignments (15%)
+8 Take-Home Assignments (12%)
+2 Visualgo Quizzes (8%)
+Midterms (20%)
+Final Exam (40%)
+Content Of Module:
+1. Introduction To Java - Java Syntax and Basic Code, Data Types. (Those with CS2030 knowledge can skip this part)
+2. Abstract Data Types - Java Interface, Classes in Java
+3. Analysis Of Algorithms - Big O Notation, Order of Growth, Analysis of Different Cases.
+4. Sorting - Insertion Sort, Bubble Sort, Merge Sort, Selection Sort, Quick Sort, Radix Sort, Bubble Sort with Flag, Time Complexities of these sorting algorithms, stability of sorts, in-place sort.
+5. Array Lists and Linked Lists (Including Doubly Linked List, Tailed Linked List, Circular Linked List etc.)
+6. Stacks and Queues - FIFO and LIFO algorithms, Palindromes
+7. Hash Tables - Hash Functions, Collision Resolution, Separate, Linear and Quadratic Probing, Double Hashing.
+8. Binary Heaps - Functions in Binary Heap (Extract Max, Search etc.)
+9. UFDS
+10. Binary Search Tree (BST) - Ranks, Insertion of Nodes into BST, Deletion of nodes, Successor and Predecessor
+11. BST and AVL Tree - BST height and size, balancing BST, Balance Factors, Tree Rotations, Rebalancing
+12. Graphs Foundations - Data Structures (Adjacency Matrix, Adjacency List, Edge List)
+13. Graph Traversal - BFS and DFS, topological sort (Kahn's Algorithm), Reachability Test, Identifying/Counting Component(s), DAGs, Topological Sort – DFS based algorithm.
+14. Minimum Spanning Tree (MST) - Cycle Property, Cut Property, Prim’s Algorithm, Prim’s variant for Dense Graphs, Kruskal’s Algorithm, Sorting Edges in Edge List.
+15. Single-Source Shortest Paths (SSSP) - Negative Weight Edges and Cycles, “Relaxation” Operation, BFS for SSSP, BFS on Unweighted Graph, Bellman's Ford Algorithm, Dijkstra's Algorithm, Modified Dijkstra's Algorithm, Lazy Deletion.
+16. (NOT TESTED) All-Pairs Shortest Paths (APSP) - Floyd Warshall’s Dynamic Programming algorithm, APSP Solutions with SSSP Algorithms.
+Ratings of Module:
+Difficulty: 15/10
+Enjoyability: 5/10
+Workload: 20/10
+The explanations for these ratings above are attributed to the fact that I had a weak foundation in CS1010S, which is a pre-requisite to CS2040. Similar to CS1010S, CS2040 has an extremely high workload and is as difficult as CS1010S. Instead of Python Programming Language, this module uses Java, which I have no experience in before taking this module. Compared to Python, Java has a much more user-unfriendly syntax that is much more difficult to comprehend in my opinion. (This differs from individual to individual, some find Java way easier, idk why).
+I was like 70% lost after watching the first lecture on introduction to Java despite re-watching the video many times. (public static void main....)
+Next comes the Algorithms. The silver lining is that most of the algorithms are relatively simple to understand and comprehend. For instance, the BFS and DFS algorithms for graphs. However, when it comes to the implementation of Java code to perform operations, I cringed! To be honest, I still don't understand any Java Code implemented at all till now. Luckily, the midterm and finals are NOT testing on Java Code, but your understanding of the concepts of the algorithms.
+Tutorials are conducted on a weekly basis and similar to many other modules, there will be a tutorial worksheet for you to try before the lessons. There are a lot of discussions and activities for my tutorial group as Ivan will ask us many questions related to the algorithm for us to ponder. Many times, we get stuck and cannot get the right answer due to the trickiness of his questions.
+Labs are what I dread the most. Not because of my TAs nor the class but the one day assignments that we are going to get every lab lesson. My lab is at 8am in the morning and these assignments will be due 8am the next day. My TAs will go through a bit on the questions and let us try afterwards. We are supposed to write down pseudocodes for submission as evidence for lab attendance. However, the assignments need to be competed in full, workable Java code in Kattis. For most assignments, I need more than 20 tries to solve the ODA as I always get error.
+The Take Home Assignments is of extreme difficulty and I cannot solve certain questions. These questions actually need knowledge not taught in lectures to solve them correctly. Kattis not only checks the accuracy of your code but also its efficiency. Even though your code might work, you still cannot pass due to time limit exceeded. I really hate this issue, getting the correct answer is already so hard, why make things even harder for us?
+Well, the only component that is easy to score is the Visualgo quizzes. They do not test on Java Code, they only test on algorithm concepts. If you practice enough questions on Visualgo, you will get full marks for this component.The test questions are basically a repeat of the practice mode questions. The only negative thing about Visualgo is that it does not explain why I get wrong for a certain question and instead, it just states that my answer is wrong.
+Both the midterms and finals were disasters for me. They comprise MCQ questions, application questions and analysis questions. The phrasing of the questions are just so odd and weird, especially for the midterms. Both the exams are open book, but the lecture notes are of no use. The questions require critical thinking skills in an application setting.
+If you misinterpret an application question, 10 marks gone! If your answer is correct but not with the best time complexity, you will get partial marks (like 2/10 tbh). The way of marking is brutal. Each MCQ is worth 4 to 6 marks and no partial marks are given for MRQs. For analysis questions, there is a True/False option and in addition, an explanation quetion of why you think the statement is true or false. If you get the true/ false part wrong, that's it. They will NOT read your explanation.
+Overall, CS2040 was a traumatic experience for me. Too difficult assignments, coupled with too little time for the ODA and extreme difficulty for the midterms and finals. This contributed to more than 40% of the total time spent for the semester, despite taking 8 modules. All the best to those taking CS2040, it won't be easy at all.
+Tutorial Participation: Full
+Visualgo Quiz: Full (Saving grace, this will prevent me from getting a C or below)
+THA: Full (After a long long time)
+ODA: Full (After a long long time)
+Midterms: 28/75
+Finals: 46/100
+Overall Percentage: 66.7%
+Expected Grade: B
+Final Grade: B+",B,hard,,,mixed,,enjoyed,,,morning,participation_based,,,
+6453061451,bellcurvefeeder,"Tuesday, May 7, 2024 10:18 PM",,"AY23/24 Sem 2
+Prof: Chong Ket Fah
+ODA and THA:
+I found the THA extremely tough. Really dreaded whenever 2 weeks passed and the new THA opens up. Advice to take this module with friends, so that can at least ""help"" one another in some way or another. ODA were generally easier, with one of two being quite tedious. Do make sure that your pseudocode is okay by checking with you lab TA's before embarking on your code, makes it much easier, at least for me.
+VisuAlgo Quizzes:
+Do study and just keep practicing on VisuAlgo. And always check your answers, do not be over confident since you should really ensure you get full marks on these 2 quizzes.
+Midterms:
+Midterms involve MCQs/MRQs, analysis questions and application questions. I found the midterms very tough. During midterms, I feel that since fewer topics are covered, they test a lot more ""in depth"" questions and really required much thinking. Structure was also different from PYP's, which caught me off-guard.
+Finals:
+Finals was similar format to midterms, with 1 more analysis and 1 more application question. I found it to be much easier than midterms, as I feel the questions weren't as confusing and I could actually decipher what the question requires me to solve. Most of the questions involved second half of the semester content, majority on graph theory (which is fun!).
+Overall remarks:
+Prof Chong lectures are good and provides examples to the algorithms covered so that we can visualise it better. However, knowing lecture content is not enough, do make sure you practice a lot of PYP so that you can be familiar with using the content to answer questions in many different ways. Piazza is also useful, as everyone can provide inputs to any question you have, or engage in any discussions etc, which helps with the learning. While I still dread CS mods, I found this module quite fun especially at the graph theory part, because of how applicable it is in the real world.
+ODA + THA + Quiz + Attendance: Full marks
+Midterms: Above UQ
+Finals: unknown for now
+Expected Grade: A/A+
+Actual Grade: tbc",A,hard,,,positive,useful,not_enjoyed,recommended,,,,,,
+6472820997,bellcurvefeeder,"Monday, June 3, 2024 9:22 PM",6453061451,"Finals: Above UQ, near high
+Actual Grade: A+",A,,,,,,,,,,,,,
+6357981265,SquattingSmiski,"Thursday, January 4, 2024 12:08 AM",,"AY23/24 SEM 1
+Prof: Chong Ket Fah
+would recommend picking up a bit of java before taking this mod! i had no experience with anything other than python from cs1010s before this so it was a bit of a struggle
+ODA & THA:
+genuinely passed away idk how i managed to complete them pls take the mod with friends for emotional support
+Visualgo Quizzes:
+mug these as practice bc everyone gets like full marks for the quiz
+Midterm & Finals:
+kinda bombed midterms because i was very lost but managed to do okay for finals in the end (esp bc it was largely on graphs and i found that more interesting than the first half of the sem)
+Overall: felt more manageable than cs1010s in terms of workload! and was able to score around average in the end haha",,moderate,moderate,,positive,,enjoyed,recommended,,,,,,
+6352958795,កម្ពុជា,"Wednesday, December 27, 2023 1:12 PM",,"Taken 23/24 Sem 1
+Prof: Chong Ket Fah
+Workload: 9/10
+Difficulty: 100/10
+Grade: B+
+The mod teaches data structures and algorithms in Java. The midterm and final only test on pseudocode and Java is used only in Labs and Assignment. Lectures are entirely online through zoom and they are also recorded. Thought I understand the lectures quite well but don't know why it doesn't translate to actually knowing how to solve questions. I guess I should have practiced more.
+A note to self: don't overload with CS mods or you might die. ☠️",,hard,,,negative,,,,,,,True,,online
+6352937327,DeezNuas,"Wednesday, December 27, 2023 12:01 PM",,"AY23/24 SEM 1
+Lecturer; Prof Chong Ket Fah
+Module;
+Finals: 40%
+Midterm: 20%
+One Day Assignment: 15%
+THA: 12%
+Visualgo Quiz: 8%
+Tutorial and Lab Attendance: 5%
+Thoughts;
+Bombed my finals but overall, i thought this module was easier than I was expecting, spent significantly less time on it than CS1010s
+I did enjoy genuinely doing the THA.
+There are people who have mentioned what was taught in CS2040 below.
+Workload; 7/10
+Difficulty; probably 7-8/10?
+Usefulness; 10/10
+Enjoyment; 11/10
+Results;
+Finals; 48/95 -- Bombed it lmfao
+Midterm; 55/100
+ODA; 15%
+THA; 12%
+Quiz; 8%
+Tutorial; 5%
+Total; 71%
+Expected grade; B+
+Actual Grade; B+",,hard,,,positive,useful,enjoyed,,,,,,,
+6352878286,RandomDSAguy,"Wednesday, December 27, 2023 9:33 AM",,"Taken in AY23/24 Semester 1
+Under Prof Chong Ket Fah
+Assessments:
+Take Home Assignments (THAs): 12%
+One Day Assignments (ODAs): 15%
+Visualgo Quizzes: 8%
+Lab + Tutorial Attendance: 5%
+Midterm: 20%
+Finals: 40%
+Overall:
+Quite an interesting course that covers various algorithms and data structures. It’s very mind blowing to see that some algorithms just work. I would recommend everyone to take this mod with their friends especially when it is under Prof Chong Ket Fah.
+ODA:
+As the name suggests, it’s a one day (coding) assignment on Kattis (something like coursemology). For this semester, it started in Friday morning and ended on Saturday morning. There’s a lab on friday for everyone so the lab TAs can help us with the ODA. Out of the 13 weeks of school, there are 10 weeks when you have to do this. However you don’t have to worry because if you actually follow lecture and seek help from your TA, it should be quite doable. This is also where your group of friend might come in because I received so much support from them. It shouldn’t be hard but expect your friday afternoon/evening to be gone because of this. I know people who can solve it during Lab itself also.
+THA:
+Ok so there were 4 waves of THAs, each spanned 2 weeks. For each wave, there are 2 THAs. THAs are basically ODAs but 10 times harder (as it should because 2 weeks). It’s harder because unlike ODAs, THAs care about time complexity and one cannot just anyhow code a “brute force” way to just get the answer. Also, the THAs will sometimes require you to build data structures out of scratch which can be annoying because it means that you cannot follow the notes 100%. I struggled a lot with THAs, out of 8 THAs, I could only do like 4 myself. The rest I got help from somewhere else. This is again where friends come into place. Also, github 👀
+Lab:
+2 hours session a week. The TA will be there to help you with ODAs and THAs.
+Tutorial:
+Questions for tutorials are more theoretical and no actual coding needed besides maybe some pseudo code. Tutorials are meant to help with midterm and finals so they are very important.
+Visualgo Quizzes:
+Just spam Visualgo questions and you will be fine. Visualgo is a website created by some prof in SOC and it’s quite a useful tool. For both of the visualgo quizzes, I spent like 2 days before to mug and still did quite well (just like most people).
+Midterm:
+I believe the format changes like every year but my sem. At least 60 marks out of 100 were MCQ. Now that seems easy at first, it is actually a curse because it’s super easy to lose marks because each question worth like 4-6 marks and no partial marks. Then there were also 2 long ass questions at the end which were like 30 marks in total. You are expected to write how would you solve those problem. They are like ODA + THA but you don’t have to code, just say what’s your idea. A lot of people tried to write some pseudo code but I would discourage one from doing so because it’s easy to make careless mistakes that way.
+Finals:
+Easier than midterm actually. The format is very similar but the questions have some fixed way to solve it because we actually learn a lot of algorithm by the time finals happens. Also, I found myself having more time for this finals as compared to midterm.
+My grades:
+THAs, ODAs, Visualgo Quizzes, Attendance: Full marks
+Midterm: 60/100 (~81 percentiles)
+Finals: 66/95 (~83 percentiles)
+Expected Grade: A- at least PLS
+Final Grade: A LESGO",A,moderate,,,positive,useful,enjoyed,recommended,,morning,,,,
+6325675245,kfcemployee,"Saturday, November 18, 2023 3:16 AM",,"AY 23/24 S1
+Prof: Chong Ket Fah
+Lab Tutors: Jeremy Lim and Nicholas Tng
+Structure:
+10 One Day Assignments - submit within 24 hours on the day of lab
+4 Take Home Assignments - 2 questions every 2 weeks
+2 Visualgo Quiz
+Midterms
+Finals
+Workload: 10/10
+This mod takes up more time compared all 4 of my other mods. If you are relatively new to coding and your only prior experience was CS1010 like me then prepare to suffer. Java is an awful language. Not only do you have to learn how to use Java, you also need to be studying the content of the mod. It feels like an insane amount of work is needed to do well for this mod. I spent roughly 3-4 hours on the One Day Assignments EVEN with help from my TA. And Take Home Assignments roughly 4-5 days per problem, just thinking of how to tackle it. I swear my peanut brain is not meant for coding man.
+Review: Content is interesting, but I don't see why BZA students need to take this mod... The lectures are tolerable. Prof Chong Ket Fah explains concepts well but I think I just have very little interest in this materials. Tutorials don't have graded assignments but the TA will go through as many questions as he can in 1 hours worth of time. Labs are used mainly to go through the One Day Assignments and Take Home Assignments. Both assignments are done on Kattis. My TAs were really good, they would go through the content covered in lecture and tutorial as code and also explain concepts to us. They also go through theory before exams which was really nice. I feel like I would have done much worse if I didn't luck out with them... not sure how I would have solved most of my assignments without consulting my TAs. Shoutout to Jeremy who I always ask for help with O(n) time complexity qns...
+Advice: Google Visualgo cheat sheets... Kattis solutions can also be found online, but they check for plagiarism so be smart about it...
+Expected Grade: B/B+
+Final Grade: TBA",B,,,,positive,,enjoyed,recommended,,,,,,online
+6056301178,anonymous_student_123,"Saturday, December 3, 2022 11:50 PM",,"AY22/23 Sem 1
+Lecturer: Prof. Tan Sun Teck & Prof. Roger Zimmermann
+Tutorial: Sean
+Labs: Huang Yuqi
+𝐀𝐬𝐬𝐞𝐬𝐬𝐦𝐞𝐧𝐭:
+12% Labs (1% each)
+15% Midterms
+6% Tutorial Attendance/Participation
+12% VisuAlgo Quiz
+3% Mock PE
+12% Actual PE
+40% Finals
+𝐌𝐨𝐝𝐮𝐥𝐞 𝐖𝐨𝐫𝐤𝐥𝐨𝐚𝐝:
+High - Weekly Labs, together with tutorials and lecture videos made this one of the most time-consuming modules.
+𝐌𝐨𝐝𝐮𝐥𝐞 𝐐𝐮𝐚𝐥𝐢𝐭𝐲:
+Good - Piazza forum was very responsive and helpful. TAs and profs were constantly on the forum and giving us feedback.
+𝐌𝐨𝐝𝐮𝐥𝐞 𝐂𝐨𝐧𝐭𝐞𝐧𝐭:
+Linked Lists, Arrays, Recursion, Sorting, Hashing, BST/AVL Tree, Heap, Graphs
+𝐑𝐞𝐯𝐢𝐞𝐰:
+This was a interesting and useful module, highly applicable in coding interviews.
+The content was quite manageable up till Midterms, because most of the concepts were familiar or touched upon in other coding modules. After which, we explored more data structures such as BST and AVL Trees which took more work to comprehend. There were some parts that I disliked about this module. For instance, the midterms were basically all MCQ. This penalised students who studied more and unfortunately got the wrong answer, as compared to a student that just randomly guessed and got lucky. It didn't reward any partial understanding of the concept, but rather a binary view of Correct and Wrong.
+With that being said, I encountered some of the best TAs in this module. Sean, my tutorial TA, was clear in his explanations. And as other reviews have shown, Yuqi was by far the best TA I met in my uni life thus far. He always gave additional practices, prepared his own slides, and answered our own questions on Telegram. He even gave the entire class engraved pens as a farewell gift (easily $20? each).
+These TAs boosted my experience of this module and I rated them highly for Module Feedback.
+𝐓𝐢𝐩𝐬 𝐟𝐨𝐫 𝐟𝐮𝐭𝐮𝐫𝐞 𝐛𝐚𝐭𝐜𝐡𝐞𝐬:
+VisuAlgo Quizzes are very doable and you just need to grind on hard mode for 1/2 hours, tops. I got nearly full marks for all these quizzes. Coming from CS2030, I didn't struggle with Java syntax but it definitely would for someone without Java experience. Pick up Java beforehand as there will be little time to get accustomed to it. Labs are due every Sunday Night and we have one whole week to work on it. However, I only started on Fridays after the labs but it worked out well for me. Judge for yourselves how you wish to tackle labs.
+Please take the time to truly understand the concepts here because this is one of the most relevant mods you may take. Just reach out to anyone if you need help.
+𝐄𝐱𝐩𝐞𝐜𝐭𝐞𝐝 𝐠𝐫𝐚𝐝𝐞 : A-/A",,moderate,moderate,,positive,useful,enjoyed,,,morning,participation_based,,,
+6051018796,Siong Hwee,"Sunday, November 27, 2022 1:56 PM",,"AY22/23 Sem 1
+Lecturer: Prof Tan Sun Teck + Prof Roger Zimmerman
+Tutorial: Naamam Tan
+Lab: Mahi + Huang yuqi (I went to a different lab from my allocated one as yuqi is GOATED)
+Assessment:
+3% Tutorial Attendance
+3% Tutorial Participation
+12% Labs
+12% VisuAlgo Quiz (2 x 5% + 1 x 2%)
+15% Midterm
+3 % Mock PE
+12% PE
+40% Final Exam
+Module Difficulty
+This module goes over the fundamentals behind classical algorithms. There is not much math involved, this module mainly covers simulation of the data structures taught. If you gain an intuitive understanding of the data structures over the Sem and this module would seem much easier.
+Workload:
+~4 hours lecture videos a week
+2x 1.5 hours QnA sessions ( I did not attend a single one)
+Labs are worth 1% a week, however, I would advise not to start on them if you do not understand the lecture concepts. The labs test an modification of the past weeks' lecture content. I believe that Ivan (head TA) killed the harder problems considering that this AY cohort was struggling and thus, the labs code were very short, <60 lines of code.
+They do not release PYP answers as they expect you to discuss the answers in piazza. You can discuss your answers with Ivan and this might deepen your understanding.
+Examinations:
+Midterm + final was mcq and probably would be so going forward as the cohort of DSA + BZA is growing larger.
+Midterm had an interesting problem called tom and jerry which you can find a reddit post on it :).
+Visualgo only requires rote practice.
+The PE tested on concepts in past labs and tutorials. You have to use VIM so you should learn how to compile your code on ssh and test it using provided shell script.
+Workload 2/10
+Enjoyability 8/10
+Usefulness 8/10
+Expected grade: A",A,hard,,,mixed,useful,enjoyed,,,,participation_based,,,
+6070273905,Siong Hwee,"Tuesday, December 20, 2022 10:21 AM",6051018796,"overall 87/100, grade A+,
+breakpoint for A+/A is between 81-87",,,,,,,,,,,,,,
+5976099387,kok,"Saturday, September 10, 2022 10:38 PM",,"Taken in AY21/22 ST 2 under Dr Chong Ket Fah
+NOTE: I took this under the RNSMen Special Term programme after completing CS1010X, and this review will mostly be tailored to future incoming freshmen who are considering doing the same.
+Summary:
+Consider carefully if you want to do this under the RNSMen ST programme. It WILL clash with orientations (I spent 8 of the last 10 days before the finals at orientation camps), and it WILL be fairly time-consuming (if nothing else because of the graded attendance/participation components). I juggled a full-time internship + this module + attending all the relevant orientation camps - my performance in all 3 along with my mental and physical health suffered quite badly. For my batch, all the CS1010X -> CS2040 students made a Telegram group together for academic and moral support. I highly recommend that future batches do the same.
+Special Note on Module Planning: There will be a note on the Special Term 2 registration saying that “Computer Science Undergraduates cannot take CS2040”. If you are an RNSMan NG student majoring in Computer Science, you can still take CS2040 in Special Term because you aren’t an Undergraduate yet :). For Computer Science majors, taking this lets you do your Data Structures and Algorithms module 2 semesters ahead, since once you matriculate you must do CS2040S which has CS1231/S as a prerequisite, while CS2040 only needs CS1010-equivalent. This lets you do funny things like take CS2220 or CS2105 in Year 1 Semester 1, and CS3233, CS3230, CS2103T, CS3241, CS4236, CS5342 in Year 1 Semester 2 (which other CS1010-exempt students can’t). If you are an EE/CEG major, you may have to wrestle with department admin staff who may get annoyed that you didn’t do Data Structures and Algorithms in C++ (CS2040C), but it should work out in the end.
+Topics:
+Unchanged since the comment by Rain and Coffee. Note that the content of CS2040/S is tied to the lecturer, not module code. If you are taking CS2040S under Prof Chong, the topics will apply to you. If you are taking CS2040 under a different Lecturer, the topics will not apply to you.
+Workload:
+- 6h of Live Lectures per week
+- 2h of Tutorials per week (attendance & participation graded, you must pre-do the tutorial assignment)
+- 4h of Labs per week (attendance & participation graded, you must solve the one-day assignment on the spot)
+- 15mins Quiz 1
+- 25mins Quiz 2
+- 1.5h Midterm
+- 2h Finals
+There are also 2x take-home labs and 2x one-day labs every week, which are completed on the online judge Kattis in Java. They range from extremely trivial to pretty tricky (teque) to hellishly time-consuming (the AVL tree one).
+Assessment:
+- 3% Tutorial Participation
+- 2% Lab Attendance
+- 15% One-Day Assignments (10 x 1.5% each)
+- 12% Take-Home Assignments (8 x 1.5% each)
+- 8% VisuAlgo Quiz (2 x 4% each)
+- 20% Midterms
+- 40% Finals
+We were only given access to the min, mean, max for each assessment component. Midterm mean was 39/100, Finals mean was ~55/100. The grade ranges are large, with each exam having a low of mid-teens to a high of up to 97 for finals. Cut-off for A+ was ~83%, and cut-off for A was likely mid-to-high 70s.
+For CS1010X students who may be worried about their performance (since now you’ll be matched up against real NUS students and not just other NSFs), it is still possible to excel. There were at least 5 CS1010X -> CS2040 students who got A+ for the module, but the caveat is that 4 out of us 5 had prior NOI/Leetcode experience, and a few did not attend orientation camps that were held around the dates of our Finals. If you are a CS1010X student looking to take and excel in CS2040 in ST2 with no Data Structures and Algorithms background, my advice would be to start pre-solving CS2040 labs on Kattis (just find previous semesters’ labs) before ST2 starts, so you can spend most of your time during the Special Term learning the theory properly. You could also go through CS2040 topics on https://visualgo.net/en. However, expect to put in way more effort compared to CS1010X.
+VisuAlgo quizzes may seem daunting, but as long as you just keep repeating the “Hard” difficulty quizzes for the appropriate topics, you will quickly realise that there are only a few types of questions for each topic, often with answers that can be pre-computed or otherwise trivially calculated.
+Content:There is a ton of content that is squished within 6 weeks, so you will have a pretty rough time regardless of your background.
+CS2040 under Prof Chong is more focused on data structures. Algorithms come in when graphs are introduced, but they seem to mostly serve as motivators for the data structures taught. Instead of learning algorithmic problem-solving paradigms (eg. Greedy, Divide & Conquer, DP, etc.), you will learn the ins and outs of classical data structures (eg. you will learn about collision resolution and hash function choice in hash maps). This was personally quite interesting to me as someone who previously only used these data structures to solve problems without thinking deeply about their nuts and bolts.
+Of course, you will be required to have a decent grasp of time and space complexity analysis. However, this mostly comes down to knowing how the data structures work, and any code-tracing type of complexity analysis questions we encountered were easier than those in Prof Tan Tiow Seng’s CS1010X.
+There isn’t a big jump in difficulty from Tutorials to Exams. Therefore, grinding Past-Year Papers isn’t as essential as it may be for other modules, but you should do them to at least read through “model answer” pseudocode so you understand how Prof Chong likes his pseudocode answers to look like.
+Our exams consisted of MCQs (theory), True/False + short explanation questions (theory), and just over 50% of the paper would be problem-solving questions. These would usually involve applying knowledge of the data structures and algorithms covered in class, but with a small twist/trick for each question. For example, while you’ve learnt Prim’s/Kruskal’s to find a Minimum Spanning Tree in class, an exam question might want you to return a set of edges that happen to be all the edges not within a graph’s Minimum Spanning Tree! Or maybe you need to apply multiple UFDS-es to keep track of multiple “group memberships”, or maybe you need to do a basic SSSP but reverse the edge directions!
+Excelling in these problem-solving questions requires both good intuition and a genuine understanding of the content taught. Do practices and make sure you clarify any doubts you have on each data structure’s purpose, operations, efficiency, etc.
+Teaching:
+Lectures were taught by Prof Chong and were recorded. I did not watch the lectures. However, his slides were great and my friends say he lectures well so he probably does lecture well.
+Labs are taught by 2 TAs. All the CS1010X -> CS2040 students were in the same Lab group… except for me 😔. During Lab sessions, the Lab TAs will first introduce relevant Java libraries for the topic at hand, go through the previous Lab’s solutions, and provide hints for this Lab’s problems. Then, you are supposed to submit pseudocode for the Lab’s problems to the TAs during the Lab session. As mentioned before, I would recommend pre-solving the Lab problems because you can just submit them on Kattis (which accepts submissions 30mins before the Lab sessions), pre-write the pseudocode alongside your real code, then during the 2-hour Zoom call you can AFK and go back to your internship/orientation camp/to sleep.
+Labs are taught by 1 TA. All the CS1010X -> CS2040 students were in the same Tutorial group. I would like to especially mention my Tutorial TA Sun Yucheng, who was extremely knowledgeable, clear, and inspiring. He explained the core concepts of each topic and question well, made extra practices and bonus questions for us to consider, and handled Tutorial Participation grades as transparently and fairly as he could. I genuinely ascribe most of my good performance in this module (especially the theory-heavy exams) to the fact that I got Yucheng as my Tutorial TA.",A,hard,heavy,,positive,useful,enjoyed,recommended,,,participation_based,True,,online
+5932587292,dogshit_cs_student,"Saturday, July 30, 2022 10:36 AM",,"Taken in AY2021/2022 Special Term(Part 2) under Prof Chong Ket Fah
+Disclaimer: I am a student of dogshit-calibre so if you are reading this chances are you will be able to cope better than me. In fact my previous review got flagged for spam so Im guessing the quality of reviews is correlated to my quality as a soc student.
+I do not recommend taking this before matriculating if you have cleared 1010X, unless you're a programming god and already know most or at least half of the content. Do note that orientation activities fall on the last few weeks of this module in special term as well. In fact I would not recommend taking this module in special term at all, considering the amount of content that it covers and that there are only 6 weeks.
+This is not a complaint about prof's teaching or the syllabus but 6 weeks is just too short and painful. For a module that people emphasise the importance of, 6 weeks is just not enough to absorb all the content taught.
+Fun fact the module started with 98 students and at the end only 76 remained.
+For course content, you can take a look at kok's review. Each week consists of 2 days of classes. 3 hour lecture + 1 hour tutorial + 1hour++ lab session for the ODA. Do note that there were classes up till the day before finals, the schedule is that packed. Midterms on week 3, finals on week 6.
+Teaching is excellent and visualalgo is a useful supplementary resource. Labs (One Day Assignments) and Take Home Assignments help you to apply the concepts learnt. Personally ODAs took me a maximum of 5hours and THAs at most 1-2 days. There are people who pre-do the THAs and ODAs and submit the minute they are released. I tried doing this but I tilted off the face of the earth because most of my solutions TLEd.
+TAs can only provide algo/high level feedback on your code and cant debug it for you.
+Shoutout to my TA Sun Yucheng, who is absolutely GOATED. His tutorials were comprehensive and well taught, and his speedy replies to my barrage of queries definitely aided my learning. (Praying that I get him as a TA for my future mods)
+What I personally did was watch all the lectures, go through the content on visualalgo again and did the quiz trainings. For midterms and finals doing the PYPs is definitely essential. Prof Chong went through the PYPs with no solutions on the last lecture.
+To maximise your scoring definitely complete all the assignments and grind the quiz training. It is possible to get full marks for both quizzes (4% each)
+If you are still reading this review kindly spare a prayer for my past self whose mental health absolutely went down the drain while doing this module and is probably crying while doing the ODA/THA.
+Module teaching: 5/5
+Module usefulness: 5/5
+Module workload: 5/5.
+Time allowance for module (6 weeks total): -inf/5
+Midterms mean was 39/100, low was 13/100, high was 85/100. I scored 50+, and did all the THAs ODAs.
+Expected grade: B+
+Final grade:",B,hard,,,positive,useful,mixed,not_recommended,,,,,,
+5948816913,dogshit_cs_student,"Monday, August 15, 2022 3:52 PM",5932587292,Final grade: A range. I still do not strongly recommend taking this in special term.,A,,,,,,,recommended,,,,,,
+5006175919,anon127294529013,"Sunday, July 26, 2020 2:22 PM",,"Taken in AY19/20 Sem 4 (ST2)
+Lecturer: Prof Aquinas Hobor
+Assessment: 30% CA, 20% midterms, 50% finals. CA is comprised of 2 one day assignments worth 1% every week and 1 one week take home worth 2%, 2 Visualgo quizzes worth 8% and tutorial/lab participation.
+All content was covered within 5 weeks. Don't take this module in special term, it is too hectic and too fast. I learnt more from online youtube videos explaining DS&A than from the lecturer. CS1231 knowledge is needed despite there not being an explicit prerequisite. The TAs are generally good. In order to do well you basically need to eat sleep shit algorithms for 5 weeks. Don't slack off like I did :(.
+Expected grade: B/B+
+Actual grade: B (grade discarded as a NG student)",B,,,,mixed,,,mixed,,,participation_based,,,online
+4259448579,awake,"Friday, December 28, 2018 6:44 PM",,"Taken in AY18/19 Sem 1
+Lecturer: Asst Prof Harold Soh
+Synopsis: CS2040 introduces fundamental data structures and algorithms to students, as well as some basic asymptotic analysis. The module is taught in Java and assumes basic working knowledge of Java.
+Assessment: Comprised of weekly/fortnightly take-home problemsets (30%), two quizzes (6%), a coding quiz (4%), a midterm (10%), participation (10%) and a final exam (40%). Weekly/fortnightly problemsets are interesting and are for putting concepts into practice, and are not difficult to do well in, given that collaboration is encouraged and the long deadline. The two quizzes serve as evaluations of learning progress in the module and are not difficult with a good understanding of the module content. The coding quiz is a practical exam and there's a lot of time for you figure out what to do (the problemsets should prepare you for this). The midterm and finals do not focus on how exactly the data structures and algorithms work, but how they can be applied to solve various algorithmic problems, and so exposure to a variety of problems will help. Finally, in-class and forum participation are encouraged and will count towards the participation component of the final grade.
+Lecturer: Prof Harold is an excellent lecturer with a great flair for teaching. He engages the audience well and lectures are generally interesting, even if you have prior knowledge.",,hard,,,positive,useful,enjoyed,,,evening,participation_based,,,
+3978843942,monikernemo,"Sunday, July 8, 2018 4:31 PM",,"Review for 17/18 Sem 2
+Lecturer: AP Tan Sun Teck
+Assessment:
+18% Sit in Lab
+2% Lab Attendance
+5% Take Home Lab
+15% Practical Exam
+5% Tutorial Attendance
+15% Midterm
+40% Finals
+This is an introductory module on Data Structures (linked list, stack, queue, binary trees, heap etc) and Algorithms (primarily focusing on sorting and some graph traversal problems). The content isn't inherently difficult because most, if not all, of the idea are quite intuitive. Despite being a veteran lecturer of CS1020, 2010, Prof Tan's implementation of the module makes the course difficult in some ways (most notably by having sit-in lab assssment once every two weeks is hellish and topped off with us struggling to learning to use Java properly).
+The pacing of teaching was also quite off, with him spending too much time in the morning simpler topics at the start and mad Sprint towards the end where more complicated and involved topics were discussed and could have been more beneficial if more time were spent on those.
+Sit in labs were difficult and highly non trivial. On top of making sure your algorithm is correct, you would also have to do it under a specific time complexity in order to obtain the full marks. Lab was FUBAR 80% of the time because of the time complexity requirement. I advice making sure your algorithm is correct first before progressing to improving efficiency by using data structures and organising information.
+Anyhow, contrary to the labs and practicals, both midterm and finals were rather mechanical in nature; involving lots of tracing and drawing trees and diagrams. Make sure you know your stuff .",,moderate,,,negative,useful,,,,morning,,,,

@@ -1,0 +1,72 @@
+
+────────────────────────────────────────────────────────────
+  LABEL EXTRACTION SUMMARY (49 reviews)
+────────────────────────────────────────────────────────────
+  Label                      Extracted     Rate
+  ────────────────────────────────────────────────
+  ⚠️ expected_grade             24/49       49%
+  ✅ perceived_difficulty       26/49       53%
+  ❌ workload_intensity          9/49       18%
+  ❌ hours_per_week              1/49        2%
+  ✅ teaching_quality           32/49       65%
+  ⚠️ relevance_usefulness       21/49       43%
+  ⚠️ interest_enjoyment         24/49       49%
+  ⚠️ overall_recommendation     13/49       27%
+  ❌ grading_fairness            0/49        0%
+  ❌ schedule_timing            10/49       20%
+  ⚠️ attendance_policy          15/49       31%
+  ❌ recorded_lectures           8/49       16%
+  ❌ flexibility                 3/49        6%
+  ⚠️ delivery_mode              13/49       27%
+
+  Columns with <10% extraction (consider dropping):
+    → hours_per_week
+    → grading_fairness
+    → flexibility
+────────────────────────────────────────────────────────────
+
+
+────────────────────────────────────────────────────────────
+  FEATURE EXTRACTION SUMMARY (49 reviews)
+────────────────────────────────────────────────────────────
+  Feature                       Extracted     Rate
+  ───────────────────────────────────────────────────
+  ✅ academic_year                 29/49       59%
+  ✅ course_content_type           29/49       59%
+  ❌ course_role                    0/49        0%
+  ❌ prerequisites_mentioned        8/49       16%
+  ❌ has_gamification               3/49        6%
+  ⚠️ delivery_mode                 13/49       27%
+  ❌ attendance_required            0/49        0%
+  ⚠️ participation_graded          15/49       31%
+  ✅ assessment_types              34/49       69%
+  ✅ has_exams                     34/49       69%
+  ❌ course_pacing                  8/49       16%
+  ❌ prior_knowledge_level          6/49       12%
+  ❌ student_year                   2/49        4%
+  ✅ major_context                 33/49       67%
+  ❌ instructor_clarity             7/49       14%
+  ❌ instructor_engagement          1/49        2%
+  ❌ instructor_helpfulness        11/49       22%
+  ⚠️ teaching_style                19/49       39%
+  ❌ finals_weight_pct             11/49       22%
+  ❌ progressive_scoring            0/49        0%
+  ❌ su_consideration               1/49        2%
+  ❌ consistent_effort_required     6/49       12%
+  ❌ peer_support_culture           9/49       18%
+  ❌ warns_plagiarism               2/49        4%
+  ❌ exam_quality_concerns          0/49        0%
+  ❌ overload_warning               1/49        2%
+
+  Columns with <10% extraction (consider dropping):
+    → course_role
+    → has_gamification
+    → attendance_required
+    → student_year
+    → instructor_engagement
+    → progressive_scoring
+    → su_consideration
+    → warns_plagiarism
+    → exam_quality_concerns
+    → overload_warning
+────────────────────────────────────────────────────────────
