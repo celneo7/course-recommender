@@ -1,0 +1,1548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Course Dashboard — CS2040</title>
+<style>
+    :root {
+        --bg: #0f1117;
+        --surface: #1a1d27;
+        --surface2: #232733;
+        --border: #2e3344;
+        --text: #e2e4e9;
+        --text-muted: #8b8fa3;
+        --accent: #6c8cff;
+        --accent-dim: #6c8cff22;
+        --pos: #4ade80;
+        --pos-bg: #4ade8018;
+        --neg: #f87171;
+        --neg-bg: #f8717118;
+        --neu: #fbbf24;
+        --neu-bg: #fbbf2418;
+        --radius: 10px;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+        padding: 2rem;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+    h1 { font-size: 1.8rem; margin-bottom: 0.25rem; }
+    h2 {
+        font-size: 1.3rem;
+        color: var(--accent);
+        margin: 2rem 0 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid var(--border);
+    }
+    h3 { font-size: 1.1rem; margin: 0; }
+    h4 { font-size: 0.95rem; margin: 0; color: var(--text); }
+    .subtitle { color: var(--text-muted); margin-bottom: 2rem; }
+
+    /* Summary cards */
+    .summary-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 0.75rem;
+        margin-bottom: 1.5rem;
+    }
+    .summary-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 1rem;
+    }
+    .summary-card .label { color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .summary-card .value { font-size: 1.3rem; font-weight: 600; margin-top: 0.25rem; }
+
+    /* Component cards */
+    .component-group { margin-bottom: 1rem; }
+    .component-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 1.25rem;
+        margin-bottom: 1rem;
+    }
+    .component-title {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.75rem;
+        margin-bottom: 1rem;
+    }
+    .comp-num {
+        background: var(--accent-dim);
+        color: var(--accent);
+        font-size: 0.75rem;
+        font-weight: 600;
+        padding: 0.25rem 0.5rem;
+        border-radius: 6px;
+        white-space: nowrap;
+        margin-top: 0.1rem;
+    }
+    .comp-question { color: var(--text-muted); font-size: 0.9rem; margin-top: 0.15rem; }
+
+    /* Aspect blocks */
+    .aspect-block {
+        border-top: 1px solid var(--border);
+        padding: 1rem 0;
+    }
+    .aspect-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0.5rem;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    .mention-badge {
+        background: var(--surface2);
+        color: var(--text-muted);
+        font-size: 0.75rem;
+        padding: 0.2rem 0.6rem;
+        border-radius: 20px;
+    }
+    .mention-badge.zero { opacity: 0.5; }
+
+    /* Sentiment bar */
+    .sentiment-bar-container { margin: 0.5rem 0; }
+    .sentiment-bar {
+        display: flex;
+        height: 8px;
+        border-radius: 4px;
+        overflow: hidden;
+        background: var(--surface2);
+    }
+    .sentiment-pos { background: var(--pos); }
+    .sentiment-neu { background: var(--neu); }
+    .sentiment-neg { background: var(--neg); }
+    .sentiment-labels {
+        display: flex;
+        gap: 1rem;
+        font-size: 0.75rem;
+        margin-top: 0.25rem;
+        color: var(--text-muted);
+    }
+    .label-pos { color: var(--pos); }
+    .label-neg { color: var(--neg); }
+    .label-count { margin-left: auto; }
+
+    /* Extracted facts */
+    .extracted-fact {
+        background: var(--accent-dim);
+        border: 1px solid var(--accent);
+        border-radius: 8px;
+        padding: 0.5rem 0.75rem;
+        font-size: 0.85rem;
+        margin: 0.5rem 0;
+    }
+
+    /* Keywords */
+    .keywords { display: flex; flex-wrap: wrap; gap: 0.35rem; margin: 0.5rem 0; }
+    .pill {
+        background: var(--surface2);
+        color: var(--text-muted);
+        font-size: 0.75rem;
+        padding: 0.15rem 0.5rem;
+        border-radius: 20px;
+    }
+
+    /* Excerpts */
+    details { margin-top: 0.5rem; }
+    summary {
+        cursor: pointer;
+        color: var(--accent);
+        font-size: 0.85rem;
+        padding: 0.25rem 0;
+    }
+    summary:hover { text-decoration: underline; }
+    .excerpt {
+        background: var(--surface2);
+        border-radius: 8px;
+        padding: 0.75rem;
+        margin: 0.5rem 0;
+        border-left: 3px solid var(--border);
+    }
+    .excerpt.positive { border-left-color: var(--pos); }
+    .excerpt.negative { border-left-color: var(--neg); }
+    .excerpt-text { font-size: 0.85rem; line-height: 1.5; font-style: italic; }
+    .excerpt-meta {
+        display: flex;
+        gap: 0.75rem;
+        font-size: 0.75rem;
+        color: var(--text-muted);
+        margin-top: 0.4rem;
+        flex-wrap: wrap;
+    }
+
+    /* Profiles */
+    .profile-card {
+        border-top: 1px solid var(--border);
+        padding: 0.75rem 0;
+    }
+    .profile-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0.35rem;
+    }
+    .profile-body {
+        font-size: 0.85rem;
+        color: var(--text-muted);
+        display: flex;
+        flex-direction: column;
+        gap: 0.15rem;
+    }
+
+    .muted { color: var(--text-muted); font-size: 0.85rem; font-style: italic; }
+
+    /* Method note */
+    .method-note {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 1rem;
+        margin-top: 2rem;
+        font-size: 0.8rem;
+        color: var(--text-muted);
+    }
+    .method-note h3 { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.5rem; }
+</style>
+</head>
+<body>
+    <h1>📊 CS2040 Course Dashboard</h1>
+    <p class="subtitle">Text-mining prototype · 17 top-level reviews analysed · 1 replies</p>
+
+    <div class="summary-grid">
+        <div class="summary-card">
+            <div class="label">Overall Sentiment</div>
+            <div class="value" style="color:var(--pos)">65% positive</div>
+        </div>
+        <div class="summary-card">
+            <div class="label">Reported Hours/Week</div>
+            <div class="value">6–15 hrs/week (median: 10)</div>
+        </div>
+        <div class="summary-card">
+            <div class="label">Grades Mentioned</div>
+            <div class="value" style="font-size:1rem">B: 6, A: 2, C: 1, a: 1</div>
+        </div>
+        <div class="summary-card">
+            <div class="label">Instructors</div>
+            <div class="value" style="font-size:1rem">Tan (8 mentions), Lee (3 mentions)</div>
+        </div>
+    </div>
+
+    <div class="component-group"><h2>Component 1: How Hard Will This Be (For Me)?</h2>
+        <div class="component-card">
+            <div class="component-title">
+                <span class="comp-num">Component 1a</span>
+                <div>
+                    <h3>Content & Cognitive Demand</h3>
+                    <p class="comp-question">How intellectually challenging is the material?</p>
+                </div>
+            </div>
+        <div class="aspect-block">
+            <div class="aspect-header">
+                <h4>Complexity of material</h4>
+                <span class="mention-badge">5/17 reviews (29%)</span>
+            </div>
+            
+            
+            <span class="muted">Only 5 reviews tagged — showing excerpts instead</span>
+            <div class="keywords"><span class="pill">hours (5)</span><span class="pill">tan (3)</span><span class="pill">interviews (2)</span><span class="pill">content (2)</span><span class="pill">math (2)</span><span class="pill">manageable (2)</span></div>
+            <details>
+                <summary>View excerpts (3 of 5)</summary>
+                
+            <div class="excerpt negative">
+                <p class="excerpt-text">"Essential module for SWE interviews. Almost everything you learn here comes up in technical interviews at FAANG companies. The content itself isn't that abstract if you've done well in CS1101S and have decent math foundations. Prof Tan's teaching is top tier. My only complaint is the deadline cluste..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— pragmatic_senior</span>
+                    <span class="likes">👍 20</span>
+                    <span class="sem-info"> · Prof Tan</span>
+                </div>
+            </div>
+            <div class="excerpt positive">
+                <p class="excerpt-text">"Retook this module after getting D+ the first time. Second time around with better preparation it was much more manageable. My advice: make sure you're solid on sorting algorithms and basic graph theory BEFORE the semester starts. The jump in difficulty around week 5-6 when we hit balanced BSTs is w..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— second_timer</span>
+                    <span class="likes">👍 10</span>
+                    
+                </div>
+            </div>
+            <div class="excerpt positive">
+                <p class="excerpt-text">"I'm an IS student who took this. The difficulty was higher than what I expected based on the prereqs. The module assumes you're comfortable with fairly complex code but IS students don't get as much programming practice as CS students. That said, Prof Tan was very helpful during office hours and the..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— is_student</span>
+                    <span class="likes">👍 5</span>
+                    <span class="sem-info"> · Prof Tan</span>
+                </div>
+            </div>
+            </details>
+        </div>
+        <div class="aspect-block">
+            <div class="aspect-header">
+                <h4>Assumed prior knowledge</h4>
+                <span class="mention-badge">7/17 reviews (41%)</span>
+            </div>
+            
+            
+            <span class="muted">Only 7 reviews tagged — showing excerpts instead</span>
+            <div class="keywords"><span class="pill">hours (7)</span><span class="pill">need (3)</span><span class="pill">data (3)</span><span class="pill">before (3)</span><span class="pill">office (3)</span><span class="pill">time (3)</span></div>
+            <details>
+                <summary>View excerpts (3 of 7)</summary>
+                
+            <div class="excerpt negative">
+                <p class="excerpt-text">"Was a TA for this course. Common struggles I saw: students underestimate the time needed for problem sets, they don't practice enough on their own before coming to tutorials, and many have weak recursion fundamentals from CS1101S. If you're considering this module, make sure you can write recursive ..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— ta_perspective</span>
+                    <span class="likes">👍 18</span>
+                    
+                </div>
+            </div>
+            <div class="excerpt negative">
+                <p class="excerpt-text">"Update: I retook this and got a B+ after spending the break doing practice problems. The course hasn't changed much but my preparation was completely different. Background preparation is EVERYTHING for this module."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— struggling_eng</span>
+                    <span class="likes">👍 14</span>
+                    
+                </div>
+            </div>
+            <div class="excerpt positive">
+                <p class="excerpt-text">"Retook this module after getting D+ the first time. Second time around with better preparation it was much more manageable. My advice: make sure you're solid on sorting algorithms and basic graph theory BEFORE the semester starts. The jump in difficulty around week 5-6 when we hit balanced BSTs is w..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— second_timer</span>
+                    <span class="likes">👍 10</span>
+                    
+                </div>
+            </div>
+            </details>
+        </div>
+        <div class="aspect-block">
+            <div class="aspect-header">
+                <h4>Learning pace</h4>
+                <span class="mention-badge">3/17 reviews (18%)</span>
+            </div>
+            
+            
+            <span class="muted">Only 3 reviews tagged — showing excerpts instead</span>
+            <div class="keywords"><span class="pill">hours (3)</span><span class="pill">tan (2)</span><span class="pill">spent (2)</span><span class="pill">topics (2)</span><span class="pill">other (2)</span><span class="pill">ended (2)</span></div>
+            <details>
+                <summary>View excerpts (3 of 3)</summary>
+                
+            <div class="excerpt positive">
+                <p class="excerpt-text">"Took this in AY22/23 Sem 2 with Prof Tan. The content is really interesting but the workload is no joke. I spent around 12-15 hours per week on problem sets alone. The topics build on each other fast so if you fall behind it's hard to catch up. Prof Tan explains things clearly though and his slides ..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— cs_student_22</span>
+                    <span class="likes">👍 12</span>
+                    <span class="sem-info"> · Prof Tan, Tan · AY22/23 Sem 2</span>
+                </div>
+            </div>
+            <div class="excerpt negative">
+                <p class="excerpt-text">"The grading for this module is a black box. I studied harder for this than any other module and still got a B-. Meanwhile my friend who seemed to put in less effort got an A. The bell curve is brutal. Also the exam had at least 2 questions on topics the prof rushed through in the last lecture. Not f..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— frustrated_student</span>
+                    <span class="likes">👍 11</span>
+                    
+                </div>
+            </div>
+            <div class="excerpt positive">
+                <p class="excerpt-text">"This was the hardest module I've taken so far. I came from an engineering background with minimal coding experience and the prerequisites (CS1101S) were NOT enough. You really need to be comfortable with recursion and basic data structures before taking this. The pace is relentless - new data struct..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— struggling_eng</span>
+                    <span class="likes">👍 8</span>
+                    
+                </div>
+            </div>
+            </details>
+        </div>
+        <div class="aspect-block">
+            <div class="aspect-header">
+                <h4>Higher-order thinking</h4>
+                <span class="mention-badge">2/17 reviews (12%)</span>
+            </div>
+            
+            
+            <span class="muted">Only 2 reviews tagged — showing excerpts instead</span>
+            <div class="keywords"><span class="pill">dry (2)</span><span class="pill">problem (2)</span><span class="pill">particularly (2)</span><span class="pill">best (1)</span><span class="pill">hands (1)</span><span class="pill">down (1)</span></div>
+            <details>
+                <summary>View excerpts (2 of 2)</summary>
+                
+            <div class="excerpt positive">
+                <p class="excerpt-text">"Best CS module hands down. Prof Tan is incredibly passionate and makes even the dry topics like amortized analysis feel exciting. The problem sets are tough but very rewarding. I particularly liked how the assessments actually tested understanding rather than memorization - the exam questions requir..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— algo_lover</span>
+                    <span class="likes">👍 15</span>
+                    <span class="sem-info"> · Prof Tan</span>
+                </div>
+            </div>
+            <div class="excerpt positive">
+                <p class="excerpt-text">"Taking this purely because every SWE job requires DSA knowledge. The content itself can be dry at times but knowing it opens so many doors. I didn't find it particularly enjoyable but I recognize its value. The skills you build here - problem decomposition, algorithmic thinking - transfer to literal..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— career_focused</span>
+                    <span class="likes">👍 6</span>
+                    
+                </div>
+            </div>
+            </details>
+        </div></div>
+        <div class="component-card">
+            <div class="component-title">
+                <span class="comp-num">Component 1b</span>
+                <div>
+                    <h3>Workload & Time Investment</h3>
+                    <p class="comp-question">How much time and effort does this course demand?</p>
+                </div>
+            </div>
+        <div class="aspect-block">
+            <div class="aspect-header">
+                <h4>Hours per week</h4>
+                <span class="mention-badge">9/17 reviews (53%)</span>
+            </div>
+            <div class="extracted-fact">📊 Reported hours/week: 6–15 hrs (median: 10)</div>
+            
+            <span class="muted">Only 9 reviews tagged — showing excerpts instead</span>
+            <div class="keywords"><span class="pill">hours (11)</span><span class="pill">tan (7)</span><span class="pill">content (4)</span><span class="pill">spent (4)</span><span class="pill">problem (4)</span><span class="pill">sets (4)</span></div>
+            <details>
+                <summary>View excerpts (3 of 9)</summary>
+                
+            <div class="excerpt negative">
+                <p class="excerpt-text">"Was a TA for this course. Common struggles I saw: students underestimate the time needed for problem sets, they don't practice enough on their own before coming to tutorials, and many have weak recursion fundamentals from CS1101S. If you're considering this module, make sure you can write recursive ..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— ta_perspective</span>
+                    <span class="likes">👍 18</span>
+                    
+                </div>
+            </div>
+            <div class="excerpt positive">
+                <p class="excerpt-text">"Best CS module hands down. Prof Tan is incredibly passionate and makes even the dry topics like amortized analysis feel exciting. The problem sets are tough but very rewarding. I particularly liked how the assessments actually tested understanding rather than memorization - the exam questions requir..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— algo_lover</span>
+                    <span class="likes">👍 15</span>
+                    <span class="sem-info"> · Prof Tan</span>
+                </div>
+            </div>
+            <div class="excerpt positive">
+                <p class="excerpt-text">"Took this in AY22/23 Sem 2 with Prof Tan. The content is really interesting but the workload is no joke. I spent around 12-15 hours per week on problem sets alone. The topics build on each other fast so if you fall behind it's hard to catch up. Prof Tan explains things clearly though and his slides ..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— cs_student_22</span>
+                    <span class="likes">👍 12</span>
+                    <span class="sem-info"> · Prof Tan, Tan · AY22/23 Sem 2</span>
+                </div>
+            </div>
+            </details>
+        </div>
+        <div class="aspect-block">
+            <div class="aspect-header">
+                <h4>Assignment frequency & volume</h4>
+                <span class="mention-badge">9/17 reviews (53%)</span>
+            </div>
+            
+            
+            <span class="muted">Only 9 reviews tagged — showing excerpts instead</span>
+            <div class="keywords"><span class="pill">hours (7)</span><span class="pill">tan (6)</span><span class="pill">content (5)</span><span class="pill">problem (5)</span><span class="pill">sets (5)</span><span class="pill">spent (4)</span></div>
+            <details>
+                <summary>View excerpts (3 of 9)</summary>
+                
+            <div class="excerpt negative">
+                <p class="excerpt-text">"Essential module for SWE interviews. Almost everything you learn here comes up in technical interviews at FAANG companies. The content itself isn't that abstract if you've done well in CS1101S and have decent math foundations. Prof Tan's teaching is top tier. My only complaint is the deadline cluste..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— pragmatic_senior</span>
+                    <span class="likes">👍 20</span>
+                    <span class="sem-info"> · Prof Tan</span>
+                </div>
+            </div>
+            <div class="excerpt negative">
+                <p class="excerpt-text">"Was a TA for this course. Common struggles I saw: students underestimate the time needed for problem sets, they don't practice enough on their own before coming to tutorials, and many have weak recursion fundamentals from CS1101S. If you're considering this module, make sure you can write recursive ..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— ta_perspective</span>
+                    <span class="likes">👍 18</span>
+                    
+                </div>
+            </div>
+            <div class="excerpt positive">
+                <p class="excerpt-text">"Best CS module hands down. Prof Tan is incredibly passionate and makes even the dry topics like amortized analysis feel exciting. The problem sets are tough but very rewarding. I particularly liked how the assessments actually tested understanding rather than memorization - the exam questions requir..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— algo_lover</span>
+                    <span class="likes">👍 15</span>
+                    <span class="sem-info"> · Prof Tan</span>
+                </div>
+            </div>
+            </details>
+        </div>
+        <div class="aspect-block">
+            <div class="aspect-header">
+                <h4>Deadline pressure</h4>
+                <span class="mention-badge">3/17 reviews (18%)</span>
+            </div>
+            
+            
+            <span class="muted">Only 3 reviews tagged — showing excerpts instead</span>
+            <div class="keywords"><span class="pill">content (3)</span><span class="pill">interviews (2)</span><span class="pill">other (2)</span><span class="pill">attendance (2)</span><span class="pill">deadlines (2)</span><span class="pill">modules (2)</span></div>
+            <details>
+                <summary>View excerpts (3 of 3)</summary>
+                
+            <div class="excerpt negative">
+                <p class="excerpt-text">"Essential module for SWE interviews. Almost everything you learn here comes up in technical interviews at FAANG companies. The content itself isn't that abstract if you've done well in CS1101S and have decent math foundations. Prof Tan's teaching is top tier. My only complaint is the deadline cluste..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— pragmatic_senior</span>
+                    <span class="likes">👍 20</span>
+                    <span class="sem-info"> · Prof Tan</span>
+                </div>
+            </div>
+            <div class="excerpt negative">
+                <p class="excerpt-text">"I was taking 5 modules that semester and this one ate up most of my time. The assignments are long and you can't start them last minute. Deadlines overlapped with my other CS modules constantly. I felt overwhelmed most of the semester. Content wise it's important but the pressure was too much. Atten..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— burned_out</span>
+                    <span class="likes">👍 9</span>
+                    
+                </div>
+            </div>
+            <div class="excerpt positive">
+                <p class="excerpt-text">"Coming from a European university, this course is very well taught compared to equivalent courses I've seen. The emphasis on practical implementation alongside theory is great. However, the workload is significantly higher than what I'm used to. Group project was stressful with tight deadlines. The ..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— exchange_student</span>
+                    <span class="likes">👍 3</span>
+                    
+                </div>
+            </div>
+            </details>
+        </div>
+        <div class="aspect-block">
+            <div class="aspect-header">
+                <h4>Overall felt pressure</h4>
+                <span class="mention-badge">3/17 reviews (18%)</span>
+            </div>
+            
+            
+            <span class="muted">Only 3 reviews tagged — showing excerpts instead</span>
+            <div class="keywords"><span class="pill">deadlines (2)</span><span class="pill">content (2)</span><span class="pill">modules (2)</span><span class="pill">most (2)</span><span class="pill">last (2)</span><span class="pill">other (2)</span></div>
+            <details>
+                <summary>View excerpts (3 of 3)</summary>
+                
+            <div class="excerpt negative">
+                <p class="excerpt-text">"The grading for this module is a black box. I studied harder for this than any other module and still got a B-. Meanwhile my friend who seemed to put in less effort got an A. The bell curve is brutal. Also the exam had at least 2 questions on topics the prof rushed through in the last lecture. Not f..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— frustrated_student</span>
+                    <span class="likes">👍 11</span>
+                    
+                </div>
+            </div>
+            <div class="excerpt negative">
+                <p class="excerpt-text">"I was taking 5 modules that semester and this one ate up most of my time. The assignments are long and you can't start them last minute. Deadlines overlapped with my other CS modules constantly. I felt overwhelmed most of the semester. Content wise it's important but the pressure was too much. Atten..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— burned_out</span>
+                    <span class="likes">👍 9</span>
+                    
+                </div>
+            </div>
+            <div class="excerpt positive">
+                <p class="excerpt-text">"Coming from a European university, this course is very well taught compared to equivalent courses I've seen. The emphasis on practical implementation alongside theory is great. However, the workload is significantly higher than what I'm used to. Group project was stressful with tight deadlines. The ..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— exchange_student</span>
+                    <span class="likes">👍 3</span>
+                    
+                </div>
+            </div>
+            </details>
+        </div></div>
+        <div class="component-card">
+            <div class="component-title">
+                <span class="comp-num">Component 1c</span>
+                <div>
+                    <h3>Assessment & Grading</h3>
+                    <p class="comp-question">How hard is it to do well?</p>
+                </div>
+            </div>
+        <div class="aspect-block">
+            <div class="aspect-header">
+                <h4>Difficulty of scoring well</h4>
+                <span class="mention-badge">2/17 reviews (12%)</span>
+            </div>
+            
+            
+            <span class="muted">Only 2 reviews tagged — showing excerpts instead</span>
+            <div class="keywords"><span class="pill">lee (2)</span><span class="pill">lectures (2)</span><span class="pill">topics (2)</span><span class="pill">hours (2)</span><span class="pill">midterm (2)</span><span class="pill">sem (1)</span></div>
+            <details>
+                <summary>View excerpts (2 of 2)</summary>
+                
+            <div class="excerpt positive">
+                <p class="excerpt-text">"The module is well-structured. Each week builds logically on the previous one. But I wish there was more feedback on assignments - we just got a grade with no explanation of what we did wrong. Hard to improve when you don't know your mistakes. The midterm was fair but the final had questions on topi..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— quiet_student</span>
+                    <span class="likes">👍 7</span>
+                    
+                </div>
+            </div>
+            <div class="excerpt negative">
+                <p class="excerpt-text">"Took this with Prof Lee in AY23/24 Sem 1. Very different experience from what I heard about Prof Tan's version. Prof Lee's lectures were a bit disorganized and he tends to jump between topics. The content is the same but delivery matters a lot. Tutorials were hit or miss depending on your TA. Worklo..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— night_owl_coder</span>
+                    <span class="likes">👍 6</span>
+                    <span class="sem-info"> · Prof Lee, Tan, Lee · AY23/24 Sem 1</span>
+                </div>
+            </div>
+            </details>
+        </div>
+        <div class="aspect-block">
+            <div class="aspect-header">
+                <h4>Grading fairness</h4>
+                <span class="mention-badge">6/17 reviews (35%)</span>
+            </div>
+            
+            
+            <span class="muted">Only 6 reviews tagged — showing excerpts instead</span>
+            <div class="keywords"><span class="pill">around (5)</span><span class="pill">topics (5)</span><span class="pill">tan (4)</span><span class="pill">hours (4)</span><span class="pill">fair (4)</span><span class="pill">questions (3)</span></div>
+            <details>
+                <summary>View excerpts (3 of 6)</summary>
+                
+            <div class="excerpt positive">
+                <p class="excerpt-text">"Best CS module hands down. Prof Tan is incredibly passionate and makes even the dry topics like amortized analysis feel exciting. The problem sets are tough but very rewarding. I particularly liked how the assessments actually tested understanding rather than memorization - the exam questions requir..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— algo_lover</span>
+                    <span class="likes">👍 15</span>
+                    <span class="sem-info"> · Prof Tan</span>
+                </div>
+            </div>
+            <div class="excerpt positive">
+                <p class="excerpt-text">"Took this in AY22/23 Sem 2 with Prof Tan. The content is really interesting but the workload is no joke. I spent around 12-15 hours per week on problem sets alone. The topics build on each other fast so if you fall behind it's hard to catch up. Prof Tan explains things clearly though and his slides ..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— cs_student_22</span>
+                    <span class="likes">👍 12</span>
+                    <span class="sem-info"> · Prof Tan, Tan · AY22/23 Sem 2</span>
+                </div>
+            </div>
+            <div class="excerpt negative">
+                <p class="excerpt-text">"The grading for this module is a black box. I studied harder for this than any other module and still got a B-. Meanwhile my friend who seemed to put in less effort got an A. The bell curve is brutal. Also the exam had at least 2 questions on topics the prof rushed through in the last lecture. Not f..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— frustrated_student</span>
+                    <span class="likes">👍 11</span>
+                    
+                </div>
+            </div>
+            </details>
+        </div>
+        <div class="aspect-block">
+            <div class="aspect-header">
+                <h4>Taught vs. assessed alignment</h4>
+                <span class="mention-badge">2/17 reviews (12%)</span>
+            </div>
+            
+            
+            <span class="muted">Only 2 reviews tagged — showing excerpts instead</span>
+            <div class="keywords"><span class="pill">fair (2)</span><span class="pill">questions (2)</span><span class="pill">topics (2)</span><span class="pill">structured (1)</span><span class="pill">builds (1)</span><span class="pill">logically (1)</span></div>
+            <details>
+                <summary>View excerpts (2 of 2)</summary>
+                
+            <div class="excerpt negative">
+                <p class="excerpt-text">"The grading for this module is a black box. I studied harder for this than any other module and still got a B-. Meanwhile my friend who seemed to put in less effort got an A. The bell curve is brutal. Also the exam had at least 2 questions on topics the prof rushed through in the last lecture. Not f..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— frustrated_student</span>
+                    <span class="likes">👍 11</span>
+                    
+                </div>
+            </div>
+            <div class="excerpt positive">
+                <p class="excerpt-text">"The module is well-structured. Each week builds logically on the previous one. But I wish there was more feedback on assignments - we just got a grade with no explanation of what we did wrong. Hard to improve when you don't know your mistakes. The midterm was fair but the final had questions on topi..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— quiet_student</span>
+                    <span class="likes">👍 7</span>
+                    
+                </div>
+            </div>
+            </details>
+        </div>
+        <div class="aspect-block">
+            <div class="aspect-header">
+                <h4>Grade distribution signals</h4>
+                <span class="mention-badge">2/17 reviews (12%)</span>
+            </div>
+            
+            <div class="extracted-fact">📊 Grades mentioned: B: 2, A: 1</div>
+            <span class="muted">Only 2 reviews tagged — showing excerpts instead</span>
+            <div class="keywords"><span class="pill">time (2)</span><span class="pill">around (2)</span><span class="pill">most (2)</span><span class="pill">people (2)</span><span class="pill">curve (2)</span><span class="pill">retook (1)</span></div>
+            <details>
+                <summary>View excerpts (2 of 2)</summary>
+                
+            <div class="excerpt negative">
+                <p class="excerpt-text">"The grading for this module is a black box. I studied harder for this than any other module and still got a B-. Meanwhile my friend who seemed to put in less effort got an A. The bell curve is brutal. Also the exam had at least 2 questions on topics the prof rushed through in the last lecture. Not f..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— frustrated_student</span>
+                    <span class="likes">👍 11</span>
+                    
+                </div>
+            </div>
+            <div class="excerpt positive">
+                <p class="excerpt-text">"Retook this module after getting D+ the first time. Second time around with better preparation it was much more manageable. My advice: make sure you're solid on sorting algorithms and basic graph theory BEFORE the semester starts. The jump in difficulty around week 5-6 when we hit balanced BSTs is w..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— second_timer</span>
+                    <span class="likes">👍 10</span>
+                    
+                </div>
+            </div>
+            </details>
+        </div></div>
+        <div class="component-card">
+            <div class="component-title">
+                <span class="comp-num">Component 1d</span>
+                <div>
+                    <h3>Background Fit</h3>
+                    <p class="comp-question">How hard was it for students like me?</p>
+                </div>
+            </div>
+        <div class="aspect-block">
+            <div class="aspect-header">
+                <h4>Background fit</h4>
+                <span class="mention-badge">7/17 reviews (41%)</span>
+            </div>
+            
+            
+            <span class="muted">Only 7 reviews tagged — showing excerpts instead</span>
+            <div class="keywords"><span class="pill">hours (8)</span><span class="pill">before (3)</span><span class="pill">tutorials (3)</span><span class="pill">office (3)</span><span class="pill">tan (3)</span><span class="pill">content (3)</span></div>
+            <details>
+                <summary>View excerpts (3 of 7)</summary>
+                
+            <div class="excerpt negative">
+                <p class="excerpt-text">"Was a TA for this course. Common struggles I saw: students underestimate the time needed for problem sets, they don't practice enough on their own before coming to tutorials, and many have weak recursion fundamentals from CS1101S. If you're considering this module, make sure you can write recursive ..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— ta_perspective</span>
+                    <span class="likes">👍 18</span>
+                    
+                </div>
+            </div>
+            <div class="excerpt positive">
+                <p class="excerpt-text">"Retook this module after getting D+ the first time. Second time around with better preparation it was much more manageable. My advice: make sure you're solid on sorting algorithms and basic graph theory BEFORE the semester starts. The jump in difficulty around week 5-6 when we hit balanced BSTs is w..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— second_timer</span>
+                    <span class="likes">👍 10</span>
+                    
+                </div>
+            </div>
+            <div class="excerpt positive">
+                <p class="excerpt-text">"This was the hardest module I've taken so far. I came from an engineering background with minimal coding experience and the prerequisites (CS1101S) were NOT enough. You really need to be comfortable with recursion and basic data structures before taking this. The pace is relentless - new data struct..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— struggling_eng</span>
+                    <span class="likes">👍 8</span>
+                    
+                </div>
+            </div>
+            </details>
+        </div></div></div><div class="component-group"><h2>Component 2: How's the Teaching?</h2>
+        <div class="component-card">
+            <div class="component-title">
+                <span class="comp-num">Component 2a</span>
+                <div>
+                    <h3>Teaching Quality & Engagement</h3>
+                    <p class="comp-question">Is the instructor clear, engaging, and knowledgeable?</p>
+                </div>
+            </div>
+        <div class="aspect-block">
+            <div class="aspect-header">
+                <h4>Clarity of explanation</h4>
+                <span class="mention-badge">4/17 reviews (24%)</span>
+            </div>
+            
+            
+            <span class="muted">Only 4 reviews tagged — showing excerpts instead</span>
+            <div class="keywords"><span class="pill">tan (3)</span><span class="pill">hours (3)</span><span class="pill">topics (3)</span><span class="pill">lee (3)</span><span class="pill">lectures (3)</span><span class="pill">sem (2)</span></div>
+            <details>
+                <summary>View excerpts (3 of 4)</summary>
+                
+            <div class="excerpt positive">
+                <p class="excerpt-text">"Took this in AY22/23 Sem 2 with Prof Tan. The content is really interesting but the workload is no joke. I spent around 12-15 hours per week on problem sets alone. The topics build on each other fast so if you fall behind it's hard to catch up. Prof Tan explains things clearly though and his slides ..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— cs_student_22</span>
+                    <span class="likes">👍 12</span>
+                    <span class="sem-info"> · Prof Tan, Tan · AY22/23 Sem 2</span>
+                </div>
+            </div>
+            <div class="excerpt positive">
+                <p class="excerpt-text">"The module is well-structured. Each week builds logically on the previous one. But I wish there was more feedback on assignments - we just got a grade with no explanation of what we did wrong. Hard to improve when you don't know your mistakes. The midterm was fair but the final had questions on topi..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— quiet_student</span>
+                    <span class="likes">👍 7</span>
+                    
+                </div>
+            </div>
+            <div class="excerpt positive">
+                <p class="excerpt-text">"Just want to add - if you get Prof Lee, the recorded lectures are essential because his live delivery can be confusing. But the recordings let you pause and rewind which actually helps. Also the textbook (CLRS) is way too dense for this course level, use VisuAlgo instead."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— night_owl_coder</span>
+                    <span class="likes">👍 7</span>
+                    <span class="sem-info"> · Prof Lee</span>
+                </div>
+            </div>
+            </details>
+        </div>
+        <div class="aspect-block">
+            <div class="aspect-header">
+                <h4>Enthusiasm & engagement</h4>
+                <span class="mention-badge">3/17 reviews (18%)</span>
+            </div>
+            
+            
+            <span class="muted">Only 3 reviews tagged — showing excerpts instead</span>
+            <div class="keywords"><span class="pill">tan (3)</span><span class="pill">problem (3)</span><span class="pill">content (2)</span><span class="pill">around (2)</span><span class="pill">hours (2)</span><span class="pill">sets (2)</span></div>
+            <details>
+                <summary>View excerpts (3 of 3)</summary>
+                
+            <div class="excerpt positive">
+                <p class="excerpt-text">"Best CS module hands down. Prof Tan is incredibly passionate and makes even the dry topics like amortized analysis feel exciting. The problem sets are tough but very rewarding. I particularly liked how the assessments actually tested understanding rather than memorization - the exam questions requir..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— algo_lover</span>
+                    <span class="likes">👍 15</span>
+                    <span class="sem-info"> · Prof Tan</span>
+                </div>
+            </div>
+            <div class="excerpt positive">
+                <p class="excerpt-text">"Took this in AY22/23 Sem 2 with Prof Tan. The content is really interesting but the workload is no joke. I spent around 12-15 hours per week on problem sets alone. The topics build on each other fast so if you fall behind it's hard to catch up. Prof Tan explains things clearly though and his slides ..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— cs_student_22</span>
+                    <span class="likes">👍 12</span>
+                    <span class="sem-info"> · Prof Tan, Tan · AY22/23 Sem 2</span>
+                </div>
+            </div>
+            <div class="excerpt positive">
+                <p class="excerpt-text">"Taking this purely because every SWE job requires DSA knowledge. The content itself can be dry at times but knowing it opens so many doors. I didn't find it particularly enjoyable but I recognize its value. The skills you build here - problem decomposition, algorithmic thinking - transfer to literal..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— career_focused</span>
+                    <span class="likes">👍 6</span>
+                    
+                </div>
+            </div>
+            </details>
+        </div>
+        <div class="aspect-block">
+            <div class="aspect-header">
+                <h4>Subject mastery</h4>
+                <span class="mention-badge">3/17 reviews (18%)</span>
+            </div>
+            
+            
+            <span class="muted">Only 3 reviews tagged — showing excerpts instead</span>
+            <div class="keywords"><span class="pill">interviews (3)</span><span class="pill">problem (3)</span><span class="pill">swe (2)</span><span class="pill">content (2)</span><span class="pill">itself (2)</span><span class="pill">tan (2)</span></div>
+            <details>
+                <summary>View excerpts (3 of 3)</summary>
+                
+            <div class="excerpt negative">
+                <p class="excerpt-text">"Essential module for SWE interviews. Almost everything you learn here comes up in technical interviews at FAANG companies. The content itself isn't that abstract if you've done well in CS1101S and have decent math foundations. Prof Tan's teaching is top tier. My only complaint is the deadline cluste..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— pragmatic_senior</span>
+                    <span class="likes">👍 20</span>
+                    <span class="sem-info"> · Prof Tan</span>
+                </div>
+            </div>
+            <div class="excerpt positive">
+                <p class="excerpt-text">"Taking this purely because every SWE job requires DSA knowledge. The content itself can be dry at times but knowing it opens so many doors. I didn't find it particularly enjoyable but I recognize its value. The skills you build here - problem decomposition, algorithmic thinking - transfer to literal..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— career_focused</span>
+                    <span class="likes">👍 6</span>
+                    
+                </div>
+            </div>
+            <div class="excerpt positive">
+                <p class="excerpt-text">"Honestly not that hard if you have a strong CS1101S foundation. I spent maybe 6-8 hours per week and got an A-. Prof Tan is one of the best lecturers in the department. The key is to start problem sets early and go to office hours if stuck. Don't just read the textbook - you need to code the data st..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— overachiever_99</span>
+                    <span class="likes">👍 4</span>
+                    <span class="sem-info"> · Prof Tan</span>
+                </div>
+            </div>
+            </details>
+        </div>
+        <div class="aspect-block">
+            <div class="aspect-header">
+                <h4>Rapport with students</h4>
+                <span class="mention-badge">3/17 reviews (18%)</span>
+            </div>
+            
+            
+            <span class="muted">Only 3 reviews tagged — showing excerpts instead</span>
+            <div class="keywords"><span class="pill">hours (6)</span><span class="pill">tan (3)</span><span class="pill">understanding (2)</span><span class="pill">programming (2)</span><span class="pill">though (2)</span><span class="pill">office (2)</span></div>
+            <details>
+                <summary>View excerpts (3 of 3)</summary>
+                
+            <div class="excerpt positive">
+                <p class="excerpt-text">"Best CS module hands down. Prof Tan is incredibly passionate and makes even the dry topics like amortized analysis feel exciting. The problem sets are tough but very rewarding. I particularly liked how the assessments actually tested understanding rather than memorization - the exam questions requir..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— algo_lover</span>
+                    <span class="likes">👍 15</span>
+                    <span class="sem-info"> · Prof Tan</span>
+                </div>
+            </div>
+            <div class="excerpt positive">
+                <p class="excerpt-text">"I'm an IS student who took this. The difficulty was higher than what I expected based on the prereqs. The module assumes you're comfortable with fairly complex code but IS students don't get as much programming practice as CS students. That said, Prof Tan was very helpful during office hours and the..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— is_student</span>
+                    <span class="likes">👍 5</span>
+                    <span class="sem-info"> · Prof Tan</span>
+                </div>
+            </div>
+            <div class="excerpt positive">
+                <p class="excerpt-text">"As a math major taking this as an elective, I found the theoretical parts very manageable but the programming assignments were challenging since I'm not as experienced with Java. The graph algorithms section was beautiful though - very elegant proofs. Spent about 8 hours per week. Would have appreci..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— math_major_here</span>
+                    <span class="likes">👍 4</span>
+                    <span class="sem-info"> · Prof Tan</span>
+                </div>
+            </div>
+            </details>
+        </div>
+        <div class="aspect-block">
+            <div class="aspect-header">
+                <h4>Encourages participation</h4>
+                <span class="mention-badge">4/17 reviews (24%)</span>
+            </div>
+            
+            
+            <span class="muted">Only 4 reviews tagged — showing excerpts instead</span>
+            <div class="keywords"><span class="pill">tutorials (4)</span><span class="pill">hours (3)</span><span class="pill">content (3)</span><span class="pill">experience (2)</span><span class="pill">enough (2)</span><span class="pill">recursion (2)</span></div>
+            <details>
+                <summary>View excerpts (3 of 4)</summary>
+                
+            <div class="excerpt negative">
+                <p class="excerpt-text">"Was a TA for this course. Common struggles I saw: students underestimate the time needed for problem sets, they don't practice enough on their own before coming to tutorials, and many have weak recursion fundamentals from CS1101S. If you're considering this module, make sure you can write recursive ..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— ta_perspective</span>
+                    <span class="likes">👍 18</span>
+                    
+                </div>
+            </div>
+            <div class="excerpt negative">
+                <p class="excerpt-text">"I was taking 5 modules that semester and this one ate up most of my time. The assignments are long and you can't start them last minute. Deadlines overlapped with my other CS modules constantly. I felt overwhelmed most of the semester. Content wise it's important but the pressure was too much. Atten..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— burned_out</span>
+                    <span class="likes">👍 9</span>
+                    
+                </div>
+            </div>
+            <div class="excerpt positive">
+                <p class="excerpt-text">"This was the hardest module I've taken so far. I came from an engineering background with minimal coding experience and the prerequisites (CS1101S) were NOT enough. You really need to be comfortable with recursion and basic data structures before taking this. The pace is relentless - new data struct..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— struggling_eng</span>
+                    <span class="likes">👍 8</span>
+                    
+                </div>
+            </div>
+            </details>
+        </div></div>
+        <div class="component-card">
+            <div class="component-title">
+                <span class="comp-num">Component 2b</span>
+                <div>
+                    <h3>Support & Responsiveness</h3>
+                    <p class="comp-question">Will I get help when I need it?</p>
+                </div>
+            </div>
+        <div class="aspect-block">
+            <div class="aspect-header">
+                <h4>Availability outside class</h4>
+                <span class="mention-badge">4/17 reviews (24%)</span>
+            </div>
+            
+            
+            <span class="muted">Only 4 reviews tagged — showing excerpts instead</span>
+            <div class="keywords"><span class="pill">hours (9)</span><span class="pill">office (4)</span><span class="pill">need (3)</span><span class="pill">data (3)</span><span class="pill">spent (3)</span><span class="pill">tan (3)</span></div>
+            <details>
+                <summary>View excerpts (3 of 4)</summary>
+                
+            <div class="excerpt positive">
+                <p class="excerpt-text">"This was the hardest module I've taken so far. I came from an engineering background with minimal coding experience and the prerequisites (CS1101S) were NOT enough. You really need to be comfortable with recursion and basic data structures before taking this. The pace is relentless - new data struct..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— struggling_eng</span>
+                    <span class="likes">👍 8</span>
+                    
+                </div>
+            </div>
+            <div class="excerpt positive">
+                <p class="excerpt-text">"I'm an IS student who took this. The difficulty was higher than what I expected based on the prereqs. The module assumes you're comfortable with fairly complex code but IS students don't get as much programming practice as CS students. That said, Prof Tan was very helpful during office hours and the..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— is_student</span>
+                    <span class="likes">👍 5</span>
+                    <span class="sem-info"> · Prof Tan</span>
+                </div>
+            </div>
+            <div class="excerpt positive">
+                <p class="excerpt-text">"As a math major taking this as an elective, I found the theoretical parts very manageable but the programming assignments were challenging since I'm not as experienced with Java. The graph algorithms section was beautiful though - very elegant proofs. Spent about 8 hours per week. Would have appreci..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— math_major_here</span>
+                    <span class="likes">👍 4</span>
+                    <span class="sem-info"> · Prof Tan</span>
+                </div>
+            </div>
+            </details>
+        </div>
+        <div class="aspect-block">
+            <div class="aspect-header">
+                <h4>Quality of feedback</h4>
+                <span class="mention-badge">1/17 reviews (6%)</span>
+            </div>
+            
+            
+            <span class="muted">Only 1 reviews tagged — showing excerpts instead</span>
+            <div class="keywords"><span class="pill">structured (1)</span><span class="pill">builds (1)</span><span class="pill">logically (1)</span><span class="pill">previous (1)</span><span class="pill">wish (1)</span><span class="pill">feedback (1)</span></div>
+            <details>
+                <summary>View excerpts (1 of 1)</summary>
+                
+            <div class="excerpt positive">
+                <p class="excerpt-text">"The module is well-structured. Each week builds logically on the previous one. But I wish there was more feedback on assignments - we just got a grade with no explanation of what we did wrong. Hard to improve when you don't know your mistakes. The midterm was fair but the final had questions on topi..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— quiet_student</span>
+                    <span class="likes">👍 7</span>
+                    
+                </div>
+            </div>
+            </details>
+        </div>
+        <div class="aspect-block">
+            <div class="aspect-header">
+                <h4>Helpfulness</h4>
+                <span class="mention-badge">2/17 reviews (12%)</span>
+            </div>
+            
+            
+            <span class="muted">Only 2 reviews tagged — showing excerpts instead</span>
+            <div class="keywords"><span class="pill">hours (5)</span><span class="pill">programming (2)</span><span class="pill">though (2)</span><span class="pill">tan (2)</span><span class="pill">office (2)</span><span class="pill">math (1)</span></div>
+            <details>
+                <summary>View excerpts (2 of 2)</summary>
+                
+            <div class="excerpt positive">
+                <p class="excerpt-text">"I'm an IS student who took this. The difficulty was higher than what I expected based on the prereqs. The module assumes you're comfortable with fairly complex code but IS students don't get as much programming practice as CS students. That said, Prof Tan was very helpful during office hours and the..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— is_student</span>
+                    <span class="likes">👍 5</span>
+                    <span class="sem-info"> · Prof Tan</span>
+                </div>
+            </div>
+            <div class="excerpt positive">
+                <p class="excerpt-text">"As a math major taking this as an elective, I found the theoretical parts very manageable but the programming assignments were challenging since I'm not as experienced with Java. The graph algorithms section was beautiful though - very elegant proofs. Spent about 8 hours per week. Would have appreci..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— math_major_here</span>
+                    <span class="likes">👍 4</span>
+                    <span class="sem-info"> · Prof Tan</span>
+                </div>
+            </div>
+            </details>
+        </div></div>
+        <div class="component-card">
+            <div class="component-title">
+                <span class="comp-num">Component 2c</span>
+                <div>
+                    <h3>Course Design & Organisation</h3>
+                    <p class="comp-question">Is the course well-structured?</p>
+                </div>
+            </div>
+        <div class="aspect-block">
+            <div class="aspect-header">
+                <h4>Overall structure</h4>
+                <span class="mention-badge">4/17 reviews (24%)</span>
+            </div>
+            
+            
+            <span class="muted">Only 4 reviews tagged — showing excerpts instead</span>
+            <div class="keywords"><span class="pill">hours (6)</span><span class="pill">spent (4)</span><span class="pill">tan (3)</span><span class="pill">hard (3)</span><span class="pill">data (3)</span><span class="pill">around (2)</span></div>
+            <details>
+                <summary>View excerpts (3 of 4)</summary>
+                
+            <div class="excerpt positive">
+                <p class="excerpt-text">"Took this in AY22/23 Sem 2 with Prof Tan. The content is really interesting but the workload is no joke. I spent around 12-15 hours per week on problem sets alone. The topics build on each other fast so if you fall behind it's hard to catch up. Prof Tan explains things clearly though and his slides ..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— cs_student_22</span>
+                    <span class="likes">👍 12</span>
+                    <span class="sem-info"> · Prof Tan, Tan · AY22/23 Sem 2</span>
+                </div>
+            </div>
+            <div class="excerpt positive">
+                <p class="excerpt-text">"This was the hardest module I've taken so far. I came from an engineering background with minimal coding experience and the prerequisites (CS1101S) were NOT enough. You really need to be comfortable with recursion and basic data structures before taking this. The pace is relentless - new data struct..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— struggling_eng</span>
+                    <span class="likes">👍 8</span>
+                    
+                </div>
+            </div>
+            <div class="excerpt positive">
+                <p class="excerpt-text">"The module is well-structured. Each week builds logically on the previous one. But I wish there was more feedback on assignments - we just got a grade with no explanation of what we did wrong. Hard to improve when you don't know your mistakes. The midterm was fair but the final had questions on topi..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— quiet_student</span>
+                    <span class="likes">👍 7</span>
+                    
+                </div>
+            </div>
+            </details>
+        </div>
+        <div class="aspect-block">
+            <div class="aspect-header">
+                <h4>Pacing across semester</h4>
+                <span class="mention-badge">3/17 reviews (18%)</span>
+            </div>
+            
+            
+            <span class="muted">Only 3 reviews tagged — showing excerpts instead</span>
+            <div class="keywords"><span class="pill">most (4)</span><span class="pill">time (3)</span><span class="pill">around (3)</span><span class="pill">people (2)</span><span class="pill">assignments (2)</span><span class="pill">modules (2)</span></div>
+            <details>
+                <summary>View excerpts (3 of 3)</summary>
+                
+            <div class="excerpt positive">
+                <p class="excerpt-text">"Retook this module after getting D+ the first time. Second time around with better preparation it was much more manageable. My advice: make sure you're solid on sorting algorithms and basic graph theory BEFORE the semester starts. The jump in difficulty around week 5-6 when we hit balanced BSTs is w..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— second_timer</span>
+                    <span class="likes">👍 10</span>
+                    
+                </div>
+            </div>
+            <div class="excerpt negative">
+                <p class="excerpt-text">"I was taking 5 modules that semester and this one ate up most of my time. The assignments are long and you can't start them last minute. Deadlines overlapped with my other CS modules constantly. I felt overwhelmed most of the semester. Content wise it's important but the pressure was too much. Atten..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— burned_out</span>
+                    <span class="likes">👍 9</span>
+                    
+                </div>
+            </div>
+            <div class="excerpt positive">
+                <p class="excerpt-text">"The module is well-structured. Each week builds logically on the previous one. But I wish there was more feedback on assignments - we just got a grade with no explanation of what we did wrong. Hard to improve when you don't know your mistakes. The midterm was fair but the final had questions on topi..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— quiet_student</span>
+                    <span class="likes">👍 7</span>
+                    
+                </div>
+            </div>
+            </details>
+        </div>
+        <div class="aspect-block">
+            <div class="aspect-header">
+                <h4>Assessment format & structure</h4>
+                <span class="mention-badge">5/17 reviews (29%)</span>
+            </div>
+            
+            
+            <span class="muted">Only 5 reviews tagged — showing excerpts instead</span>
+            <div class="keywords"><span class="pill">topics (4)</span><span class="pill">questions (3)</span><span class="pill">grading (3)</span><span class="pill">fair (3)</span><span class="pill">hours (3)</span><span class="pill">lectures (3)</span></div>
+            <details>
+                <summary>View excerpts (3 of 5)</summary>
+                
+            <div class="excerpt positive">
+                <p class="excerpt-text">"Best CS module hands down. Prof Tan is incredibly passionate and makes even the dry topics like amortized analysis feel exciting. The problem sets are tough but very rewarding. I particularly liked how the assessments actually tested understanding rather than memorization - the exam questions requir..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— algo_lover</span>
+                    <span class="likes">👍 15</span>
+                    <span class="sem-info"> · Prof Tan</span>
+                </div>
+            </div>
+            <div class="excerpt negative">
+                <p class="excerpt-text">"The grading for this module is a black box. I studied harder for this than any other module and still got a B-. Meanwhile my friend who seemed to put in less effort got an A. The bell curve is brutal. Also the exam had at least 2 questions on topics the prof rushed through in the last lecture. Not f..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— frustrated_student</span>
+                    <span class="likes">👍 11</span>
+                    
+                </div>
+            </div>
+            <div class="excerpt positive">
+                <p class="excerpt-text">"The module is well-structured. Each week builds logically on the previous one. But I wish there was more feedback on assignments - we just got a grade with no explanation of what we did wrong. Hard to improve when you don't know your mistakes. The midterm was fair but the final had questions on topi..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— quiet_student</span>
+                    <span class="likes">👍 7</span>
+                    
+                </div>
+            </div>
+            </details>
+        </div></div></div><div class="component-group"><h2>Component 3: Is This Course Worth Taking?</h2>
+        <div class="component-card">
+            <div class="component-title">
+                <span class="comp-num">Component 3a</span>
+                <div>
+                    <h3>Career & Learning Relevance</h3>
+                    <p class="comp-question">Is this course useful for my goals?</p>
+                </div>
+            </div>
+        <div class="aspect-block">
+            <div class="aspect-header">
+                <h4>Career usefulness</h4>
+                <span class="mention-badge">4/17 reviews (24%)</span>
+            </div>
+            
+            
+            <span class="muted">Only 4 reviews tagged — showing excerpts instead</span>
+            <div class="keywords"><span class="pill">interviews (3)</span><span class="pill">content (3)</span><span class="pill">problem (3)</span><span class="pill">swe (2)</span><span class="pill">itself (2)</span><span class="pill">tan (2)</span></div>
+            <details>
+                <summary>View excerpts (3 of 4)</summary>
+                
+            <div class="excerpt negative">
+                <p class="excerpt-text">"Essential module for SWE interviews. Almost everything you learn here comes up in technical interviews at FAANG companies. The content itself isn't that abstract if you've done well in CS1101S and have decent math foundations. Prof Tan's teaching is top tier. My only complaint is the deadline cluste..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— pragmatic_senior</span>
+                    <span class="likes">👍 20</span>
+                    <span class="sem-info"> · Prof Tan</span>
+                </div>
+            </div>
+            <div class="excerpt positive">
+                <p class="excerpt-text">"Taking this purely because every SWE job requires DSA knowledge. The content itself can be dry at times but knowing it opens so many doors. I didn't find it particularly enjoyable but I recognize its value. The skills you build here - problem decomposition, algorithmic thinking - transfer to literal..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— career_focused</span>
+                    <span class="likes">👍 6</span>
+                    
+                </div>
+            </div>
+            <div class="excerpt positive">
+                <p class="excerpt-text">"Honestly not that hard if you have a strong CS1101S foundation. I spent maybe 6-8 hours per week and got an A-. Prof Tan is one of the best lecturers in the department. The key is to start problem sets early and go to office hours if stuck. Don't just read the textbook - you need to code the data st..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— overachiever_99</span>
+                    <span class="likes">👍 4</span>
+                    <span class="sem-info"> · Prof Tan</span>
+                </div>
+            </div>
+            </details>
+        </div>
+        <div class="aspect-block">
+            <div class="aspect-header">
+                <h4>Skill-building</h4>
+                <span class="mention-badge">2/17 reviews (12%)</span>
+            </div>
+            
+            
+            <span class="muted">Only 2 reviews tagged — showing excerpts instead</span>
+            <div class="keywords"><span class="pill">swe (2)</span><span class="pill">interviews (2)</span><span class="pill">content (2)</span><span class="pill">itself (2)</span><span class="pill">problem (2)</span><span class="pill">other (2)</span></div>
+            <details>
+                <summary>View excerpts (2 of 2)</summary>
+                
+            <div class="excerpt negative">
+                <p class="excerpt-text">"Essential module for SWE interviews. Almost everything you learn here comes up in technical interviews at FAANG companies. The content itself isn't that abstract if you've done well in CS1101S and have decent math foundations. Prof Tan's teaching is top tier. My only complaint is the deadline cluste..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— pragmatic_senior</span>
+                    <span class="likes">👍 20</span>
+                    <span class="sem-info"> · Prof Tan</span>
+                </div>
+            </div>
+            <div class="excerpt positive">
+                <p class="excerpt-text">"Taking this purely because every SWE job requires DSA knowledge. The content itself can be dry at times but knowing it opens so many doors. I didn't find it particularly enjoyable but I recognize its value. The skills you build here - problem decomposition, algorithmic thinking - transfer to literal..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— career_focused</span>
+                    <span class="likes">👍 6</span>
+                    
+                </div>
+            </div>
+            </details>
+        </div>
+        <div class="aspect-block">
+            <div class="aspect-header">
+                <h4>Intellectual value</h4>
+                <span class="mention-badge">2/17 reviews (12%)</span>
+            </div>
+            
+            
+            <span class="muted">Only 2 reviews tagged — showing excerpts instead</span>
+            <div class="keywords"><span class="pill">beautiful (2)</span><span class="pill">though (2)</span><span class="pill">hours (2)</span><span class="pill">math (1)</span><span class="pill">major (1)</span><span class="pill">taking (1)</span></div>
+            <details>
+                <summary>View excerpts (2 of 2)</summary>
+                
+            <div class="excerpt negative">
+                <p class="excerpt-text">"Was a TA for this course. Common struggles I saw: students underestimate the time needed for problem sets, they don't practice enough on their own before coming to tutorials, and many have weak recursion fundamentals from CS1101S. If you're considering this module, make sure you can write recursive ..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— ta_perspective</span>
+                    <span class="likes">👍 18</span>
+                    
+                </div>
+            </div>
+            <div class="excerpt positive">
+                <p class="excerpt-text">"As a math major taking this as an elective, I found the theoretical parts very manageable but the programming assignments were challenging since I'm not as experienced with Java. The graph algorithms section was beautiful though - very elegant proofs. Spent about 8 hours per week. Would have appreci..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— math_major_here</span>
+                    <span class="likes">👍 4</span>
+                    <span class="sem-info"> · Prof Tan</span>
+                </div>
+            </div>
+            </details>
+        </div>
+        <div class="aspect-block">
+            <div class="aspect-header">
+                <h4>Delivers on description</h4>
+                <span class="mention-badge">1/17 reviews (6%)</span>
+            </div>
+            
+            
+            <span class="muted">Only 1 reviews tagged — showing excerpts instead</span>
+            <div class="keywords"><span class="pill">hours (3)</span><span class="pill">difficulty (1)</span><span class="pill">higher (1)</span><span class="pill">expected (1)</span><span class="pill">based (1)</span><span class="pill">prereqs (1)</span></div>
+            <details>
+                <summary>View excerpts (1 of 1)</summary>
+                
+            <div class="excerpt positive">
+                <p class="excerpt-text">"I'm an IS student who took this. The difficulty was higher than what I expected based on the prereqs. The module assumes you're comfortable with fairly complex code but IS students don't get as much programming practice as CS students. That said, Prof Tan was very helpful during office hours and the..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— is_student</span>
+                    <span class="likes">👍 5</span>
+                    <span class="sem-info"> · Prof Tan</span>
+                </div>
+            </div>
+            </details>
+        </div></div>
+        <div class="component-card">
+            <div class="component-title">
+                <span class="comp-num">Component 3b</span>
+                <div>
+                    <h3>Interest & Enjoyment</h3>
+                    <p class="comp-question">Will I actually enjoy this course?</p>
+                </div>
+            </div>
+        <div class="aspect-block">
+            <div class="aspect-header">
+                <h4>Topic interest</h4>
+                <span class="mention-badge">3/17 reviews (18%)</span>
+            </div>
+            
+            
+            <span class="muted">Only 3 reviews tagged — showing excerpts instead</span>
+            <div class="keywords"><span class="pill">tan (3)</span><span class="pill">problem (3)</span><span class="pill">content (2)</span><span class="pill">around (2)</span><span class="pill">hours (2)</span><span class="pill">sets (2)</span></div>
+            <details>
+                <summary>View excerpts (3 of 3)</summary>
+                
+            <div class="excerpt positive">
+                <p class="excerpt-text">"Best CS module hands down. Prof Tan is incredibly passionate and makes even the dry topics like amortized analysis feel exciting. The problem sets are tough but very rewarding. I particularly liked how the assessments actually tested understanding rather than memorization - the exam questions requir..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— algo_lover</span>
+                    <span class="likes">👍 15</span>
+                    <span class="sem-info"> · Prof Tan</span>
+                </div>
+            </div>
+            <div class="excerpt positive">
+                <p class="excerpt-text">"Took this in AY22/23 Sem 2 with Prof Tan. The content is really interesting but the workload is no joke. I spent around 12-15 hours per week on problem sets alone. The topics build on each other fast so if you fall behind it's hard to catch up. Prof Tan explains things clearly though and his slides ..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— cs_student_22</span>
+                    <span class="likes">👍 12</span>
+                    <span class="sem-info"> · Prof Tan, Tan · AY22/23 Sem 2</span>
+                </div>
+            </div>
+            <div class="excerpt positive">
+                <p class="excerpt-text">"Taking this purely because every SWE job requires DSA knowledge. The content itself can be dry at times but knowing it opens so many doors. I didn't find it particularly enjoyable but I recognize its value. The skills you build here - problem decomposition, algorithmic thinking - transfer to literal..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— career_focused</span>
+                    <span class="likes">👍 6</span>
+                    
+                </div>
+            </div>
+            </details>
+        </div>
+        <div class="aspect-block">
+            <div class="aspect-header">
+                <h4>Overall satisfaction</h4>
+                <span class="mention-badge">2/17 reviews (12%)</span>
+            </div>
+            
+            
+            <span class="muted">Only 2 reviews tagged — showing excerpts instead</span>
+            <div class="keywords"><span class="pill">tan (3)</span><span class="pill">around (2)</span><span class="pill">hours (2)</span><span class="pill">problem (2)</span><span class="pill">sets (2)</span><span class="pill">topics (2)</span></div>
+            <details>
+                <summary>View excerpts (2 of 2)</summary>
+                
+            <div class="excerpt positive">
+                <p class="excerpt-text">"Best CS module hands down. Prof Tan is incredibly passionate and makes even the dry topics like amortized analysis feel exciting. The problem sets are tough but very rewarding. I particularly liked how the assessments actually tested understanding rather than memorization - the exam questions requir..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— algo_lover</span>
+                    <span class="likes">👍 15</span>
+                    <span class="sem-info"> · Prof Tan</span>
+                </div>
+            </div>
+            <div class="excerpt positive">
+                <p class="excerpt-text">"Took this in AY22/23 Sem 2 with Prof Tan. The content is really interesting but the workload is no joke. I spent around 12-15 hours per week on problem sets alone. The topics build on each other fast so if you fall behind it's hard to catch up. Prof Tan explains things clearly though and his slides ..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— cs_student_22</span>
+                    <span class="likes">👍 12</span>
+                    <span class="sem-info"> · Prof Tan, Tan · AY22/23 Sem 2</span>
+                </div>
+            </div>
+            </details>
+        </div></div></div><div class="component-group"><h2>Contextual Layer: Logistics</h2>
+        <div class="component-card">
+            <div class="component-title">
+                <span class="comp-num">Contextual</span>
+                <div>
+                    <h3>Logistics</h3>
+                    <p class="comp-question">Attendance, recordings, format (varies by semester/instructor)</p>
+                </div>
+            </div>
+        <div class="aspect-block">
+            <div class="aspect-header">
+                <h4>Attendance policy</h4>
+                <span class="mention-badge">3/17 reviews (18%)</span>
+            </div>
+            
+            
+            <span class="muted">Only 3 reviews tagged — showing excerpts instead</span>
+            <div class="keywords"><span class="pill">tan (2)</span><span class="pill">problem (2)</span><span class="pill">sets (2)</span><span class="pill">are (2)</span><span class="pill">required (2)</span><span class="pill">lectures (2)</span></div>
+            <details>
+                <summary>View excerpts (3 of 3)</summary>
+                
+            <div class="excerpt negative">
+                <p class="excerpt-text">"Essential module for SWE interviews. Almost everything you learn here comes up in technical interviews at FAANG companies. The content itself isn't that abstract if you've done well in CS1101S and have decent math foundations. Prof Tan's teaching is top tier. My only complaint is the deadline cluste..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— pragmatic_senior</span>
+                    <span class="likes">👍 20</span>
+                    <span class="sem-info"> · Prof Tan</span>
+                </div>
+            </div>
+            <div class="excerpt positive">
+                <p class="excerpt-text">"Best CS module hands down. Prof Tan is incredibly passionate and makes even the dry topics like amortized analysis feel exciting. The problem sets are tough but very rewarding. I particularly liked how the assessments actually tested understanding rather than memorization - the exam questions requir..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— algo_lover</span>
+                    <span class="likes">👍 15</span>
+                    <span class="sem-info"> · Prof Tan</span>
+                </div>
+            </div>
+            <div class="excerpt negative">
+                <p class="excerpt-text">"I was taking 5 modules that semester and this one ate up most of my time. The assignments are long and you can't start them last minute. Deadlines overlapped with my other CS modules constantly. I felt overwhelmed most of the semester. Content wise it's important but the pressure was too much. Atten..."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— burned_out</span>
+                    <span class="likes">👍 9</span>
+                    
+                </div>
+            </div>
+            </details>
+        </div>
+        <div class="aspect-block">
+            <div class="aspect-header">
+                <h4>Recorded lectures</h4>
+                <span class="mention-badge">1/17 reviews (6%)</span>
+            </div>
+            
+            
+            <span class="muted">Only 1 reviews tagged — showing excerpts instead</span>
+            <div class="keywords"><span class="pill">want (1)</span><span class="pill">add (1)</span><span class="pill">lee (1)</span><span class="pill">recorded (1)</span><span class="pill">lectures (1)</span><span class="pill">are (1)</span></div>
+            <details>
+                <summary>View excerpts (1 of 1)</summary>
+                
+            <div class="excerpt positive">
+                <p class="excerpt-text">"Just want to add - if you get Prof Lee, the recorded lectures are essential because his live delivery can be confusing. But the recordings let you pause and rewind which actually helps. Also the textbook (CLRS) is way too dense for this course level, use VisuAlgo instead."</p>
+                <div class="excerpt-meta">
+                    <span class="author">— night_owl_coder</span>
+                    <span class="likes">👍 7</span>
+                    <span class="sem-info"> · Prof Lee</span>
+                </div>
+            </div>
+            </details>
+        </div>
+        <div class="aspect-block">
+            <div class="aspect-header">
+                <h4>Delivery format</h4>
+                <span class="mention-badge zero">0 mentions</span>
+            </div>
+            
+            
+            <span class="muted">No reviews tagged</span>
+            
+            <details>
+                <summary>View excerpts (0 of 0)</summary>
+                <p class="muted">No relevant excerpts found.</p>
+            </details>
+        </div></div></div>
+
+    <div class="component-group"><h2>Reviewer Profiles (Cross-Course)</h2><div class="component-card"><p class="comp-question">How do reviewers of this course rate other courses? Helps calibrate whether a reviewer is generally harsh/generous or specifically so for this course.</p>
+            <div class="profile-card">
+                <div class="profile-header">
+                    <strong>cs_student_22</strong>
+                    <span class="mention-badge">2 other courses reviewed</span>
+                </div>
+                <div class="profile-body">
+                    <div>Also reviewed: CS1101S, MA1521</div>
+                    <div>Grades in other courses: A, B</div>
+                    <div>✅ Rated this course notably higher than their other courses</div>
+                </div>
+            </div>
+            <div class="profile-card">
+                <div class="profile-header">
+                    <strong>struggling_eng</strong>
+                    <span class="mention-badge">2 other courses reviewed</span>
+                </div>
+                <div class="profile-body">
+                    <div>Also reviewed: CS1101S, ST2334</div>
+                    <div>Grades in other courses: C, B</div>
+                    <div>➖ Similar sentiment to their other course reviews</div>
+                </div>
+            </div>
+            <div class="profile-card">
+                <div class="profile-header">
+                    <strong>algo_lover</strong>
+                    <span class="mention-badge">2 other courses reviewed</span>
+                </div>
+                <div class="profile-body">
+                    <div>Also reviewed: CS2030S, CS3230</div>
+                    <div>Grades in other courses: A, A</div>
+                    <div>➖ Similar sentiment to their other course reviews</div>
+                </div>
+            </div>
+            <div class="profile-card">
+                <div class="profile-header">
+                    <strong>pragmatic_senior</strong>
+                    <span class="mention-badge">1 other courses reviewed</span>
+                </div>
+                <div class="profile-body">
+                    <div>Also reviewed: CS2103T</div>
+                    <div>Grades in other courses: A</div>
+                    <div>⚠️ Rated this course notably lower than their other courses</div>
+                </div>
+            </div>
+            <div class="profile-card">
+                <div class="profile-header">
+                    <strong>night_owl_coder</strong>
+                    <span class="mention-badge">1 other courses reviewed</span>
+                </div>
+                <div class="profile-body">
+                    <div>Also reviewed: CS2030S</div>
+                    <div>Grades in other courses: B</div>
+                    <div>✅ Rated this course notably higher than their other courses</div>
+                </div>
+            </div>
+            <div class="profile-card">
+                <div class="profile-header">
+                    <strong>burned_out</strong>
+                    <span class="mention-badge">1 other courses reviewed</span>
+                </div>
+                <div class="profile-body">
+                    <div>Also reviewed: CS2103T</div>
+                    <div>Grades in other courses: B</div>
+                    <div>➖ Similar sentiment to their other course reviews</div>
+                </div>
+            </div>
+            <div class="profile-card">
+                <div class="profile-header">
+                    <strong>overachiever_99</strong>
+                    <span class="mention-badge">1 other courses reviewed</span>
+                </div>
+                <div class="profile-body">
+                    <div>Also reviewed: CS2100</div>
+                    <div>Grades in other courses: A</div>
+                    <div>✅ Rated this course notably higher than their other courses</div>
+                </div>
+            </div>
+            <div class="profile-card">
+                <div class="profile-header">
+                    <strong>career_focused</strong>
+                    <span class="mention-badge">1 other courses reviewed</span>
+                </div>
+                <div class="profile-body">
+                    <div>Also reviewed: CS2101</div>
+                    <div>Grades in other courses: N/A</div>
+                    <div>✅ Rated this course notably higher than their other courses</div>
+                </div>
+            </div>
+            <div class="profile-card">
+                <div class="profile-header">
+                    <strong>is_student</strong>
+                    <span class="mention-badge">1 other courses reviewed</span>
+                </div>
+                <div class="profile-body">
+                    <div>Also reviewed: IS1108</div>
+                    <div>Grades in other courses: A</div>
+                    <div>➖ Similar sentiment to their other course reviews</div>
+                </div>
+            </div></div></div>
+
+    <div class="method-note">
+        <h3>Methodology</h3>
+        <p>Aspect tagging: keyword/regex matching (no model training). Sentiment: VADER (rule-based, designed for informal text). 
+        Hours & grades: regex numeric extraction. Reviewer profiles: cross-course sentiment comparison by author.
+        This is a prototype to validate whether the dataset contains extractable signal. Results should be interpreted as directional, not precise.</p>
+    </div>
+</body>
+</html>

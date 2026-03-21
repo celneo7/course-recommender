@@ -1,0 +1,182 @@
+[
+  {
+    "post_id": "1001",
+    "author": "cs_student_22",
+    "message": "Took this in AY22/23 Sem 2 with Prof Tan. The content is really interesting but the workload is no joke. I spent around 12-15 hours per week on problem sets alone. The topics build on each other fast so if you fall behind it's hard to catch up. Prof Tan explains things clearly though and his slides are well organized. Ended with a B+, which I think is fair for the effort I put in. Would recommend if you genuinely enjoy algorithms.",
+    "date": "2023-06-15T10:30:00",
+    "likes": "12",
+    "dislikes": "0",
+    "reply_to_author": null,
+    "reply_to_post_id": null
+  },
+  {
+    "post_id": "1002",
+    "author": "struggling_eng",
+    "message": "This was the hardest module I've taken so far. I came from an engineering background with minimal coding experience and the prerequisites (CS1101S) were NOT enough. You really need to be comfortable with recursion and basic data structures before taking this. The pace is relentless - new data structure every week. I spent 20+ hours some weeks just trying to understand the concepts. The tutorials helped but office hours were always packed. Ended with a C+.",
+    "date": "2023-06-20T14:15:00",
+    "likes": "8",
+    "dislikes": "1",
+    "reply_to_author": null,
+    "reply_to_post_id": null
+  },
+  {
+    "post_id": "1003",
+    "author": "algo_lover",
+    "message": "Best CS module hands down. Prof Tan is incredibly passionate and makes even the dry topics like amortized analysis feel exciting. The problem sets are tough but very rewarding. I particularly liked how the assessments actually tested understanding rather than memorization - the exam questions required you to apply concepts to novel problems. Grading was fair. Around 10 hours per week of work outside lectures.",
+    "date": "2023-07-01T09:00:00",
+    "likes": "15",
+    "dislikes": "0",
+    "reply_to_author": null,
+    "reply_to_post_id": null
+  },
+  {
+    "post_id": "1004",
+    "author": "pragmatic_senior",
+    "message": "Essential module for SWE interviews. Almost everything you learn here comes up in technical interviews at FAANG companies. The content itself isn't that abstract if you've done well in CS1101S and have decent math foundations. Prof Tan's teaching is top tier. My only complaint is the deadline clustering - problem sets 3, 4 and 5 all came within 2 weeks of each other. Attendance not required but you'd be foolish to skip lectures.",
+    "date": "2023-07-10T16:45:00",
+    "likes": "20",
+    "dislikes": "0",
+    "reply_to_author": null,
+    "reply_to_post_id": null
+  },
+  {
+    "post_id": "1005",
+    "author": "night_owl_coder",
+    "message": "Took this with Prof Lee in AY23/24 Sem 1. Very different experience from what I heard about Prof Tan's version. Prof Lee's lectures were a bit disorganized and he tends to jump between topics. The content is the same but delivery matters a lot. Tutorials were hit or miss depending on your TA. Workload was manageable though, maybe 8-10 hours per week. Grading felt harsh - I thought I did well on the midterm but got below average.",
+    "date": "2024-01-15T11:00:00",
+    "likes": "6",
+    "dislikes": "2",
+    "reply_to_author": null,
+    "reply_to_post_id": null
+  },
+  {
+    "post_id": "1006",
+    "author": "cs_student_22",
+    "message": "Replying to my own comment - forgot to mention that the recorded lectures were really helpful for revision. Also the Kattis practice problems are great for building intuition. If you're worried about difficulty, start practicing on Kattis before the semester begins.",
+    "date": "2023-06-15T12:00:00",
+    "likes": "5",
+    "dislikes": "0",
+    "reply_to_author": "cs_student_22",
+    "reply_to_post_id": "1001"
+  },
+  {
+    "post_id": "1007",
+    "author": "math_major_here",
+    "message": "As a math major taking this as an elective, I found the theoretical parts very manageable but the programming assignments were challenging since I'm not as experienced with Java. The graph algorithms section was beautiful though - very elegant proofs. Spent about 8 hours per week. Would have appreciated more support for non-CS students on the coding side. Prof Tan was understanding when I went to office hours though.",
+    "date": "2023-08-01T13:30:00",
+    "likes": "4",
+    "dislikes": "0",
+    "reply_to_author": null,
+    "reply_to_post_id": null
+  },
+  {
+    "post_id": "1008",
+    "author": "second_timer",
+    "message": "Retook this module after getting D+ the first time. Second time around with better preparation it was much more manageable. My advice: make sure you're solid on sorting algorithms and basic graph theory BEFORE the semester starts. The jump in difficulty around week 5-6 when we hit balanced BSTs is where most people struggle. The curve helped a lot. Most people got B- to B+ range.",
+    "date": "2023-09-10T08:00:00",
+    "likes": "10",
+    "dislikes": "0",
+    "reply_to_author": null,
+    "reply_to_post_id": null
+  },
+  {
+    "post_id": "1009",
+    "author": "quiet_student",
+    "message": "The module is well-structured. Each week builds logically on the previous one. But I wish there was more feedback on assignments - we just got a grade with no explanation of what we did wrong. Hard to improve when you don't know your mistakes. The midterm was fair but the final had questions on topics that were barely covered in lectures. Spent around 12 hours per week.",
+    "date": "2023-10-01T17:00:00",
+    "likes": "7",
+    "dislikes": "1",
+    "reply_to_author": null,
+    "reply_to_post_id": null
+  },
+  {
+    "post_id": "1010",
+    "author": "exchange_student",
+    "message": "Coming from a European university, this course is very well taught compared to equivalent courses I've seen. The emphasis on practical implementation alongside theory is great. However, the workload is significantly higher than what I'm used to. Group project was stressful with tight deadlines. The content is extremely relevant if you're going into software engineering or grad school.",
+    "date": "2023-11-01T14:00:00",
+    "likes": "3",
+    "dislikes": "0",
+    "reply_to_author": null,
+    "reply_to_post_id": null
+  },
+  {
+    "post_id": "1011",
+    "author": "burned_out",
+    "message": "I was taking 5 modules that semester and this one ate up most of my time. The assignments are long and you can't start them last minute. Deadlines overlapped with my other CS modules constantly. I felt overwhelmed most of the semester. Content wise it's important but the pressure was too much. Attendance wasn't mandatory but participation in tutorials counted for grades.",
+    "date": "2023-11-15T20:00:00",
+    "likes": "9",
+    "dislikes": "0",
+    "reply_to_author": null,
+    "reply_to_post_id": null
+  },
+  {
+    "post_id": "1012",
+    "author": "overachiever_99",
+    "message": "Honestly not that hard if you have a strong CS1101S foundation. I spent maybe 6-8 hours per week and got an A-. Prof Tan is one of the best lecturers in the department. The key is to start problem sets early and go to office hours if stuck. Don't just read the textbook - you need to code the data structures yourself to truly understand them. Very useful for interviews.",
+    "date": "2023-12-01T10:00:00",
+    "likes": "4",
+    "dislikes": "3",
+    "reply_to_author": null,
+    "reply_to_post_id": null
+  },
+  {
+    "post_id": "1013",
+    "author": "career_focused",
+    "message": "Taking this purely because every SWE job requires DSA knowledge. The content itself can be dry at times but knowing it opens so many doors. I didn't find it particularly enjoyable but I recognize its value. The skills you build here - problem decomposition, algorithmic thinking - transfer to literally every other CS module. Got a B which I'm fine with.",
+    "date": "2024-01-20T09:30:00",
+    "likes": "6",
+    "dislikes": "0",
+    "reply_to_author": null,
+    "reply_to_post_id": null
+  },
+  {
+    "post_id": "1014",
+    "author": "frustrated_student",
+    "message": "The grading for this module is a black box. I studied harder for this than any other module and still got a B-. Meanwhile my friend who seemed to put in less effort got an A. The bell curve is brutal. Also the exam had at least 2 questions on topics the prof rushed through in the last lecture. Not fair at all.",
+    "date": "2024-02-01T22:00:00",
+    "likes": "11",
+    "dislikes": "2",
+    "reply_to_author": null,
+    "reply_to_post_id": null
+  },
+  {
+    "post_id": "1015",
+    "author": "ta_perspective",
+    "message": "Was a TA for this course. Common struggles I saw: students underestimate the time needed for problem sets, they don't practice enough on their own before coming to tutorials, and many have weak recursion fundamentals from CS1101S. If you're considering this module, make sure you can write recursive functions in your sleep. The course content is beautiful once it clicks.",
+    "date": "2024-02-15T14:00:00",
+    "likes": "18",
+    "dislikes": "0",
+    "reply_to_author": null,
+    "reply_to_post_id": null
+  },
+  {
+    "post_id": "1016",
+    "author": "struggling_eng",
+    "message": "Update: I retook this and got a B+ after spending the break doing practice problems. The course hasn't changed much but my preparation was completely different. Background preparation is EVERYTHING for this module.",
+    "date": "2024-03-01T10:00:00",
+    "likes": "14",
+    "dislikes": "0",
+    "reply_to_author": null,
+    "reply_to_post_id": null
+  },
+  {
+    "post_id": "1017",
+    "author": "is_student",
+    "message": "I'm an IS student who took this. The difficulty was higher than what I expected based on the prereqs. The module assumes you're comfortable with fairly complex code but IS students don't get as much programming practice as CS students. That said, Prof Tan was very helpful during office hours and the TAs were patient. You'll need to put in extra hours if you're not from CS. I did about 15 hours per week. Got a B.",
+    "date": "2024-03-15T16:00:00",
+    "likes": "5",
+    "dislikes": "0",
+    "reply_to_author": null,
+    "reply_to_post_id": null
+  },
+  {
+    "post_id": "1018",
+    "author": "night_owl_coder",
+    "message": "Just want to add - if you get Prof Lee, the recorded lectures are essential because his live delivery can be confusing. But the recordings let you pause and rewind which actually helps. Also the textbook (CLRS) is way too dense for this course level, use VisuAlgo instead.",
+    "date": "2024-04-01T23:30:00",
+    "likes": "7",
+    "dislikes": "0",
+    "reply_to_author": null,
+    "reply_to_post_id": null
+  }
+]

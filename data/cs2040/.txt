@@ -1,3 +1,10 @@
+# either pinpoint one specific ML problem & go off a build
+# or focus on application - build the parts you are able to build (dont need new algo for some of those)
+
+try implementing the model; if too hard then focus on the application & then utility of application and where survey comes into play
+if cannot build the model, then now allow users to give more systemized data so next time can build better models
+
+
 
 ────────────────────────────────────────────────────────────
   LABEL EXTRACTION SUMMARY (49 reviews)

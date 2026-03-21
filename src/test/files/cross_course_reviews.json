@@ -1,0 +1,98 @@
+[
+  {
+    "course_code": "CS1101S",
+    "post_id": "2001",
+    "author": "cs_student_22",
+    "message": "Great intro to CS. Prof Henz is amazing. Workload is heavy but manageable. About 10 hours per week. The concepts are fundamental and well-taught. Got an A-.",
+    "date": "2022-12-01T10:00:00",
+    "likes": "8", "dislikes": "0", "reply_to_author": null, "reply_to_post_id": null
+  },
+  {
+    "course_code": "CS1101S",
+    "post_id": "2002",
+    "author": "struggling_eng",
+    "message": "As an engineering student this was really tough. No prior programming experience and the pace was fast. Spent 18 hours a week and still only got a C+. The concepts are interesting but I felt left behind.",
+    "date": "2022-12-05T14:00:00",
+    "likes": "5", "dislikes": "0", "reply_to_author": null, "reply_to_post_id": null
+  },
+  {
+    "course_code": "MA1521",
+    "post_id": "3001",
+    "author": "cs_student_22",
+    "message": "Standard calculus module. Not too bad if you did well in JC math. About 5-6 hours per week. Exams are straightforward. Got a B+.",
+    "date": "2022-12-10T10:00:00",
+    "likes": "3", "dislikes": "0", "reply_to_author": null, "reply_to_post_id": null
+  },
+  {
+    "course_code": "CS2030S",
+    "post_id": "4001",
+    "author": "algo_lover",
+    "message": "Loved this module. OOP and functional programming concepts are well-covered. Prof is clear and the labs are fun. About 10 hours per week. Got an A.",
+    "date": "2023-01-15T09:00:00",
+    "likes": "6", "dislikes": "0", "reply_to_author": null, "reply_to_post_id": null
+  },
+  {
+    "course_code": "CS2030S",
+    "post_id": "4002",
+    "author": "night_owl_coder",
+    "message": "Decent module but the labs can be frustrating. Sometimes unclear what's expected. Teaching was okay, not great. About 8 hours per week. Got a B.",
+    "date": "2023-06-01T11:00:00",
+    "likes": "4", "dislikes": "1", "reply_to_author": null, "reply_to_post_id": null
+  },
+  {
+    "course_code": "ST2334",
+    "post_id": "5001",
+    "author": "struggling_eng",
+    "message": "Statistics is not my thing but this was manageable. The workload was light compared to CS modules. About 5 hours per week. Got a B-. Prof was decent.",
+    "date": "2023-06-10T14:00:00",
+    "likes": "2", "dislikes": "0", "reply_to_author": null, "reply_to_post_id": null
+  },
+  {
+    "course_code": "CS2103T",
+    "post_id": "6001",
+    "author": "pragmatic_senior",
+    "message": "Software engineering module. Very practical and directly applicable to industry. Group project heavy. About 12 hours per week but spikes during project deadlines. Got an A-. Highly recommend.",
+    "date": "2023-08-01T16:00:00",
+    "likes": "10", "dislikes": "0", "reply_to_author": null, "reply_to_post_id": null
+  },
+  {
+    "course_code": "CS2103T",
+    "post_id": "6002",
+    "author": "burned_out",
+    "message": "The group project was a nightmare. Workload was insane, easily 15-20 hours per week towards the end. I was so stressed. Content is useful but the execution of this module needs work. Got a B.",
+    "date": "2023-08-05T20:00:00",
+    "likes": "7", "dislikes": "1", "reply_to_author": null, "reply_to_post_id": null
+  },
+  {
+    "course_code": "IS1108",
+    "post_id": "7001",
+    "author": "is_student",
+    "message": "Good intro to IS. Covers a lot of ground. Not too technical. About 6 hours per week. The group project was interesting. Got an A-.",
+    "date": "2023-06-01T16:00:00",
+    "likes": "3", "dislikes": "0", "reply_to_author": null, "reply_to_post_id": null
+  },
+  {
+    "course_code": "CS2101",
+    "post_id": "8001",
+    "author": "career_focused",
+    "message": "Communication module paired with CS2103T. Light workload, about 4 hours per week. Presentations and writing. Easy A if you put in effort. Not intellectually stimulating but practical for career.",
+    "date": "2024-01-10T09:00:00",
+    "likes": "5", "dislikes": "0", "reply_to_author": null, "reply_to_post_id": null
+  },
+  {
+    "course_code": "CS3230",
+    "post_id": "9001",
+    "author": "algo_lover",
+    "message": "The natural follow-up to CS2040. Much more theoretical and proof-heavy. If you enjoyed 2040 you'll love this. Workload about 12 hours per week. Very challenging but intellectually satisfying. Got an A-.",
+    "date": "2024-02-01T09:00:00",
+    "likes": "8", "dislikes": "0", "reply_to_author": null, "reply_to_post_id": null
+  },
+  {
+    "course_code": "CS2100",
+    "post_id": "10001",
+    "author": "overachiever_99",
+    "message": "Computer organization. Straightforward if you attend lectures. About 6 hours per week. Content is dry but important. Got an A. Not much to complain about.",
+    "date": "2023-08-01T10:00:00",
+    "likes": "2", "dislikes": "0", "reply_to_author": null, "reply_to_post_id": null
+  }
+]
