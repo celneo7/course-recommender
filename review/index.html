@@ -37,6 +37,20 @@
   .step-counter{font-size:.78rem;color:#6b7280;font-weight:600;white-space:nowrap}
   .captures-row{font-size:.8rem;color:#4b5563;margin-bottom:5px}
   .captures-row strong{color:#374151}
+  .guidance-toggle{background:none;border:1px solid #93c5fd;border-radius:6px;padding:5px 12px;font-size:.8rem;color:#1d4ed8;cursor:pointer;margin-top:8px;display:flex;align-items:center;gap:6px;width:fit-content;font-weight:500}
+  .guidance-toggle:hover{background:#eff6ff}
+  .guidance-toggle .chevron{transition:transform .2s;display:inline-block;font-size:.7rem}
+  .guidance-toggle.open .chevron{transform:rotate(180deg)}
+  .guidance-body{margin-top:6px;padding:10px 12px;background:#f8faff;border:1px solid #dbeafe;border-radius:6px;font-size:.78rem;color:#374151;display:none}
+  .guidance-body.open{display:block}
+  .guidance-rule{margin-bottom:10px}
+  .guidance-rule:last-child{margin-bottom:0}
+  .guidance-rule-title{font-weight:600;color:#1e40af;margin-bottom:3px}
+  .guidance-rule-body{white-space:pre-wrap;color:#374151}
+  .guidance-note{padding:7px 10px;background:#fffbeb;border:1px solid #fde68a;border-radius:5px;margin-bottom:8px;font-size:.78rem}
+  .guidance-note strong{color:#92400e}
+  .guidance-edge{margin-top:6px}
+  .guidance-edge li{margin:2px 0;color:#374151}
 
   /* rubric reference table */
   .rubric-tbl{width:100%;border-collapse:collapse;font-size:.78rem}
@@ -136,7 +150,8 @@ const DIM_INFO = {
       neg:"Says the course is hard, or says it\u2019s not easy (e.g. \u201cthis class destroyed me\u201d)",
       neu:"One overall claim that points both ways (e.g. \u201chard but doable\u201d)",
       pos:"Says the course is easy, or not hard (e.g. \u201cmanageable\u201d, \u201ceasy A\u201d)",
-      na:"No claim about overall difficulty"},
+      na:"No claim about overall difficulty",
+      note:"Only fires on overall-course claims. Component-level complaints (\u201cmidterm was hard\u201d, \u201cPSet 3 destroyed me\u201d) never fire H1 \u2014 those go to H4, H5, or H7."},
   H2:{name:"Emotional & physical impact",
       captures:"Emotional or physical impact the reviewer says the course caused them.",
       neg:"Strong negative feelings or physical strain (e.g. \u201cso stressed\u201d, \u201ccouldn\u2019t sleep\u201d)",
@@ -148,7 +163,8 @@ const DIM_INFO = {
       neg:"Warns to avoid or take precautions (e.g. \u201cdon\u2019t take this\u201d, \u201cstart early\u201d)",
       neu:"Conditional advice (e.g. \u201cgood if prepared, otherwise tough\u201d)",
       pos:"Says most students can handle it (e.g. \u201canyone can take this\u201d)",
-      na:"No advice given, or advice unrelated to difficulty"},
+      na:"No advice given, or advice unrelated to difficulty",
+      note:"Strategy advice (\u201cdo past year papers and you\u2019ll be fine\u201d) isn\u2019t a warning \u2014 doesn\u2019t fire. H3 fires when the advice implies the course punishes unprepared students."},
   H4:{name:"Effort & time investment",
       captures:"How much time, effort, or outside help the course took.",
       neg:"A lot of time/effort/outside help (e.g. \u201cspent every weekend on this\u201d)",
@@ -172,7 +188,8 @@ const DIM_INFO = {
       neg:"Setup made it harder (e.g. \u201cgrading was opaque\u201d, \u201cdeadlines back-to-back\u201d)",
       neu:"Setup mentioned but no clear harder or easier",
       pos:"Setup made it easier (e.g. \u201crubric was clear\u201d, \u201cgenerous partial credit\u201d)",
-      na:"Course setup not mentioned"},
+      na:"Course setup not mentioned",
+      note:"H7 vs H9: \u201cCourse was crammed into half a semester\u201d \u2014 H7 (schedule design). \u201cLecturer rushed through slides\u201d \u2014 H9 (delivery). If unclear, tag both."},
   H8:{name:"Prerequisite bar",
       captures:"How much prior knowledge the course expects you to have.",
       neg:"Lacking prior knowledge made it harder",
@@ -184,13 +201,39 @@ const DIM_INFO = {
       neg:"Teaching made it harder (e.g. \u201clectures confusing\u201d, \u201chad to self-teach\u201d)",
       neu:"Teaching mixed or just adequate",
       pos:"Teaching helped (e.g. \u201clectures were clear\u201d)",
-      na:"Teaching not mentioned"},
+      na:"Teaching not mentioned",
+      note:"H9 does not affect the overall difficulty label. Tag it for completeness, but it is reported separately."},
   label:{name:"Overall difficulty verdict",
       captures:"H1 and H5 are primary signals. H4/H6/H7/H8 reinforce. H2/H3 are experiential. H9 is non-scoring.",
       neg:"Difficult \u2014 H1 or H5 Negative, or structural dims lean Negative",
       neu:"Neutral \u2014 primary signals mixed/absent, structural dims balanced",
       pos:"Easy \u2014 H1 or H5 Positive, or structural dims lean Positive",
       na:"Insufficient signal \u2014 all H1\u2013H8 Not addressed"}
+};
+
+const GENERAL_RULES=[
+  {title:"When unsure, default to \u201cNot addressed\u201d, not \u201cNeutral\u201d",
+   body:"Neutral means one claim about this dimension points both ways. It\u2019s not a catch-all for ambiguity.\n\u2022 H1 Neutral: \u201cIt can be hard but it\u2019s manageable if you put in the work.\u201d \u2014 one overall claim, both directions.\n\u2022 H1 Not addressed: \u201cThe midterm was brutal but the lectures were easy.\u201d \u2014 two separate component-level comments, no overall claim."},
+  {title:"The evidence must point at the course",
+   body:"The difficulty or ease has to be tied to the course itself, not outside factors.\n\u2022 \u201cTextbook was hard to find\u201d \u2014 not H1 Negative (about availability).\n\u2022 \u201cDropped because of a schedule conflict\u201d \u2014 not H5 Negative (drop not caused by difficulty).\n\u2022 \u201cWorked three jobs that semester\u201d \u2014 not H4 Negative (student\u2019s outside life)."}
+];
+
+const LABEL_RULES={
+  decision:[
+    "Difficult: H1 is Negative, OR H5 is Negative, OR most structural dims (H4, H6, H7, H8) point Negative \u2014 and nothing strong points the other way.",
+    "Easy: H1 is Positive, OR H5 is Positive, OR most structural dims point Positive \u2014 and nothing strong points the other way.",
+    "Neutral: H1 and H5 are Neutral or Not addressed, AND structural dims are mixed or balanced.",
+    "Insufficient signal: All dims H1\u2013H8 are Not addressed. Only H9 may be tagged."
+  ],
+  edge_cases:[
+    "H1 Negative; rest Neutral or Not addressed \u2192 Difficult",
+    "H1 Not addressed, H4/H7/H8 all Negative \u2192 Difficult (structural path)",
+    "H1 Not addressed, only one structural dim Negative \u2192 Neutral",
+    "\u201cMidterm was brutal\u201d \u2014 no overall claim \u2192 H1 Not addressed; H4/H7 may fire",
+    "\u201cKind of hard but manageable\u201d \u2192 H1 Neutral",
+    "\u201cI dropped because of a schedule conflict\u201d \u2192 H5 Not addressed",
+    "Only H9 tagged, H1\u2013H8 all Not addressed \u2192 Insufficient signal"
+  ]
 };
 
 const TAG_CLS={"Negative":"tag-neg","Neutral":"tag-neu","Positive":"tag-pos","Not addressed":"tag-na"};
@@ -206,6 +249,7 @@ let curStep=0;
 let chosen={};
 let existing=[];
 let savedFeedback="";
+let pendingPayload=null;
 
 function getReviewerId(){
   let id=localStorage.getItem("reviewer_id");
@@ -220,15 +264,35 @@ async function fetchExisting(){
   try{const r=await fetch(CFG.apps_script_url);existing=await r.json()}catch(e){existing=[]}
 }
 
+function seededShuffle(arr,seed){
+  arr=arr.slice();
+  for(let i=arr.length-1;i>0;i--){
+    seed=(seed*1664525+1013904223)>>>0;
+    const j=seed%(i+1);
+    [arr[i],arr[j]]=[arr[j],arr[i]];
+  }
+  return arr;
+}
+
 function assignReviews(){
+  // Compute reviewer ID hash for seeded shuffle (breaks ties among same-count items,
+  // so simultaneous loaders get different assignments without losing sheet adaptivity).
+  let hash=0;
+  for(let c of reviewerName) hash=(hash*31+c.charCodeAt(0))>>>0;
+
   const items=DATA.items;
   const counts={};
   items.forEach(it=>counts[it.post_id]=new Set());
   existing.forEach(row=>{if(counts[row.post_id])counts[row.post_id].add(row.reviewer_name)});
-  const done=new Set();
-  existing.forEach(row=>{if(row.reviewer_name===reviewerName)done.add(row.post_id)});
-  let eligible=items.map((it,idx)=>({idx,pid:it.post_id,n:counts[it.post_id]?counts[it.post_id].size:0})).filter(x=>!done.has(x.pid));
-  for(let i=eligible.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[eligible[i],eligible[j]]=[eligible[j],eligible[i]]}
+
+  const doneIds=new Set(JSON.parse(localStorage.getItem("reviewer_done_ids_"+reviewerName)||"[]"));
+  existing.forEach(row=>{if(row.reviewer_name===reviewerName)doneIds.add(row.post_id)});
+
+  let eligible=items.map((it,idx)=>({idx,pid:it.post_id,n:counts[it.post_id].size}))
+    .filter(x=>!doneIds.has(x.pid));
+
+  // Seeded shuffle first (deterministic per reviewer), then stable sort by count.
+  eligible=seededShuffle(eligible,hash);
   eligible.sort((a,b)=>a.n-b.n);
   assigned=eligible.slice(0,CFG.reviews_per_reviewer).map(x=>x.idx);
 }
@@ -237,7 +301,11 @@ async function startReview(){
   reviewerName=getReviewerId();
   await fetchExisting();
   assignReviews();
-  if(assigned.length===0){show("scr-done");document.getElementById("done-msg").textContent="No reviews need your input right now. Thanks!";return}
+  if(assigned.length===0){
+    show("scr-done");
+    document.getElementById("done-msg").textContent="You have already completed your reviews. Thank you!";
+    return;
+  }
   curReview=0;curStep=0;chosen={};
   show("scr-review");
   renderReview();
@@ -277,7 +345,26 @@ function renderStep(){
   h+=`<tr class="r-neu"><td>Neutral</td><td>${esc(info.neu)}</td></tr>`;
   h+=`<tr class="r-pos"><td>Positive</td><td>${esc(info.pos)}</td></tr>`;
   h+=`<tr class="r-na"><td>Not addressed</td><td>${esc(info.na)}</td></tr>`;
-  h+=`</table></div>`;
+  h+=`</table>`;
+
+  // collapsible guidance section
+  const gid="guidance-"+curStep;
+  h+=`<button class="guidance-toggle" id="btn-${gid}" onclick="toggleGuidance('${gid}')">&#9432; View additional rules &amp; examples <span class="chevron">&#9660;</span></button>`;
+  h+=`<div class="guidance-body" id="${gid}">`;
+  if(info.note) h+=`<div class="guidance-note"><strong>Note:</strong> ${esc(info.note)}</div>`;
+  GENERAL_RULES.forEach(r=>{
+    h+=`<div class="guidance-rule"><div class="guidance-rule-title">${esc(r.title)}</div>`;
+    h+=`<div class="guidance-rule-body">${esc(r.body)}</div></div>`;
+  });
+  if(isLabel){
+    h+=`<div class="guidance-rule"><div class="guidance-rule-title">Decision rules</div><ul style="margin:4px 0 0 16px;padding:0">`;
+    LABEL_RULES.decision.forEach(d=>{ h+=`<li>${esc(d)}</li>`; });
+    h+=`</ul></div>`;
+    h+=`<div class="guidance-rule guidance-edge"><div class="guidance-rule-title">Edge cases</div><ul style="margin:4px 0 0 16px;padding:0">`;
+    LABEL_RULES.edge_cases.forEach(e=>{ h+=`<li class="guidance-edge">${esc(e)}</li>`; });
+    h+=`</ul></div>`;
+  }
+  h+=`</div></div>`;
 
   // model responses (reference only)
   h+=`<div class="models-row">`;
@@ -331,8 +418,10 @@ function renderStep(){
   if(isLast){
     h+=`<div class="submit-btns">`;
     h+=`<button class="btn btn-outline btn-sm" onclick="skipReview()">Skip</button>`;
-    h+=`<button class="btn btn-primary btn-sm" id="submit-btn" onclick="submitReview()" ${picked?"":"disabled"}>Submit</button>`;
+    const allPicked=STEPS.every(s=>!!chosen[s]);
+    h+=`<button class="btn btn-primary btn-sm" id="submit-btn" onclick="submitReview()" ${allPicked?"":"disabled"}>Submit</button>`;
     h+=`</div>`;
+    h+=`<div id="submit-err" style="display:none;color:#dc2626;font-size:.85rem;margin-top:6px">Submission failed. Check your connection and try again.</div>`;
   }
   h+=`</div>`;
 
@@ -343,6 +432,13 @@ function renderStep(){
   h+=`</div></div>`;
 
   document.getElementById("step-container").innerHTML=h;
+}
+
+function toggleGuidance(id){
+  const el=document.getElementById(id);
+  const btn=document.getElementById("btn-"+id);
+  if(el) el.classList.toggle("open");
+  if(btn) btn.classList.toggle("open");
 }
 
 function pickTag(step,tag){
@@ -375,7 +471,35 @@ async function submitReview(){
     review_num:curReview+1,
     total_assigned:assigned.length
   };
-  try{await fetch(CFG.apps_script_url,{method:"POST",body:JSON.stringify(payload)})}catch(e){console.error(e)}
+
+  // Save payload locally before attempting POST so we can retry if needed.
+  pendingPayload=payload;
+
+  let ok=false;
+  try{
+    await fetch(CFG.apps_script_url,{
+      method:"POST",
+      // text/plain avoids CORS preflight which Apps Script doesn't handle.
+      headers:{"Content-Type":"text/plain"},
+      body:JSON.stringify(payload)
+    });
+    ok=true;
+  }catch(e){console.error(e)}
+
+  if(!ok){
+    btn.disabled=false;btn.textContent="Submit";
+    const errEl=document.getElementById("submit-err");
+    if(errEl) errEl.style.display="block";
+    return;
+  }
+
+  // Mark this review as done locally so it's skipped on re-entry.
+  const doneKey="reviewer_done_ids_"+reviewerName;
+  const doneIds=new Set(JSON.parse(localStorage.getItem(doneKey)||"[]"));
+  doneIds.add(payload.post_id);
+  localStorage.setItem(doneKey,JSON.stringify([...doneIds]));
+  pendingPayload=null;
+
   advanceReview();
 }
 
