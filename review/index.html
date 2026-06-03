@@ -302,12 +302,13 @@
     /* step chips: 2x2 instead of 4 across */
     .steps-row{gap:6px}
     .step-chip{flex:1 1 calc(50% - 3px);min-width:0;font-size:.74rem;padding:7px 8px}
-    /* tag picker on review page: pills wrap nicely */
-    .picker-body{flex-direction:column;align-items:flex-start;gap:8px}
-    .picker-btns{flex-wrap:wrap;width:100%}
-    .tag-btn{flex:1 1 calc(50% - 4px);min-width:0;padding:7px 4px;font-size:.76rem}
-    .picker-label{font-size:.82rem}
-    .picker-hint{font-size:.72rem}
+    /* tag picker on review page: 1 button per row so long labels never clip */
+    .tag-picker{overflow:visible}
+    .picker-body{flex-direction:column;align-items:stretch;gap:10px;padding:10px 12px}
+    .picker-btns{display:flex;flex-direction:column;width:100%;gap:6px}
+    .tag-btn{width:100%;padding:9px 12px;font-size:.85rem;text-align:center}
+    .picker-label{font-size:.85rem}
+    .picker-hint{font-size:.74rem;line-height:1.4}
     /* feedback row stacks */
     .feedback-row{flex-direction:column;align-items:stretch;gap:8px;padding:10px 12px}
     .feedback-row textarea{height:60px}
