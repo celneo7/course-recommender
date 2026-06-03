@@ -260,7 +260,7 @@
     .exp-tbl thead{display:none}
     .exp-tbl colgroup,.exp-tbl col{display:none}
     .exp-tbl tr{margin-bottom:12px;border:1px solid #9ca3af;border-radius:10px;background:#fff;padding:12px;overflow:hidden}
-    .exp-tbl td{border:none!important;padding:0;background:transparent!important}
+    .exp-tbl td{border:none!important;padding:0;background:transparent!important;width:100%!important;min-width:0!important}
     .exp-tbl td.gap-col{display:none}
     /* Dimension id + name in a tight header at the top of each card */
     .exp-tbl td.exp-dim-id{display:inline-block;width:auto;font-weight:700;color:#4f46e5;font-size:.85rem;background:#f5f3ff!important;padding:3px 8px;border-radius:6px;margin-bottom:8px}
@@ -284,8 +284,11 @@
   .mobile-hint{display:none}
   /* General mobile polish (phone-sized viewports) */
   @media(max-width:600px){
-    /* Show the desktop-recommendation banner */
-    .mobile-hint{display:block;background:#fef3c7;color:#854d0e;padding:8px 14px;font-size:.76rem;text-align:center;border-bottom:1px solid #fde68a;font-weight:500}
+    /* Desktop-recommendation banner — fixed at top, sits above landing overlay */
+    .mobile-hint{display:block;position:fixed;top:0;left:0;right:0;z-index:200;background:#fef3c7;color:#854d0e;padding:8px 14px;font-size:.76rem;text-align:center;border-bottom:1px solid #fde68a;font-weight:500}
+    /* Push every screen below the banner */
+    body{padding-top:34px}
+    #scr-landing.active{padding-top:34px;box-sizing:border-box}
     /* Use the full phone width — minimal side padding everywhere */
     .wrap{padding:8px 6px}
     .exp-wrap{padding:8px 4px 40px;max-width:100%}
