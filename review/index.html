@@ -246,6 +246,64 @@
     .step-def{border-right:none;border-bottom:2px solid #e5e7eb}
     .review-sticky .review-body{max-height:150px}
   }
+  /* Experience table — fall back to horizontal scroll on narrow screens */
+  @media(max-width:1024px){
+    .exp-tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+    .exp-tbl{min-width:980px}
+    .exp-tbl td.exp-dim-meta{min-width:200px}
+  }
+  /* General mobile polish (phone-sized viewports) */
+  @media(max-width:600px){
+    /* Use the full phone width — minimal side padding everywhere */
+    .wrap{padding:10px 8px}
+    .exp-wrap{padding:10px 6px 40px;max-width:100%}
+    /* tighter cards */
+    .exp-header{padding:14px 14px}
+    .exp-header h2{font-size:1.1rem}
+    .exp-header p{font-size:.85rem;line-height:1.5}
+    .exp-feedback-card{padding:14px 12px}
+    .exp-label-section{padding:12px 10px}
+    .review-intro{padding:14px 14px}
+    /* step chips: 2x2 instead of 4 across */
+    .steps-row{gap:8px}
+    .step-chip{flex:1 1 calc(50% - 4px);min-width:0;font-size:.8rem;padding:8px 10px}
+    /* tag picker on review page: pills wrap nicely */
+    .picker-body{flex-direction:column;align-items:flex-start;gap:10px}
+    .picker-btns{flex-wrap:wrap;width:100%}
+    .tag-btn{flex:1 1 calc(50% - 4px);min-width:0;padding:8px 6px;font-size:.8rem}
+    /* feedback row stacks */
+    .feedback-row{flex-direction:column;align-items:stretch;gap:8px;padding:10px 12px}
+    .feedback-row textarea{height:60px}
+    .submit-btns{justify-content:flex-end}
+    /* nav row wraps */
+    .nav-row{flex-wrap:wrap;gap:8px;padding:10px 12px}
+    .nav-row .status{flex:1 1 100%;order:3;text-align:center}
+    /* sticky review banner: shorter, smaller text */
+    .review-sticky .review-body{font-size:.82rem;padding:8px 12px;height:28vh}
+    .rbar-label{font-size:.74rem}
+    /* step body: stacks (already covered by max-width:700px above) */
+    .step-head{padding:10px 14px}
+    .step-dim-name{font-size:.95rem}
+    /* rubric tables inside step card */
+    .rubric-tbl{font-size:.78rem}
+    .rubric-tbl td{padding:4px 6px}
+    .rubric-tbl td:first-child{width:75px;padding:4px 8px}
+    /* summary table (verdict step) */
+    .summary-tbl{font-size:.68rem}
+    .summary-tbl th,.summary-tbl td{padding:3px 4px}
+    /* landing card */
+    .landing{margin:8px}
+    .landing-header{padding:18px 18px 14px}
+    .landing-header h2{font-size:1.15rem}
+    .landing-body{padding:16px 18px 20px}
+    .landing select,.landing input[type=text]{font-size:.95rem;padding:10px 12px}
+    /* exp-nav: stack on phone */
+    .exp-nav{flex-direction:column;align-items:stretch;gap:8px}
+    .exp-nav .status{text-align:center}
+    .exp-nav .btn-primary{width:100%}
+    /* info-icon tooltip: narrower so it fits viewport */
+    .info-icon::after{width:min(80vw,260px)}
+  }
 </style>
 </head>
 <body>
@@ -724,22 +782,13 @@ function updateExperienceContinue(){
   const status=document.getElementById("exp-status");
   if(!btn)return;
   const tagsOk=STEPS.every(s=>!!experienceTags[s]);
-  const dimVal=((document.getElementById("dim-feedback")||{}).value||"").trim();
-  const rubVal=((document.getElementById("agreement-feedback")||{}).value||"").trim();
-  const commentsOk=!!dimVal&&!!rubVal;
-  btn.disabled=!(tagsOk&&commentsOk);
-  if(status){
-    if(!tagsOk) status.textContent="Tag every row above to continue";
-    else if(!commentsOk) status.textContent="Fill in both comments to continue";
-    else status.textContent="";
-  }
+  btn.disabled=!tagsOk;
+  if(status) status.textContent=tagsOk?"":"Tag every row above to continue";
 }
 
 async function submitExperience(){
   const tagsOk=STEPS.every(s=>!!experienceTags[s]);
-  const dimVal=((document.getElementById("dim-feedback")||{}).value||"").trim();
-  const rubVal=((document.getElementById("agreement-feedback")||{}).value||"").trim();
-  if(!tagsOk||!dimVal||!rubVal) return;
+  if(!tagsOk) return;
   rubricFeedback=(document.getElementById("agreement-feedback")||{value:""}).value||"";
   const dimFeedback=(document.getElementById("dim-feedback")||{value:""}).value||"";
   const btn=document.getElementById("experience-next");
