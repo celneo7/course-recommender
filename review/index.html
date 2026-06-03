@@ -246,31 +246,65 @@
     .step-def{border-right:none;border-bottom:2px solid #e5e7eb}
     .review-sticky .review-body{max-height:150px}
   }
-  /* Experience table — fall back to horizontal scroll on narrow screens */
-  @media(max-width:1024px){
+  /* Experience table — between 600 and 1024px, fall back to horizontal scroll */
+  @media(max-width:1024px) and (min-width:601px){
     .exp-tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
     .exp-tbl{min-width:980px}
     .exp-tbl td.exp-dim-meta{min-width:200px}
   }
+  /* Phone (≤600px): restructure each row as a card with rubric options
+     stacked vertically and the picker pills inline at the bottom. */
+  @media(max-width:600px){
+    .exp-tbl-wrap{overflow:visible;box-shadow:none;background:transparent}
+    .exp-tbl,.exp-tbl thead,.exp-tbl tbody,.exp-tbl tr,.exp-tbl th,.exp-tbl td{display:block;width:100%}
+    .exp-tbl thead{display:none}
+    .exp-tbl colgroup,.exp-tbl col{display:none}
+    .exp-tbl tr{margin-bottom:12px;border:1px solid #9ca3af;border-radius:10px;background:#fff;padding:12px;overflow:hidden}
+    .exp-tbl td{border:none!important;padding:0;background:transparent!important}
+    .exp-tbl td.gap-col{display:none}
+    /* Dimension id + name in a tight header at the top of each card */
+    .exp-tbl td.exp-dim-id{display:inline-block;width:auto;font-weight:700;color:#4f46e5;font-size:.85rem;background:#f5f3ff!important;padding:3px 8px;border-radius:6px;margin-bottom:8px}
+    .exp-tbl td.exp-dim-meta{padding-bottom:10px;border-bottom:1px solid #e5e7eb!important;margin-bottom:10px}
+    /* Rubric cells: stacked with their label as a small chip */
+    .exp-tbl td.exp-rubric-cell{padding:7px 10px;margin-bottom:6px;border-radius:6px;font-size:.78rem;line-height:1.4}
+    .exp-tbl td.exp-rubric-cell::before{content:attr(data-label);display:inline-block;font-weight:700;font-size:.66rem;text-transform:uppercase;letter-spacing:.05em;padding:2px 7px;border-radius:4px;margin-right:8px;vertical-align:middle}
+    .exp-tbl td.exp-rubric-cell.rub-neg{background:#fef2f2!important}
+    .exp-tbl td.exp-rubric-cell.rub-neg::before{background:#fee2e2;color:#991b1b}
+    .exp-tbl td.exp-rubric-cell.rub-neu{background:#fefbef!important}
+    .exp-tbl td.exp-rubric-cell.rub-neu::before{background:#fef9c3;color:#854d0e}
+    .exp-tbl td.exp-rubric-cell.rub-pos{background:#f0fdf4!important}
+    .exp-tbl td.exp-rubric-cell.rub-pos::before{background:#dcfce7;color:#166534}
+    /* Picker: full-width row at bottom of each card, pills side-by-side */
+    .exp-tbl td.pick-col{margin-top:10px;padding:10px;background:#faf5ff!important;border:2px solid #a78bfa!important;border-radius:8px;width:100%}
+    .exp-tbl td.pick-col::before{content:attr(data-label);display:block;font-weight:700;font-size:.66rem;text-transform:uppercase;letter-spacing:.05em;color:#6b21a8;margin-bottom:6px}
+    .exp-pick-stack{flex-direction:row;gap:6px}
+    .exp-pick-pill{flex:1 1 0;padding:8px 4px;font-size:.76rem}
+  }
+  /* Desktop-recommendation banner — only shown on mobile (rule below) */
+  .mobile-hint{display:none}
   /* General mobile polish (phone-sized viewports) */
   @media(max-width:600px){
+    /* Show the desktop-recommendation banner */
+    .mobile-hint{display:block;background:#fef3c7;color:#854d0e;padding:8px 14px;font-size:.76rem;text-align:center;border-bottom:1px solid #fde68a;font-weight:500}
     /* Use the full phone width — minimal side padding everywhere */
-    .wrap{padding:10px 8px}
-    .exp-wrap{padding:10px 6px 40px;max-width:100%}
-    /* tighter cards */
-    .exp-header{padding:14px 14px}
-    .exp-header h2{font-size:1.1rem}
-    .exp-header p{font-size:.85rem;line-height:1.5}
+    .wrap{padding:8px 6px}
+    .exp-wrap{padding:8px 4px 40px;max-width:100%}
+    /* tighter cards + smaller text */
+    .exp-header{padding:12px 12px}
+    .exp-header h2{font-size:1.02rem}
+    .exp-header p{font-size:.78rem;line-height:1.45}
     .exp-feedback-card{padding:14px 12px}
     .exp-label-section{padding:12px 10px}
     .review-intro{padding:14px 14px}
     /* step chips: 2x2 instead of 4 across */
-    .steps-row{gap:8px}
-    .step-chip{flex:1 1 calc(50% - 4px);min-width:0;font-size:.8rem;padding:8px 10px}
+    .steps-row{gap:6px}
+    .step-chip{flex:1 1 calc(50% - 3px);min-width:0;font-size:.74rem;padding:7px 8px}
     /* tag picker on review page: pills wrap nicely */
-    .picker-body{flex-direction:column;align-items:flex-start;gap:10px}
+    .picker-body{flex-direction:column;align-items:flex-start;gap:8px}
     .picker-btns{flex-wrap:wrap;width:100%}
-    .tag-btn{flex:1 1 calc(50% - 4px);min-width:0;padding:8px 6px;font-size:.8rem}
+    .tag-btn{flex:1 1 calc(50% - 4px);min-width:0;padding:7px 4px;font-size:.76rem}
+    .picker-label{font-size:.82rem}
+    .picker-hint{font-size:.72rem}
     /* feedback row stacks */
     .feedback-row{flex-direction:column;align-items:stretch;gap:8px;padding:10px 12px}
     .feedback-row textarea{height:60px}
@@ -307,6 +341,7 @@
 </style>
 </head>
 <body>
+<div class="mobile-hint">For best experience, please use a laptop or desktop.</div>
 <div class="wrap">
 
 <!-- LANDING (also loads data in background while user fills form) -->
@@ -720,10 +755,10 @@ function renderExperience(){
     h+=`<div class="exp-dim-captures">${esc(info.captures)}</div>`;
     h+=`</td>`;
     tagCols.forEach(c=>{
-      h+=`<td class="exp-rubric-cell rub-${c.cls}">${esc(info[c.key])}</td>`;
+      h+=`<td class="exp-rubric-cell rub-${c.cls}" data-label="${esc(c.label)}">${esc(info[c.key])}</td>`;
     });
     h+=`<td class="gap-col"></td>`;
-    h+=`<td class="pick-col"><div class="exp-pick-stack">`;
+    h+=`<td class="pick-col" data-label="Your tag"><div class="exp-pick-stack">`;
     tagCols.forEach(c=>{
       const sel=cur===c.label;
       h+=`<button type="button" class="exp-pick-pill ${c.cls}${sel?' sel':''}" onclick="pickExperienceTag('${dim}','${c.label.replace(/'/g,"\\'")}')">${esc(c.label)}</button>`;
@@ -750,10 +785,10 @@ function renderExperience(){
   h+=`</tr></thead><tbody><tr>`;
   labelCols.forEach(c=>{
     // label rubric strings contain HTML — render as-is.
-    h+=`<td class="exp-rubric-cell rub-${c.cls}">${lblInfo[c.key]}</td>`;
+    h+=`<td class="exp-rubric-cell rub-${c.cls}" data-label="${esc(c.label)}">${lblInfo[c.key]}</td>`;
   });
   h+=`<td class="gap-col"></td>`;
-  h+=`<td class="pick-col"><div class="exp-pick-stack">`;
+  h+=`<td class="pick-col" data-label="Your verdict"><div class="exp-pick-stack">`;
   labelCols.forEach(c=>{
     const sel=curLbl===c.label;
     h+=`<button type="button" class="exp-pick-pill ${c.cls}${sel?' sel':''}" onclick="pickExperienceTag('label','${c.label.replace(/'/g,"\\'")}')">${esc(c.label)}</button>`;
